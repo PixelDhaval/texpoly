@@ -1,0 +1,7968 @@
+[{
+  "_id": {
+    "$oid": "661d62ebf7268b25549624e7"
+  },
+  "itemCode": "LATS",
+  "itemName": "LADIES TSHIRT",
+  "labelName": "LADIES TSHIRT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "LBS",
+  "masterPrice": "90",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661d6363f7268b25549624e8"
+  },
+  "itemCode": "CJP",
+  "itemName": "CHILDREN JOGGING PANTS",
+  "labelName": "CHILDREN JOGGING PANTS",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "JOGGING PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Pcs",
+  "masterPrice": "95",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e10ed2623f1b4f9949850"
+  },
+  "itemCode": "APF",
+  "itemName": "ADULT POLAR FLEECE",
+  "labelName": "ADULT POLAR FLEECE",
+  "grade": "A",
+  "category": "ADULT",
+  "section": "WOOL BODY",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e111c2623f1b4f9949851"
+  },
+  "itemCode": "ASW",
+  "itemName": "ASIAN WEAR",
+  "labelName": "ASIAN WEAR",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "50"
+},
+{
+  "_id": {
+    "$oid": "661e123f0bb5706f8495c545"
+  },
+  "itemCode": "BARM",
+  "itemName": "BABY RUMMAGE",
+  "labelName": "BABY RUMMAGE",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "80",
+  "baleweight": "50"
+},
+{
+  "_id": {
+    "$oid": "661e1291f0562d346db06e7e"
+  },
+  "itemCode": "BAJK",
+  "itemName": "BABY JACKET",
+  "labelName": "BABY JACKET",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "83",
+  "baleweight": "60"
+},
+{
+  "_id": {
+    "$oid": "661e12d258bb2ce9ccc6b1d8"
+  },
+  "itemCode": "BSCP",
+  "itemName": "BASEBALL CAPS",
+  "labelName": "BASEBALL CAPS",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "PREMIUM",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "110",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e12f758bb2ce9ccc6b1d9"
+  },
+  "itemCode": "BNJK",
+  "itemName": "BASEBALL NYLON JACKET",
+  "labelName": "BASEBALL NYLON JACKET",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "98",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e131658bb2ce9ccc6b1da"
+  },
+  "itemCode": "BDCV",
+  "itemName": "BED COVERS",
+  "labelName": "BED COVERS",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "110",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e133b58bb2ce9ccc6b1db"
+  },
+  "itemCode": "BDS1",
+  "itemName": "BED SHEET #1",
+  "labelName": "BED SHEET #1",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "87",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e135b58bb2ce9ccc6b1dc"
+  },
+  "itemCode": "BDS2",
+  "itemName": "BED SHEET #2",
+  "labelName": "BED SHEET #2",
+  "grade": "B",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "60",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e138658bb2ce9ccc6b1dd"
+  },
+  "itemCode": "BLT",
+  "itemName": "BELTS",
+  "labelName": "BELTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "045"
+},
+{
+  "_id": {
+    "$oid": "661e13b958bb2ce9ccc6b1de"
+  },
+  "itemCode": "BLKT",
+  "itemName": "BLANKETS",
+  "labelName": "BLANKETS",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "89",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e140258bb2ce9ccc6b1df"
+  },
+  "itemCode": "BJP1",
+  "itemName": "BOYS JEANS PANT #1",
+  "labelName": "BOYS JEANS PANT #1",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "PANT",
+  "packing": "150",
+  "packingType": "Bale",
+  "packingMeasure": "Pcs",
+  "masterPrice": "86",
+  "baleweight": "50"
+},
+{
+  "_id": {
+    "$oid": "661e144158bb2ce9ccc6b1e0"
+  },
+  "itemCode": "BJP2",
+  "itemName": "BOYS JEANS PANT #2",
+  "labelName": "BOYS JEANS PANT #2",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "PANT",
+  "packing": "150",
+  "packingType": "Bale",
+  "packingMeasure": "Pcs",
+  "masterPrice": "65",
+  "baleweight": "50"
+},
+{
+  "_id": {
+    "$oid": "661e1551f0e8115a92de69d9"
+  },
+  "itemCode": "BOPT1",
+  "itemName": "BOYS PANTS #1",
+  "labelName": "BOYS PANTS #1",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "95",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e1569f0e8115a92de69da"
+  },
+  "itemCode": "BOPT2",
+  "itemName": "BOYS PANTS #2",
+  "labelName": "BOYS PANTS #2",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "62",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e158cf0e8115a92de69db"
+  },
+  "itemCode": "BYST1",
+  "itemName": "BOYS SHIRT #1",
+  "labelName": "BOYS SHIRT #1",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "95",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "661e15b1f0e8115a92de69dc"
+  },
+  "itemCode": "BYST2",
+  "itemName": "BOYS SHIRT #2",
+  "labelName": "BOYS SHIRT #2",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "50",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dce23bc2be3285922c33f"
+  },
+  "itemCode": "BKS",
+  "itemName": "BIKER SHORTS",
+  "labelName": "BIKER SHORTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Wt",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "100"
+},
+{
+  "_id": {
+    "$oid": "665dce72bc2be3285922c340"
+  },
+  "itemCode": "BABL",
+  "itemName": "BABY BLANKET",
+  "labelName": "BABY BLANKET",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dcecbbc2be3285922c341"
+  },
+  "itemCode": "CPSR",
+  "itemName": "CHILD PEDDY SUIT (ROMPERS)",
+  "labelName": "CHILD PEDDY SUIT ",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dcef8a661708f4befaa33"
+  },
+  "itemCode": "CPSR2",
+  "itemName": "CHILD PEDDY SUIT (ROMPERS) #2",
+  "labelName": "CHILD PEDDY SUIT  #2",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dcf4ba661708f4befaa34"
+  },
+  "itemCode": "CLRM",
+  "itemName": "CHILDREN LIGHT RUMMAGE ",
+  "labelName": "CHILDREN LIGHT RUMMAGE ",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dcf65a661708f4befaa35"
+  },
+  "itemCode": "CMRM",
+  "itemName": "CHILDREN MEDIUM RUMMAGE  ",
+  "labelName": "CHILDREN MEDIUM RUMMAGE  ",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dcf93a661708f4befaa36"
+  },
+  "itemCode": "CMXR",
+  "itemName": "CHILDREN MIX RUMMAGE ",
+  "labelName": "CHILDREN MIX RUMMAGE ",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dcfbda661708f4befaa37"
+  },
+  "itemCode": "CDST1",
+  "itemName": "CHILDREN SHORTS #1",
+  "labelName": "CHILDREN SHORTS #1",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dcfdfa661708f4befaa38"
+  },
+  "itemCode": "CDST2",
+  "itemName": "CHILDREN SHORTS #2",
+  "labelName": "CHILDREN SHORTS #2",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd00ea661708f4befaa39"
+  },
+  "itemCode": "CDSR",
+  "itemName": "CHILDREN SLEEPER (ROMPERS)",
+  "labelName": "CHILDREN SLEEPER ",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd044a661708f4befaa3a"
+  },
+  "itemCode": "CPSB",
+  "itemName": "CHILDREN PEDDY SUIT (BIG SIZE)",
+  "labelName": "CHILDREN PEDDY SUIT (BIG SIZE)",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd083bd2ab2110580a6a3"
+  },
+  "itemCode": "CTSS1",
+  "itemName": "CHILDREN T-SHIRTS S/S #1",
+  "labelName": "CHILDREN T-SHIRTS S/S #1",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd096bd2ab2110580a6a4"
+  },
+  "itemCode": "CTSS2",
+  "itemName": "CHILDREN T-SHIRTS S/S #2",
+  "labelName": "CHILDREN T-SHIRTS S/S #2",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd0b3bd2ab2110580a6a5"
+  },
+  "itemCode": "CMFR1",
+  "itemName": "COMFORTER #1",
+  "labelName": "COMFORTER #1",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd0d2bd2ab2110580a6a6"
+  },
+  "itemCode": "CMFR2",
+  "itemName": "COMFORTER #2",
+  "labelName": "COMFORTER #2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd118bd2ab2110580a6a7"
+  },
+  "itemCode": "CRTN",
+  "itemName": "CURTAINS",
+  "labelName": "CURTAINS",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd1f2bd2ab2110580a6a8"
+  },
+  "itemCode": "EBST",
+  "itemName": "ELASTIC BEDSHEETS",
+  "labelName": "ELASTIC BEDSHEETS",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd21cbd2ab2110580a6a9"
+  },
+  "itemCode": "FNBS",
+  "itemName": "FLANNEL BEDSHEET",
+  "labelName": "FLANNEL BEDSHEET",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd247bd2ab2110580a6aa"
+  },
+  "itemCode": "GLDS",
+  "itemName": "GIRLS DRESSES",
+  "labelName": "GIRLS DRESSES",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "0100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd26dbd2ab2110580a6ab"
+  },
+  "itemCode": "HSS1",
+  "itemName": "HOODED SWEATSHIRTS",
+  "labelName": "HOODED SWEATSHIRTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd285bd2ab2110580a6ac"
+  },
+  "itemCode": "HSS2",
+  "itemName": "HOODED SWEATSHIRTS #2",
+  "labelName": "HOODED SWEATSHIRTS #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd2a6bd2ab2110580a6ad"
+  },
+  "itemCode": "HHRM2",
+  "itemName": "HOUSE HOLD RUMMAGE # 2",
+  "labelName": "HOUSE HOLD RUMMAGE # 2",
+  "grade": "B",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd354bd2ab2110580a6b0"
+  },
+  "itemCode": "JGPT1",
+  "itemName": "JOGGING PANTS",
+  "labelName": "JOGGING PANTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JOGGING PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd372bd2ab2110580a6b1"
+  },
+  "itemCode": "JGPT2",
+  "itemName": "JOGGING PANTS # 2",
+  "labelName": "JOGGING PANTS # 2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "JOGGING PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd393bd2ab2110580a6b2"
+  },
+  "itemCode": "LCCT",
+  "itemName": "LACE CURTAINS ",
+  "labelName": "LACE CURTAINS ",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd3c1bd2ab2110580a6b3"
+  },
+  "itemCode": "LABR1",
+  "itemName": "LADIES BRA #1",
+  "labelName": "LADIES BRA #1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd3debd2ab2110580a6b4"
+  },
+  "itemCode": "LABR2",
+  "itemName": "LADIES BRA #2",
+  "labelName": "LADIES BRA #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd3ffbd2ab2110580a6b5"
+  },
+  "itemCode": "LACD",
+  "itemName": "LADIES COTTON DRESSES",
+  "labelName": "LADIES COTTON DRESSES",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd415bd2ab2110580a6b6"
+  },
+  "itemCode": "LCD",
+  "itemName": "LADIES COTTON NIGHT DRESS",
+  "labelName": "LADIES COTTON NIGHT DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd433bd2ab2110580a6b7"
+  },
+  "itemCode": "LCPT",
+  "itemName": "LADIES COTTON PANTS",
+  "labelName": "LADIES COTTON PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd450bd2ab2110580a6b8"
+  },
+  "itemCode": "LCSK",
+  "itemName": "LADIES COTTON SKIRTS",
+  "labelName": "LADIES COTTON SKIRTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd46fbd2ab2110580a6b9"
+  },
+  "itemCode": "LDPT",
+  "itemName": "LADIES DRESS PANTS",
+  "labelName": "LADIES DRESS PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "0100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd490bd2ab2110580a6ba"
+  },
+  "itemCode": "LMD2",
+  "itemName": "LADIES MINI DRESS # 2",
+  "labelName": "LADIES MINI DRESS # 2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd4b8bd2ab2110580a6bb"
+  },
+  "itemCode": "LFPT",
+  "itemName": "LAD FASHION POLY TOPS",
+  "labelName": "LAD FASHION POLY TOPS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd4d2bd2ab2110580a6bc"
+  },
+  "itemCode": "LJPT1",
+  "itemName": "LADIES JEANS PANTS",
+  "labelName": "LADIES JEANS PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd4edbd2ab2110580a6bd"
+  },
+  "itemCode": "LJPT2",
+  "itemName": "LADIES JEANS PANTS # 2",
+  "labelName": "LADIES JEANS PANTS # 2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "045"
+},
+{
+  "_id": {
+    "$oid": "665dd508bd2ab2110580a6be"
+  },
+  "itemCode": "LJST",
+  "itemName": "LADIES JUMP SUIT",
+  "labelName": "LADIES JUMPSUIT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd526bd2ab2110580a6bf"
+  },
+  "itemCode": "LLSW",
+  "itemName": "LADIES LONG SWEATER",
+  "labelName": "LADIES LONG SWEATER",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd590bd2ab2110580a6c0"
+  },
+  "itemCode": "LMSK",
+  "itemName": "LADIES MEDIUM SKIRTS",
+  "labelName": "LADIES MEDIUM SKIRTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd5a8bd2ab2110580a6c1"
+  },
+  "itemCode": "LDOV",
+  "itemName": "LADIES DRESS OVERSIZE",
+  "labelName": "LADIES DRESS OVERSIZE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd5c4bd2ab2110580a6c2"
+  },
+  "itemCode": "LMBL1",
+  "itemName": "LADIES MIX BLOUSE",
+  "labelName": "LADIES MIX BLOUSE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dd5ddbd2ab2110580a6c3"
+  },
+  "itemCode": "LMBL2",
+  "itemName": "LADIES MIX BLOUSE # 2",
+  "labelName": "LADIES MIX BLOUSE # 2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df546bd2ab2110580a6c4"
+  },
+  "itemCode": "LMDS1",
+  "itemName": "LADIES MIX DRESSES",
+  "labelName": "LADIES MIX DRESSES",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df579bd2ab2110580a6c5"
+  },
+  "itemCode": "LMDS2",
+  "itemName": "LADIES MIX DRESSES # 2",
+  "labelName": "LADIES MIX DRESSES # 2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df5b5bd2ab2110580a6c6"
+  },
+  "itemCode": "LMST",
+  "itemName": "LADIES MIX SKIRTS",
+  "labelName": "LADIES MIX SKIRTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df5e0bd2ab2110580a6c7"
+  },
+  "itemCode": "LPEP",
+  "itemName": "LADIES POLY ELASTIC PANTS",
+  "labelName": "LADIES POLY ELASTIC PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df61abd2ab2110580a6c9"
+  },
+  "itemCode": "LPNT",
+  "itemName": "LADIES POLY NIGHTY",
+  "labelName": "LADIES POLY NIGHTY",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df655bd2ab2110580a6cb"
+  },
+  "itemCode": "LSPB",
+  "itemName": "LADIES SILK/POLY BLOUSE",
+  "labelName": "LADIES SILK/POLY BLOUSE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df66bbd2ab2110580a6cc"
+  },
+  "itemCode": "LSPD",
+  "itemName": "LADIES SILK/POLY DRESS",
+  "labelName": "LADIES SILK/POLY DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df691bd2ab2110580a6cd"
+  },
+  "itemCode": "LSPS",
+  "itemName": "LADIES SILK/POLY SKIRTS ",
+  "labelName": "LADIES SILK/POLY SKIRTS ",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df6c0bd2ab2110580a6ce"
+  },
+  "itemCode": "LMNS",
+  "itemName": "LADIES MINI SKIRT",
+  "labelName": "LADIES MINI SKIRT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df6d6bd2ab2110580a6cf"
+  },
+  "itemCode": "LDSW",
+  "itemName": "LADIES SWEATER",
+  "labelName": "LADIES SWEATER",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df6edbd2ab2110580a6d0"
+  },
+  "itemCode": "LTSS1",
+  "itemName": "LADIES T-SHIRTS S/S #1",
+  "labelName": "LADIES T-SHIRTS S/S #1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df705bd2ab2110580a6d1"
+  },
+  "itemCode": "LTSS2",
+  "itemName": "LADIES T-SHIRTS S/S #2",
+  "labelName": "LADIES T-SHIRTS S/S #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df72fbd2ab2110580a6d2"
+  },
+  "itemCode": "LEG1",
+  "itemName": "LEGGINGS # 1",
+  "labelName": "LEGGINGS # 1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "045"
+},
+{
+  "_id": {
+    "$oid": "665df746bd2ab2110580a6d3"
+  },
+  "itemCode": "LEG2",
+  "itemName": "LEGGINGS # 2",
+  "labelName": "LEGGINGS # 2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df768bd2ab2110580a6d4"
+  },
+  "itemCode": "LDUW",
+  "itemName": "LADIES UNDERWEAR",
+  "labelName": "LADIES UNDERWEAR",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665df788bd2ab2110580a6d5"
+  },
+  "itemCode": "MTCP",
+  "itemName": "MATS & CARPETS",
+  "labelName": "MATS & CARPETS",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfcffbd2ab2110580a6d6"
+  },
+  "itemCode": "MCTS",
+  "itemName": "MEN COLLAR T-SHIRTS S/S",
+  "labelName": "MEN COLLAR T-SHIRTS S/S",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfd21bd2ab2110580a6d7"
+  },
+  "itemCode": "MCTL",
+  "itemName": "MEN COLLAR T-SHIRTS L/S",
+  "labelName": "MEN COLLAR T-SHIRTS L/S",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfd54bd2ab2110580a6d8"
+  },
+  "itemCode": "MCP1",
+  "itemName": "MEN COTTON PANTS #1",
+  "labelName": "MEN COTTON PANTS #1",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfd6abd2ab2110580a6d9"
+  },
+  "itemCode": "MCP2",
+  "itemName": "MEN COTTON PANTS #2",
+  "labelName": "MEN COTTON PANTS #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfd8cbd2ab2110580a6da"
+  },
+  "itemCode": "MDPT",
+  "itemName": "MEN DRESS PANTS",
+  "labelName": "MEN DRESS PANTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "0100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfdabbd2ab2110580a6db"
+  },
+  "itemCode": "MDSL1",
+  "itemName": "MEN DRESS SHIRTS L/S & S/S #1",
+  "labelName": "MEN DRESS SHIRTS L/S & S/S #1",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfdd0bd2ab2110580a6dc"
+  },
+  "itemCode": "MJPT1",
+  "itemName": "MEN JEANS PANTS #1",
+  "labelName": "MEN JEANS PANTS #1",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfdf7bd2ab2110580a6dd"
+  },
+  "itemCode": "MJPT2",
+  "itemName": "MEN JEANS PANTS #2",
+  "labelName": "MEN JEANS PANTS #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfe19bd2ab2110580a6de"
+  },
+  "itemCode": "MMS1",
+  "itemName": "MEN MIX SHIRTS #1",
+  "labelName": "MEN MIX SHIRT #1",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "0100",
+  "baleweight": "50"
+},
+{
+  "_id": {
+    "$oid": "665dfe35bd2ab2110580a6df"
+  },
+  "itemCode": "MMST2",
+  "itemName": "MEN MIX SHIRTS #2",
+  "labelName": "MEN MIX SHIRTS #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "0100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfe67bd2ab2110580a6e0"
+  },
+  "itemCode": "MMST3",
+  "itemName": "MEN MIX SHIRTS #3",
+  "labelName": "MEN MIX SHIRTS # 3",
+  "grade": "C",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfeaabd2ab2110580a6e3"
+  },
+  "itemCode": "MPP",
+  "itemName": "MEN POLY PANTS",
+  "labelName": "MEN POLY PANTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfec0bd2ab2110580a6e4"
+  },
+  "itemCode": "MRTL",
+  "itemName": "MEN R/N T-SHIRT L/S ",
+  "labelName": "MEN R/N T-SHIRT L/S ",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfedfbd2ab2110580a6e5"
+  },
+  "itemCode": "MRTS",
+  "itemName": "MEN R/N T-SHIRTS S/S #1",
+  "labelName": "MEN R/N T-SHIRTS S/S #1",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dfef8bd2ab2110580a6e6"
+  },
+  "itemCode": "MSXL",
+  "itemName": "MEN SHIRTS XL",
+  "labelName": "MEN SHIRTS XL",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "045"
+},
+{
+  "_id": {
+    "$oid": "665dff29bd2ab2110580a6e7"
+  },
+  "itemCode": "MSLT",
+  "itemName": "MEN SLEEVELESS T SHIRT",
+  "labelName": "MEN SLEEVELESS T SHIRT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dff42bd2ab2110580a6e8"
+  },
+  "itemCode": "MNSW",
+  "itemName": "MEN SWEATER",
+  "labelName": "MEN SWEATER",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dff66bd2ab2110580a6e9"
+  },
+  "itemCode": "MTS2",
+  "itemName": "MEN T-SHIRT S/S #2",
+  "labelName": "MEN T-SHIRT S/S #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dff86bd2ab2110580a6ea"
+  },
+  "itemCode": "MWPT",
+  "itemName": "MEN WOOL PANTS ",
+  "labelName": "MEN WOOL PANTS ",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dffa5bd2ab2110580a6eb"
+  },
+  "itemCode": "NTPT2",
+  "itemName": "NYLON TRACK PANTS #2",
+  "labelName": "NYLON TRACK PANTS #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dffc9bd2ab2110580a6ec"
+  },
+  "itemCode": "ORST1",
+  "itemName": "ORIGINAL SHORTS #1",
+  "labelName": "ORIGINAL SHORTS #1",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665dffe9bd2ab2110580a6ed"
+  },
+  "itemCode": "PRCT",
+  "itemName": "PLASTIC RAIN COATS",
+  "labelName": "PLASTIC RAIN COATS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e0001bd2ab2110580a6ee"
+  },
+  "itemCode": "REMI",
+  "itemName": "REMINENTS",
+  "labelName": "REMINENTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e001bbd2ab2110580a6ef"
+  },
+  "itemCode": "SJTO",
+  "itemName": "SKI JACKETS OVERSIZE",
+  "labelName": "SKI JACKETS OVERSIZE",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e0035bd2ab2110580a6f0"
+  },
+  "itemCode": "SJTL",
+  "itemName": "SKI JACKETS LONG",
+  "labelName": "SKI JACKETS LONG",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e004ebd2ab2110580a6f1"
+  },
+  "itemCode": "SKJN",
+  "itemName": "SKINNY JEANS",
+  "labelName": "SKINNY JEANS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e00879f764f17e883a025"
+  },
+  "itemCode": "SPSO1",
+  "itemName": "SPORTS SHORTS #1",
+  "labelName": "SPORTS SHORTS #1",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e00ac9f764f17e883a026"
+  },
+  "itemCode": "SPSO2",
+  "itemName": "SPORTS SHORTS # 2",
+  "labelName": "SPORTS SHORTS # 2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e00c39f764f17e883a027"
+  },
+  "itemCode": "SPSO3",
+  "itemName": "SPORTS SHORTS # 3",
+  "labelName": "SPORTS SHORTS # 3",
+  "grade": "C",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e00fc9f764f17e883a028"
+  },
+  "itemCode": "SPTS1",
+  "itemName": "SPORTS T-SHIRTS #1",
+  "labelName": "SPORTS T-SHIRTS #1",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e013b9f764f17e883a029"
+  },
+  "itemCode": "SPTS2",
+  "itemName": "SPORTS T-SHIRTS #2",
+  "labelName": "SPORTS T-SHIRTS #2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e01589f764f17e883a02a"
+  },
+  "itemCode": "SPTS3",
+  "itemName": "SPORTS T-SHIRTS #3",
+  "labelName": "SPORTS T-SHIRTS #3",
+  "grade": "C",
+  "category": "GENERAL",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e01a19f764f17e883a02b"
+  },
+  "itemCode": "TOW1",
+  "itemName": "TOWELS #1",
+  "labelName": "TOWELS #1",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e01bd9f764f17e883a02c"
+  },
+  "itemCode": "TOW2",
+  "itemName": "TOWELS #2",
+  "labelName": "TOWELS #2",
+  "grade": "B",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e01d59f764f17e883a02e"
+  },
+  "itemCode": "TOW3",
+  "itemName": "TOWELS #3",
+  "labelName": "TOWELS #3",
+  "grade": "C",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e01f59f764f17e883a02f"
+  },
+  "itemCode": "WBS1",
+  "itemName": "WHITE BED SHEET  #1",
+  "labelName": "WHITE BED SHEET  #1",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e02169f764f17e883a030"
+  },
+  "itemCode": "VLDS",
+  "itemName": "VELVET DRESS",
+  "labelName": "VELVET DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e02359f764f17e883a031"
+  },
+  "itemCode": "LCSW",
+  "itemName": "LADIES CARDIGAN SWEATER",
+  "labelName": "LADIES CARDIGAN SWEATER",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e024a9f764f17e883a032"
+  },
+  "itemCode": "LWD",
+  "itemName": "LADIES WINTER DRESS",
+  "labelName": "LADIES WINTER DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e02729f764f17e883a033"
+  },
+  "itemCode": "MCPT",
+  "itemName": "MEN CARGO PANTS",
+  "labelName": "MEN CARGO PANTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e02859f764f17e883a034"
+  },
+  "itemCode": "MTSX",
+  "itemName": "MEN T-SHIRTS XL",
+  "labelName": "MEN T-SHIRTS XL",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e029d9f764f17e883a035"
+  },
+  "itemCode": "MCPX",
+  "itemName": "MEN COTTON PANTS XL",
+  "labelName": "MEN COTTON PANTS XL",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e02c69f764f17e883a036"
+  },
+  "itemCode": "LJPX",
+  "itemName": "LADIES JEANS PANTS XL",
+  "labelName": "LADIES JEANS PANTS XL",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e02e29f764f17e883a037"
+  },
+  "itemCode": "VLTB",
+  "itemName": "VELVET TOPS & BOTTOMS",
+  "labelName": "VELVET TOP & BOTTOM",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e02f99f764f17e883a038"
+  },
+  "itemCode": "WKST",
+  "itemName": "WORK SUITS",
+  "labelName": "WORK SUIT",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e03a49a59384265b25c19"
+  },
+  "itemCode": "AMJN",
+  "itemName": "ADULT MIX JEANS",
+  "labelName": "ADULT MIX JEANS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e03c99a59384265b25c1a"
+  },
+  "itemCode": "BBHD",
+  "itemName": "BABY HOODED ",
+  "labelName": "BABY HOODED ",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e03ec9a59384265b25c1b"
+  },
+  "itemCode": "BAGS",
+  "itemName": "BAGS",
+  "labelName": "BAGS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e04059a59384265b25c1c"
+  },
+  "itemCode": "BTRB",
+  "itemName": "BATH ROBES",
+  "labelName": "BATHROBES",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e046f9a59384265b25c1d"
+  },
+  "itemCode": "CDSK",
+  "itemName": "CHILDREN SOCKS",
+  "labelName": "CHILDREN SOCKS",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e04a19a59384265b25c1e"
+  },
+  "itemCode": "CTSL",
+  "itemName": "CHILDREN T-SHIRTS L/S",
+  "labelName": "CHILDREN T-SHIRTS L/S",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e04c89a59384265b25c1f"
+  },
+  "itemCode": "CDSW",
+  "itemName": "CHILDREN SWEATER",
+  "labelName": "CHILDREN SWEATER",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e04f79a59384265b25c20"
+  },
+  "itemCode": "CLON",
+  "itemName": "COLON",
+  "labelName": "COLON",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e05229a59384265b25c21"
+  },
+  "itemCode": "HTJT",
+  "itemName": "HEAVY TRACK JACKET",
+  "labelName": "HEAVY TRACK JACKET",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e05419a59384265b25c22"
+  },
+  "itemCode": "DPTA",
+  "itemName": "DUPATTA",
+  "labelName": "DUPATTA",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e05659a59384265b25c23"
+  },
+  "itemCode": "FLPT",
+  "itemName": "FLEECE PANTS",
+  "labelName": "FLEECE PANTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e05999a59384265b25c24"
+  },
+  "itemCode": "HHRK",
+  "itemName": "HHR KITCHAN",
+  "labelName": "HHR KITCHAN",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e05e09a59384265b25c25"
+  },
+  "itemCode": "LCBL",
+  "itemName": "LADIES COTTON BLOUSE",
+  "labelName": "LADIES COTTON BLOUSE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e05fa9a59384265b25c26"
+  },
+  "itemCode": "LHNS",
+  "itemName": "LADIES HI NECK SWEATER",
+  "labelName": "LADIES HI NECK SWEATER",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e06129a59384265b25c27"
+  },
+  "itemCode": "LLJS",
+  "itemName": "LADIES LONG JUMPSUITS",
+  "labelName": "LADIES LONG JUMPSUITS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e06369a59384265b25c28"
+  },
+  "itemCode": "LMD1",
+  "itemName": "LADIES MINI DRESS #1",
+  "labelName": "LADIES MINI DRESS #1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e06579a59384265b25c29"
+  },
+  "itemCode": "LPPT",
+  "itemName": "LADIES PLAZZO PANTS",
+  "labelName": "LADIES PLAZZO PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "0100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e06739a59384265b25c2a"
+  },
+  "itemCode": "LSJS",
+  "itemName": "LADIES SEXY JUMPSUIT",
+  "labelName": "LADIES SEXY JUMPSUIT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e06999a59384265b25c2b"
+  },
+  "itemCode": "LDSG",
+  "itemName": "LADIES SHRUG",
+  "labelName": "LADIES SHRUG",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e06d59a59384265b25c2c"
+  },
+  "itemCode": "LSJN",
+  "itemName": "LADIES SKINNY JEANS PANTS",
+  "labelName": "LADIES SKINNY JEANS PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e06f79a59384265b25c2d"
+  },
+  "itemCode": "LTJT2",
+  "itemName": "LEATHER JACKETS #2",
+  "labelName": "LEATHER JACKETS #2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e07169a59384265b25c2e"
+  },
+  "itemCode": "MNUW",
+  "itemName": "MEN UNDERWEAR",
+  "labelName": "MEN UNDERWEAR",
+  "grade": "A",
+  "category": "MEN",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e07ad9a59384265b25c2f"
+  },
+  "itemCode": "PNCH",
+  "itemName": "PONCHO",
+  "labelName": "PONCHO",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e07c79a59384265b25c30"
+  },
+  "itemCode": "PDVT",
+  "itemName": "PUFFER DOWN VEST",
+  "labelName": "PUFFER DOWN VEST",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e07e29a59384265b25c31"
+  },
+  "itemCode": "RXJT",
+  "itemName": "REXIN JACKET",
+  "labelName": "REXIN JACKET",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e07fb9a59384265b25c32"
+  },
+  "itemCode": "SAWL",
+  "itemName": "SHAWL",
+  "labelName": "SHAWL",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e08149a59384265b25c33"
+  },
+  "itemCode": "SLBG",
+  "itemName": "SLEEPING BAGS",
+  "labelName": "SLEEPING BAGS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e08269a59384265b25c34"
+  },
+  "itemCode": "SKPR",
+  "itemName": "SOCKS PAIRED ",
+  "labelName": "SOCKS PAIRED ",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e08429a59384265b25c35"
+  },
+  "itemCode": "TBCV",
+  "itemName": "TABLE COVER",
+  "labelName": "TABLE COVER",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e08659a59384265b25c36"
+  },
+  "itemCode": "WNLG",
+  "itemName": "WINTER LEGGINGS",
+  "labelName": "WINTER LEGGINGS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7c189a59384265b25c38"
+  },
+  "itemCode": "BXSO",
+  "itemName": "BOXER SHORTS",
+  "labelName": "BOXER SHORTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7c469a59384265b25c39"
+  },
+  "itemCode": "BRSS2",
+  "itemName": "BRASSIERS # 2",
+  "labelName": "BRASSIERS # 2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7c6e9a59384265b25c3a"
+  },
+  "itemCode": "BRSS1",
+  "itemName": "BRASSIERS",
+  "labelName": "BRASSIERS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7c999a59384265b25c3b"
+  },
+  "itemCode": "CDJT",
+  "itemName": "CHILDREN JACKETS",
+  "labelName": "CHILDREN JACKETS",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7cb39a59384265b25c3c"
+  },
+  "itemCode": "CDJT2",
+  "itemName": "CHILDREN JACKETS #2",
+  "labelName": "CHILDREN JACKETS #2",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7cd89a59384265b25c3d"
+  },
+  "itemCode": "CJTB",
+  "itemName": "CHILDREN JOGGING  TOP & BOTTOM",
+  "labelName": "CHILDREN JOGGING  TOP & BOTTOM",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "JOGGING PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7d1e7be08df5e14c514b"
+  },
+  "itemCode": "CDPF",
+  "itemName": "CHILDREN POLAR FLEECE",
+  "labelName": "CHILDREN POLAR FLEECE",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7d6d7be08df5e14c514c"
+  },
+  "itemCode": "EXTT",
+  "itemName": "EXERCISE TANK TOP",
+  "labelName": "EXERCISE TANK TOP",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7d987be08df5e14c514d"
+  },
+  "itemCode": "HHRM",
+  "itemName": "HOUSE HOLD RUMMAGE",
+  "labelName": "HOUSE HOLD RUMMAGE",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7de37be08df5e14c514e"
+  },
+  "itemCode": "LCTP2",
+  "itemName": "LADIES COTTON PANTS #2",
+  "labelName": "LADIES COTTON PANTS #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7e1d3fc46da5f1d1127b"
+  },
+  "itemCode": "LFLB",
+  "itemName": "LADIES FLANNEL BLOUSES",
+  "labelName": "LADIES FLANNEL BLOUSES",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7e803fc46da5f1d1127c"
+  },
+  "itemCode": "LJGS",
+  "itemName": "LIGHT JOGGING SUIT",
+  "labelName": "LIGHT JOGGING SUIT",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JOGGING PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7e9d3fc46da5f1d1127d"
+  },
+  "itemCode": "MFLS",
+  "itemName": "MEN FLANNEL SHIRT",
+  "labelName": "MEN FLANNEL SHIRT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7f323fc46da5f1d1127f"
+  },
+  "itemCode": "MXCP",
+  "itemName": "MIX CAPS",
+  "labelName": "MIX CAPS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7f4f3fc46da5f1d11280"
+  },
+  "itemCode": "NTPT1",
+  "itemName": "NYLON TRACK PANTS #1",
+  "labelName": "NYLON TRACK PANTS #1",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7f763fc46da5f1d11281"
+  },
+  "itemCode": "ORST2",
+  "itemName": "ORIGINAL SHORTS #2",
+  "labelName": "ORIGINAL SHORTS #2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7f9c3fc46da5f1d11282"
+  },
+  "itemCode": "PRGL",
+  "itemName": "PAIRED GLOVES",
+  "labelName": "PAIRED GLOVES",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "0100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e7fda3fc46da5f1d11283"
+  },
+  "itemCode": "SKRM",
+  "itemName": "SILK RUMMAGE",
+  "labelName": "SILK RUMMAGE",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e81e93fc46da5f1d11284"
+  },
+  "itemCode": "SKSC",
+  "itemName": "SILK SCARVES",
+  "labelName": "SILK SCARVES",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e820d3fc46da5f1d11285"
+  },
+  "itemCode": "SJT1",
+  "itemName": "SKI JACKETS #1",
+  "labelName": "SKI JACKETS #1",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e82253fc46da5f1d11286"
+  },
+  "itemCode": "SJT2",
+  "itemName": "SKI JACKETS #2 ",
+  "labelName": "SKI JACKETS #2 ",
+  "grade": "B",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e82513fc46da5f1d11287"
+  },
+  "itemCode": "SJNP",
+  "itemName": "SKINI JEANS PANTS",
+  "labelName": "SKINI JEANS PANTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e827f3fc46da5f1d11288"
+  },
+  "itemCode": "SPKT1",
+  "itemName": "SPORTS TRACK JACKETS",
+  "labelName": "SPORTS TRACK JACKETS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e82953fc46da5f1d11289"
+  },
+  "itemCode": "STJT2",
+  "itemName": "SPORTS TRACK JACKETS #2",
+  "labelName": "SPORTS TRACK JACKETS #2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e82c33fc46da5f1d1128a"
+  },
+  "itemCode": "STPT",
+  "itemName": "SPORTS TRACK PANTS",
+  "labelName": "SPORTS TRACK PANTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e82f13fc46da5f1d1128b"
+  },
+  "itemCode": "WHSR1",
+  "itemName": "WHITE SHIRTS #1",
+  "labelName": "WHITE SHIRTS #1",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e83103fc46da5f1d1128c"
+  },
+  "itemCode": "WOCP",
+  "itemName": "WOOL CAPS",
+  "labelName": "WOOL CAPS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e83313fc46da5f1d1128d"
+  },
+  "itemCode": "LJSL",
+  "itemName": "LADIES JUMP SUIT LONG",
+  "labelName": "LADIES JUMPSUIT ",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e83613fc46da5f1d1128e"
+  },
+  "itemCode": "LMPT",
+  "itemName": "LADIES MIX PANTS",
+  "labelName": "LADIES MIX PANT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e837b3fc46da5f1d1128f"
+  },
+  "itemCode": "MMPT",
+  "itemName": "MEN MIX PANTS",
+  "labelName": "MEN MIX PANT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e839c3fc46da5f1d11290"
+  },
+  "itemCode": "LJJT",
+  "itemName": "LADIES JEANS JACKETS",
+  "labelName": "LADIES JEANS JACKETS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e83d13fc46da5f1d11291"
+  },
+  "itemCode": "MJJT",
+  "itemName": "MEN JEANS JACKETS",
+  "labelName": "MEN JEANS JACKETS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e84043fc46da5f1d11292"
+  },
+  "itemCode": "MCDP",
+  "itemName": "MEN CORDUROY PANTS",
+  "labelName": "MEN CORDUROY PANTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e842b3fc46da5f1d11293"
+  },
+  "itemCode": "MCRP1",
+  "itemName": "MEN CARGO PANTS #1",
+  "labelName": "MEN CARGO PANTS #1",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e8efe3fc46da5f1d11294"
+  },
+  "itemCode": "BLKT2",
+  "itemName": "BLANKETS # 2",
+  "labelName": "BLANKETS # 2",
+  "grade": "B",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e8f3a3fc46da5f1d11295"
+  },
+  "itemCode": "BRSB",
+  "itemName": "BRASSIERS BIG",
+  "labelName": "BRASSIERS BIG",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e8f673fc46da5f1d11296"
+  },
+  "itemCode": "CJTB2",
+  "itemName": "CHILDREN JOGGING  TOP & BOTTOM #2",
+  "labelName": "CHILDREN JOGGING  TOP & BOTTOM #2",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "JOGGING PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e8f863fc46da5f1d11297"
+  },
+  "itemCode": "CDPF2",
+  "itemName": "CHILDREN POLAR FLEECE #2",
+  "labelName": "CHILDREN POLAR FLEECE #2",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e8fd33fc46da5f1d11298"
+  },
+  "itemCode": "CMSW",
+  "itemName": "CHRISTMAS SWEATER",
+  "labelName": "CHRISTMAS SWEATER",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e8fea3fc46da5f1d11299"
+  },
+  "itemCode": "CLJT",
+  "itemName": "COLLEGE JACKETS",
+  "labelName": "COLLEGE JACKETS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e903f3fc46da5f1d1129b"
+  },
+  "itemCode": "HHRMK",
+  "itemName": "KITCHEN HOUSE HOLD RUMMAGE ",
+  "labelName": "KITCHEN HOUSE HOLD RUMMAGE ",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e90673fc46da5f1d1129c"
+  },
+  "itemCode": "HWST",
+  "itemName": "HAWAIN SHIRT",
+  "labelName": "HAWAIN SHIRT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e90ac3fc46da5f1d1129d"
+  },
+  "itemCode": "LCPP1",
+  "itemName": "LADIES CAPRI PANTS #1",
+  "labelName": "LADIES CAPRI PANTS #1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e90c23fc46da5f1d1129e"
+  },
+  "itemCode": "LCPP2",
+  "itemName": "LADIES CAPRI PANTS #2",
+  "labelName": "LADIES CAPRI PANTS #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e91033fc46da5f1d1129f"
+  },
+  "itemCode": "LCDC",
+  "itemName": "LADIES CORDUROY COATS",
+  "labelName": "LADIES CORDUROY COATS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e91302bdb1bb11da3a8d7"
+  },
+  "itemCode": "LCDP",
+  "itemName": "LADIES CORDUROY PANTS",
+  "labelName": "LADIES CORDUROY PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e91642bdb1bb11da3a8d8"
+  },
+  "itemCode": "LDBL",
+  "itemName": "LADIES DENIM BLOUSE",
+  "labelName": "LADIES DINEM BLOUSE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e918e2bdb1bb11da3a8d9"
+  },
+  "itemCode": "LFD1",
+  "itemName": "LADIES FASHION DRESS #1",
+  "labelName": "LADIES FASHION DRESS #1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e91a22bdb1bb11da3a8da"
+  },
+  "itemCode": "LFD2",
+  "itemName": "LADIES FASHION DRESS #2",
+  "labelName": "LADIES FASHION DRESS #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e91c02bdb1bb11da3a8db"
+  },
+  "itemCode": "LFJT",
+  "itemName": "LADIES FASHION JACKETS",
+  "labelName": "LADIES FASHION JACKETS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e96152bdb1bb11da3a8dc"
+  },
+  "itemCode": "LHNT",
+  "itemName": "LADIES HI NECK T SHIRTS",
+  "labelName": "LADIES HI NECK T SHIRTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e964d2bdb1bb11da3a8dd"
+  },
+  "itemCode": "LMST2",
+  "itemName": "LADIES MIX SKIRTS #2",
+  "labelName": "LADIES MIX SKIRTS #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e966a2bdb1bb11da3a8de"
+  },
+  "itemCode": "LMSX",
+  "itemName": "LADIES MIX SKIRTS XL",
+  "labelName": "LADIES MIX SKIRTS XL",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "0100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e96a4b0c041665cbddb9e"
+  },
+  "itemCode": "LNCD",
+  "itemName": "LADIES NIGHT COTTON DRESS",
+  "labelName": "LADIES NIGHT COTTON DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e96b7b0c041665cbddb9f"
+  },
+  "itemCode": "LNCD2",
+  "itemName": "LADIES NIGHT COTTON DRESS #2",
+  "labelName": "LADIES NIGHT COTTON DRESS #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e96d5b0c041665cbddba0"
+  },
+  "itemCode": "LPDS",
+  "itemName": "LADIES PARTY DRESSES",
+  "labelName": "LADIES PARTY DRESSES",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e9705b0c041665cbddba1"
+  },
+  "itemCode": "LDSH",
+  "itemName": "LADIES SHAWL",
+  "labelName": "LADIES SHAWL",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e9724b0c041665cbddba2"
+  },
+  "itemCode": "LSSK",
+  "itemName": "LADIES SPECIAL SKIRT",
+  "labelName": "LADIES SPECIAL SKIRT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e9b91b0c041665cbddba3"
+  },
+  "itemCode": "LSWD",
+  "itemName": "LADIES SWEATER DRESS",
+  "labelName": "LADIES SWEATER DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e9bacb0c041665cbddba4"
+  },
+  "itemCode": "LT34",
+  "itemName": "LADIES T-SHIRTS 3/4",
+  "labelName": "LADIES T-SHIRTS 3/4",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e9e5fb0c041665cbddba5"
+  },
+  "itemCode": "LWFJ",
+  "itemName": "LADIES WOOL FAISHION JACKET",
+  "labelName": "LADIES WOOL FAISHION JACKET",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e9e8db0c041665cbddba6"
+  },
+  "itemCode": "LTJT1",
+  "itemName": "LEATHER JACKETS #1",
+  "labelName": "LEATHER JACKETS #1",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e9ee3b0c041665cbddba7"
+  },
+  "itemCode": "LZJT",
+  "itemName": "LIGHT ZIPPER JACKETS",
+  "labelName": "LIGHT ZIPPER JACKETS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665e9fceb0c041665cbddba9"
+  },
+  "itemCode": "MCDC",
+  "itemName": "MEN CORDUROY COATS",
+  "labelName": "MEN CORDUROY COATS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea0d9b0c041665cbddbaa"
+  },
+  "itemCode": "MRTL2",
+  "itemName": "MEN R/N T-SHIRT L/S # 2",
+  "labelName": "MEN R/N T-SHIRT L/S # 2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea13bb0c041665cbddbac"
+  },
+  "itemCode": "MSLT2",
+  "itemName": "MEN SLEEVELESS T SHIRT # 2",
+  "labelName": "MEN SLEEVELESS T SHIRT # 2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea16db0c041665cbddbad"
+  },
+  "itemCode": "MSCF",
+  "itemName": "MEN SUIT COATS F/L",
+  "labelName": "MEN SUIT COATS F/L",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea189b0c041665cbddbae"
+  },
+  "itemCode": "MNSW2",
+  "itemName": "MEN SWEATER #2",
+  "labelName": "MEN SWEATER #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea1aab0c041665cbddbaf"
+  },
+  "itemCode": "MWTS",
+  "itemName": "MEN WHITE T-SHIRTS S/S",
+  "labelName": "MEN WHITE T-SHIRTS S/S",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "0100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea1c7b0c041665cbddbb0"
+  },
+  "itemCode": "MWST",
+  "itemName": "MEN WORK SHIRTS",
+  "labelName": "MEN WORK SHIRTS",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea1deb0c041665cbddbb1"
+  },
+  "itemCode": "MWSS",
+  "itemName": "MEN WESTERN STYLE SHIRT",
+  "labelName": "MEN WESTERN STYLE SHIRT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea1f8b0c041665cbddbb2"
+  },
+  "itemCode": "MXBG",
+  "itemName": "MIX BAGS",
+  "labelName": "MIX BAGS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea225b0c041665cbddbb3"
+  },
+  "itemCode": "MXRP",
+  "itemName": "MIX RUMPERS",
+  "labelName": "MIX RUMPERS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea272b0c041665cbddbb4"
+  },
+  "itemCode": "SJOS",
+  "itemName": "SKI JACKETS OVERSIZE ",
+  "labelName": "SKI JACKETS OVERSIZE ",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea297b0c041665cbddbb5"
+  },
+  "itemCode": "SLJT",
+  "itemName": "SKI LONG JACKETS",
+  "labelName": "SKI LONG JACKETS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea2afb0c041665cbddbb6"
+  },
+  "itemCode": "SKPT",
+  "itemName": "SKI PANTS",
+  "labelName": "SKI PANTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea2e7b0c041665cbddbb7"
+  },
+  "itemCode": "STHT",
+  "itemName": "SOFT TOYS & HARD TOYS",
+  "labelName": "SOFT TOYS & HARD TOYS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "045"
+},
+{
+  "_id": {
+    "$oid": "665ea33db0c041665cbddbb8"
+  },
+  "itemCode": "STKG",
+  "itemName": "STOCKINGS",
+  "labelName": "STOCKINGS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "045"
+},
+{
+  "_id": {
+    "$oid": "665ea353b0c041665cbddbb9"
+  },
+  "itemCode": "SDJT",
+  "itemName": "SUEDEN JACKETS",
+  "labelName": "SUEDEN JACKETS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea383b0c041665cbddbbb"
+  },
+  "itemCode": "SWBR",
+  "itemName": "SWIMMING BRA",
+  "labelName": "SWIMMING BRA",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea3e0b0c041665cbddbbc"
+  },
+  "itemCode": "SWUW",
+  "itemName": "SWIMMING UNDERWEAR",
+  "labelName": "SWIMMING UNDERWEAR",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea3feb0c041665cbddbbd"
+  },
+  "itemCode": "TWRB",
+  "itemName": "TOWEL ROBES",
+  "labelName": "TOWEL ROBES",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea4e6b0c041665cbddbbe"
+  },
+  "itemCode": "TRCT",
+  "itemName": "TRENCH COATS",
+  "labelName": "TRENCH COATS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea502b0c041665cbddbbf"
+  },
+  "itemCode": "VLBL",
+  "itemName": "VELVET BLOUSE",
+  "labelName": "VELVET BLOUSE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea562b0c041665cbddbc0"
+  },
+  "itemCode": "VLSK",
+  "itemName": "VELVET SKIRTS",
+  "labelName": "VELVET SKIRTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ea5c9b0c041665cbddbc1"
+  },
+  "itemCode": "WOSC",
+  "itemName": "WOOL SCARVES",
+  "labelName": "WOOL SCARVES",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "0100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eac2a114a8847c599bf4e"
+  },
+  "itemCode": "cj34",
+  "itemName": "COTTON JACKET 3/4",
+  "labelName": "COTTON JACKET 3/4",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Pcs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eacbe114a8847c599bf50"
+  },
+  "itemCode": "DCPJ",
+  "itemName": "DOCTOR PAJAMA",
+  "labelName": "DOCTOR PAJAMA",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eaceb114a8847c599bf51"
+  },
+  "itemCode": "ELCP",
+  "itemName": "ELASTIC CAPRI",
+  "labelName": "ELASTIC CAPRI",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ead1a114a8847c599bf52"
+  },
+  "itemCode": "FLPJ",
+  "itemName": "FLANNEL PAJAMA",
+  "labelName": "FLANNEL PAJAMA",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ead39114a8847c599bf53"
+  },
+  "itemCode": "FKCP",
+  "itemName": "FASHION KNIT CAPRI",
+  "labelName": "FASHION KNIT CAPRI",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ead5e114a8847c599bf54"
+  },
+  "itemCode": "FKJT",
+  "itemName": "FASHION KNIT JACKET",
+  "labelName": "FASHION KNIT JACKET",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ead99ea4a2dfa611e8461"
+  },
+  "itemCode": "FZJT",
+  "itemName": "FLEECE ZIPPER JACKET",
+  "labelName": "FLEECE ZIPPER JACKET",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eadb2ea4a2dfa611e8462"
+  },
+  "itemCode": "FPPD",
+  "itemName": "FLEECE PANTS PRINTED",
+  "labelName": "FLEECE PANTS PRINTED",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eadd0ea4a2dfa611e8463"
+  },
+  "itemCode": "HNTS",
+  "itemName": "HI-NECK TSHIRT",
+  "labelName": "HI-NECK TSHIRT",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eadeeea4a2dfa611e8464"
+  },
+  "itemCode": "HNSW",
+  "itemName": "HI-NECK SWEATER",
+  "labelName": "HI-NECK SWEATER",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eae1aea4a2dfa611e8465"
+  },
+  "itemCode": "HSSO",
+  "itemName": "HOODED SWEATSHIRT OVERSIZE",
+  "labelName": "HOODED SWEATSHIRT OVERSIZE",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eae71ea4a2dfa611e8466"
+  },
+  "itemCode": "LTLS",
+  "itemName": "LADIES T-SHIRT L/S",
+  "labelName": "LADIES T-SHIRT L/S",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eae91ea4a2dfa611e8467"
+  },
+  "itemCode": "LOSW",
+  "itemName": "LADIES OPEN SWEATER",
+  "labelName": "LADIES OPEN SWEATER",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eaec7ea4a2dfa611e8468"
+  },
+  "itemCode": "LKTD",
+  "itemName": "LADIES KNITTED DRESS",
+  "labelName": "LADIES KNITTED DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eaef5ea4a2dfa611e8469"
+  },
+  "itemCode": "LDD",
+  "itemName": "LADIES DIVIDED DRESS",
+  "labelName": "LADIES DIVIDED DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eaf19ea4a2dfa611e846a"
+  },
+  "itemCode": "MXLY",
+  "itemName": "MIX LYCRA",
+  "labelName": "MIX LYCRA",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eaf30ea4a2dfa611e846b"
+  },
+  "itemCode": "MXVL",
+  "itemName": "MIX VELVET",
+  "labelName": "MIX VELVET",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb03eea4a2dfa611e846c"
+  },
+  "itemCode": "MTWC",
+  "itemName": "MEN TWEED COAT",
+  "labelName": "MEN TWEED COAT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb059ea4a2dfa611e846d"
+  },
+  "itemCode": "MTLS",
+  "itemName": "MEN T-SHIRT L/S",
+  "labelName": "MEN T-SHIRT L/S",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb0d7ea4a2dfa611e846e"
+  },
+  "itemCode": "MWNS",
+  "itemName": "MEN WHITE SHIRT",
+  "labelName": "MEN WHITE SHIRT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb0f5ea4a2dfa611e846f"
+  },
+  "itemCode": "MXUW",
+  "itemName": "MIX UNDERWEAR",
+  "labelName": "MIX UNDERWEAR",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb1adea4a2dfa611e8470"
+  },
+  "itemCode": "KTPT",
+  "itemName": "KNIT PANT",
+  "labelName": "KNIT PANT",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb2bdea4a2dfa611e8471"
+  },
+  "itemCode": "SDWS",
+  "itemName": "SKI DOWN WEST",
+  "labelName": "SKI DOWN WEST",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb2f6ea4a2dfa611e8472"
+  },
+  "itemCode": "SSOV",
+  "itemName": "SWEATSHIRT OVERSIZE",
+  "labelName": "SWEATSHIRT OVERSIZE",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb319ea4a2dfa611e8473"
+  },
+  "itemCode": "WNDS",
+  "itemName": "WINTER DRESS",
+  "labelName": "WINTER DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb340ea4a2dfa611e8474"
+  },
+  "itemCode": "LCNY",
+  "itemName": "LADIES COTTON NIGHTY",
+  "labelName": "LADIES COTTON NIGHTY",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "0100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb35fea4a2dfa611e8475"
+  },
+  "itemCode": "FDVT",
+  "itemName": "FLEECE DOWN VEST",
+  "labelName": "FLEENCE DOWN VEST",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb377ea4a2dfa611e8476"
+  },
+  "itemCode": "LPSK",
+  "itemName": "LADIES PRINTED SKIRTS",
+  "labelName": "LADIES PRINTED SKIRTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb39dea4a2dfa611e8477"
+  },
+  "itemCode": "TKPT2",
+  "itemName": "TRACK PANTS #2",
+  "labelName": "TRACK PANTS #2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb3f1ea4a2dfa611e8478"
+  },
+  "itemCode": "MCRP",
+  "itemName": "MEN CORDUROY PANT",
+  "labelName": "MEN CORDUROY PANT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb412ea4a2dfa611e8479"
+  },
+  "itemCode": "DEPT1",
+  "itemName": "DENIM ELASTIC PANT #1",
+  "labelName": "DENIM ELASTIC PANT #1",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb4beea4a2dfa611e847a"
+  },
+  "itemCode": "MHFS",
+  "itemName": "MEN HEAVY FLANNEL SHIRT",
+  "labelName": "MEN HEAVY FLANNEL SHIRT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb4deea4a2dfa611e847b"
+  },
+  "itemCode": "LFTP",
+  "itemName": "LADIES FASHION TOP",
+  "labelName": "LADIES FASHION TOP",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb5afea4a2dfa611e847c"
+  },
+  "itemCode": "CPPJ",
+  "itemName": "COTTON PRINTED PYAJAMA",
+  "labelName": "COTTON PRINTED PYAJAMA",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb5dfea4a2dfa611e847d"
+  },
+  "itemCode": "LCCP",
+  "itemName": "LADIES COTTON CAPRI",
+  "labelName": "LADIES COTTON CAPRI",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb60dea4a2dfa611e847e"
+  },
+  "itemCode": "PLZO",
+  "itemName": "PLAZO",
+  "labelName": "PLAZO",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb626ea4a2dfa611e847f"
+  },
+  "itemCode": "PLPT",
+  "itemName": "POLO PANTS",
+  "labelName": "POLO PANT",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb65dea4a2dfa611e8480"
+  },
+  "itemCode": "LMDO",
+  "itemName": "LADIES MIX DRESS OVERSIZE",
+  "labelName": "LADIES MIX DRESS OVERSIZE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "045"
+},
+{
+  "_id": {
+    "$oid": "665eb671ea4a2dfa611e8481"
+  },
+  "itemCode": "SHRG",
+  "itemName": "SHRUG",
+  "labelName": "SHRUG",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb6aaea4a2dfa611e8482"
+  },
+  "itemCode": "SPCP",
+  "itemName": "SPORTS CAPRI",
+  "labelName": "SPORTS CAPRI",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb6e9ea4a2dfa611e8483"
+  },
+  "itemCode": "LSPT",
+  "itemName": "LADIES SILK/POLY TOP",
+  "labelName": "LADIES SILK/POLY TOP",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb711ea4a2dfa611e8484"
+  },
+  "itemCode": "DSMX",
+  "itemName": "DISCO MIX",
+  "labelName": "DISCO MIX",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb731ea4a2dfa611e8485"
+  },
+  "itemCode": "KPPT",
+  "itemName": "KNIT PRINTED PANT",
+  "labelName": "KNIT PRINTED PANT",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb748ea4a2dfa611e8486"
+  },
+  "itemCode": "VLTP",
+  "itemName": "VELVET TOP",
+  "labelName": "VELVET TOP",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb775ea4a2dfa611e8487"
+  },
+  "itemCode": "MWOS",
+  "itemName": "MEN WOOL SHIRT",
+  "labelName": "MEN WOOL SHIRT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb7abea4a2dfa611e8488"
+  },
+  "itemCode": "STOV",
+  "itemName": "SPORTS T-SHIRTS OVERSIZE",
+  "labelName": "SPORTS T-SHIRTS OVERSIZE",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb7c1ea4a2dfa611e8489"
+  },
+  "itemCode": "WOMF",
+  "itemName": "WOOL MUFFLER",
+  "labelName": "WOOL MUFFLER",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb826ea4a2dfa611e848a"
+  },
+  "itemCode": "LSKD",
+  "itemName": "LADIES SILK DRESS",
+  "labelName": "LADIES SILK DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb8a8ea4a2dfa611e848c"
+  },
+  "itemCode": "FLMF",
+  "itemName": "FLEECE MUFLER",
+  "labelName": "FLEECE MUFLER",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb910ea4a2dfa611e848d"
+  },
+  "itemCode": "MCTO",
+  "itemName": "MEN COLLAR T-SHIRT S/S OVERSIZE",
+  "labelName": "MEN COLLAR T-SHIRT S/S OVERSIZE",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb936ea4a2dfa611e848e"
+  },
+  "itemCode": "FLRP",
+  "itemName": "FLEECE RUMPER",
+  "labelName": "FLEECE RUMPER",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eb965ea4a2dfa611e848f"
+  },
+  "itemCode": "STPO",
+  "itemName": "SPORTS TRACK PANTS OVERSIZE",
+  "labelName": "SPORTS TRACK PANTS OVERSIZE",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebafdea4a2dfa611e8490"
+  },
+  "itemCode": "GLDS2",
+  "itemName": "GIRLS DRESSES # 2",
+  "labelName": "GIRLS DRESSES # 2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebb6cea4a2dfa611e8491"
+  },
+  "itemCode": "LSKP",
+  "itemName": "LADIES SKIRTS PRINTED",
+  "labelName": "LADIES SKIRTS PRINTED",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebbddea4a2dfa611e8492"
+  },
+  "itemCode": "MTW2",
+  "itemName": "MEN T-SHIRT WHITE #2",
+  "labelName": "MEN T-SHIRT WHITE #2",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebc24ea4a2dfa611e8493"
+  },
+  "itemCode": "NYCP",
+  "itemName": "NYLON CAPRI",
+  "labelName": "NYLON CAPRI",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebc70ea4a2dfa611e8494"
+  },
+  "itemCode": "KRSW",
+  "itemName": "KROSIYA SWEATER",
+  "labelName": "KROSIYA SWEATER",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebc83ea4a2dfa611e8495"
+  },
+  "itemCode": "BHSW",
+  "itemName": "BHALU SWEATER",
+  "labelName": "BHALU SWEATER",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebca2ea4a2dfa611e8496"
+  },
+  "itemCode": "PTDS",
+  "itemName": "PARTY DRESS",
+  "labelName": "PARTY DRESS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebd3a5f4c429721b08414"
+  },
+  "itemCode": "SNTP",
+  "itemName": "SHINNY TOP",
+  "labelName": "SHINNY TOP",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebd785f4c429721b08415"
+  },
+  "itemCode": "LEGO",
+  "itemName": "LEGGING OVERSIZE",
+  "labelName": "LEGGING OVERSIZE",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebded5f4c429721b08416"
+  },
+  "itemCode": "LBOV",
+  "itemName": "LADIES BLOUSE OVERSIZE",
+  "labelName": "LADIES BLOUSE OVERSIZE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ebe4f5f4c429721b08417"
+  },
+  "itemCode": "LDCP1",
+  "itemName": "LADIES DENIM CAPRI PANTS # 1 ",
+  "labelName": "LADIES DENIM CAPRI PANTS # 1 ",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec03f5f4c429721b08419"
+  },
+  "itemCode": "MCTS2",
+  "itemName": "MEN COLLAR T-SHIRTS S/S #2",
+  "labelName": "MEN COLLAR T-SHIRTS S/S #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec17e5f4c429721b0841b"
+  },
+  "itemCode": "LJPO",
+  "itemName": "LADIES JEANS PANT OVERSIZE",
+  "labelName": "LADIES JEANS PANT OVERSIZE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec1d25f4c429721b0841c"
+  },
+  "itemCode": "AMNO",
+  "itemName": "ARMY NOT ORIGINAL",
+  "labelName": "ARMY NOT ORIGINAL",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec1ff21f4dcfdb8b35d47"
+  },
+  "itemCode": "LRPT",
+  "itemName": "LADIES RAYON PANTS",
+  "labelName": "LADIES RAYON PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec22921f4dcfdb8b35d48"
+  },
+  "itemCode": "HYST",
+  "itemName": "HEAVY STOCKINGS",
+  "labelName": "HEAVY STOCKINGS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec27321f4dcfdb8b35d49"
+  },
+  "itemCode": "MRTO",
+  "itemName": "MEN R/N T-SHIRTS OVERSIZE",
+  "labelName": "MEN R/N T-SHIRTS OVERSIZE",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec29821f4dcfdb8b35d4a"
+  },
+  "itemCode": "SPBR2",
+  "itemName": "SPORTS BRA #2",
+  "labelName": "SPORTS BRA #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec2af21f4dcfdb8b35d4b"
+  },
+  "itemCode": "SPBR1",
+  "itemName": "SPORTS BRA #1",
+  "labelName": "SPORTS BRA #1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec2f921f4dcfdb8b35d4d"
+  },
+  "itemCode": "LCPO",
+  "itemName": "LADIES COTTON PANTS OVERSIZE",
+  "labelName": "LADIES COTTON PANTS OVERSIZE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec32221f4dcfdb8b35d4e"
+  },
+  "itemCode": "LDUW2",
+  "itemName": "LADIES UNDERWEAR #2",
+  "labelName": "LADIES UNDERWEAR #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec34721f4dcfdb8b35d4f"
+  },
+  "itemCode": "MNUW2",
+  "itemName": "MEN UNDERWEAR #2",
+  "labelName": "MEN UNDERWEAR #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec36221f4dcfdb8b35d50"
+  },
+  "itemCode": "SHCT",
+  "itemName": "SHEERS CURTAINS",
+  "labelName": "SHEERS CURTAINS",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec3b121f4dcfdb8b35d51"
+  },
+  "itemCode": "LPLD",
+  "itemName": "LADIES POLO DRESS",
+  "labelName": "LADIES POLO DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec48e21f4dcfdb8b35d52"
+  },
+  "itemCode": "CDHD",
+  "itemName": "CHILDREN HOODED",
+  "labelName": "CHILDREN HOODED",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec57821f4dcfdb8b35d56"
+  },
+  "itemCode": "JKPT",
+  "itemName": "JOGGER KNIT PANTS",
+  "labelName": "JOGGER KNIT PANTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "0100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec61eec810b8a4c5a52a7"
+  },
+  "itemCode": "LSPB2",
+  "itemName": "LADIES SILK/POLY BLOUSE #2",
+  "labelName": "LADIES SILK/POLY BLOUSE #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec68eec810b8a4c5a52a8"
+  },
+  "itemCode": "PWCS",
+  "itemName": "PILLOW CASES",
+  "labelName": "PILLOW CASES",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec859ec810b8a4c5a52a9"
+  },
+  "itemCode": "LCPJ",
+  "itemName": "LADIES COTTON PAJAMA",
+  "labelName": "LADIES COTTON PAJAMA",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec875ec810b8a4c5a52aa"
+  },
+  "itemCode": "LSSO",
+  "itemName": "LADIES SEXY SHORT",
+  "labelName": "LADIES SEXY SHORT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec88aec810b8a4c5a52ab"
+  },
+  "itemCode": "LSSO2",
+  "itemName": "LADIES SEXY SHORT #2",
+  "labelName": "LADIES SEXY SHORT #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec8d7ec810b8a4c5a52ac"
+  },
+  "itemCode": "LSXS",
+  "itemName": "LADIES SEXY SKIRTS",
+  "labelName": "LADIES SEXY SKIRTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec90b829da3ac53a6a211"
+  },
+  "itemCode": "LDTS2",
+  "itemName": "LADIES T-SHIRTS #2",
+  "labelName": "LADIES T-SHIRTS #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec921829da3ac53a6a212"
+  },
+  "itemCode": "MXDS",
+  "itemName": "MIX DENIM SHORTS",
+  "labelName": "MIX DENIM SHORTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec93e829da3ac53a6a213"
+  },
+  "itemCode": "MXPJ",
+  "itemName": "MIX PAJAMA",
+  "labelName": "MIX PAJAMA",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec955829da3ac53a6a214"
+  },
+  "itemCode": "MDKCP",
+  "itemName": "MODERN KNIT CAPRI",
+  "labelName": "MODERN KNIT CAPRI",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ec96f829da3ac53a6a215"
+  },
+  "itemCode": "MKSO",
+  "itemName": "MODERN KNIT SHORTS",
+  "labelName": "MODERN KNIT SHORTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665eca8d829da3ac53a6a216"
+  },
+  "itemCode": "LMSO",
+  "itemName": "LADIES MODERN SHORT",
+  "labelName": "LADIES MODERN SHORT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "665ecab0829da3ac53a6a217"
+  },
+  "itemCode": "LMDS",
+  "itemName": "LADIES MODERN SKIRTS",
+  "labelName": "LADIES MODERN SKIRTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "045"
+},
+{
+  "_id": {
+    "$oid": "6665413b811e7c4aca174433"
+  },
+  "itemCode": "BHSS",
+  "itemName": "BABY HOODED SWEATSHIRT",
+  "labelName": "BABY HOODED SWEATSHIRT",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6665449d811e7c4aca174434"
+  },
+  "itemCode": "GRSK",
+  "itemName": "GIRLS SKIRTS",
+  "labelName": "GIRLS SKIRTS",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666544d0811e7c4aca174435"
+  },
+  "itemCode": "LNCB",
+  "itemName": "LADIES NIGHT COTTON BLOUSES",
+  "labelName": "LADIES NIGHT COTTON BLOUSES",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66654503811e7c4aca174436"
+  },
+  "itemCode": "LAPT",
+  "itemName": "LADIES POLY TOP",
+  "labelName": "LADIES POLY TOP",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66654523811e7c4aca174437"
+  },
+  "itemCode": "LATP",
+  "itemName": "LADIES THARMAL PANT",
+  "labelName": "LADIES THARMAL PANT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6665453f811e7c4aca174438"
+  },
+  "itemCode": "PRSK2",
+  "itemName": "PAIRED SOCKS #2",
+  "labelName": "PAIRED SOCKS #2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66654554811e7c4aca174439"
+  },
+  "itemCode": "PRSK",
+  "itemName": "PAIRED SOCKS",
+  "labelName": "PAIRED SOCKS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6665456a811e7c4aca17443a"
+  },
+  "itemCode": "SMTW",
+  "itemName": "SMALL MEDIUM TOWEL",
+  "labelName": "SMALL MEDIUM TOWEL",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66654580811e7c4aca17443b"
+  },
+  "itemCode": "SFTY",
+  "itemName": "SOFT TOYS",
+  "labelName": "SOFT TOYS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66671078aa68d513088f995f"
+  },
+  "itemCode": "BBSK",
+  "itemName": "BABY SOCKS",
+  "labelName": "BABY SOCKS",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666710a0aa68d513088f9960"
+  },
+  "itemCode": "CDST",
+  "itemName": "CHILDREN STOCKINGS",
+  "labelName": "CHILDREN STOCKINGS",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666710beaa68d513088f9961"
+  },
+  "itemCode": "LJSK",
+  "itemName": "LADIES JEANS SKIRTS",
+  "labelName": "LADIES JEANS SKIRTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666710ddaa68d513088f9962"
+  },
+  "itemCode": "LPOP",
+  "itemName": "LADIES POLY PANTS",
+  "labelName": "LADIES POLY PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eaa69ac2faa3efe6e1085"
+  },
+  "itemCode": "CRTP",
+  "itemName": "CROP TOP",
+  "labelName": "CROP TOP",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eaac105dbf9f346f877c0"
+  },
+  "itemCode": "LSRP",
+  "itemName": "LADIES SKORTS PRINTED",
+  "labelName": "LADIES SKORTS PRINTED",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eaad705dbf9f346f877c1"
+  },
+  "itemCode": "MNDR",
+  "itemName": "MINI DRESSES",
+  "labelName": "MINI DRESSES",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eaaf205dbf9f346f877c2"
+  },
+  "itemCode": "TCJK",
+  "itemName": "TRACK JACKETS",
+  "labelName": "TRACK JACKETS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eab1505dbf9f346f877c3"
+  },
+  "itemCode": "TKPT",
+  "itemName": "TRACK PANTS",
+  "labelName": "TRACK PANTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eab7e2505002436feb9f9"
+  },
+  "itemCode": "MXBL",
+  "itemName": "MIX BLOUSE",
+  "labelName": "MIX BLOUSE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ebd35be450aa54049f552"
+  },
+  "itemCode": "LZJT2",
+  "itemName": "LIGHT ZIPPER JACKET #",
+  "labelName": "LIGHT ZIPPER JACKET #",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ebd70be450aa54049f553"
+  },
+  "itemCode": "MRTS3",
+  "itemName": "MEN R/N T-SHIRTS ##",
+  "labelName": "MEN R/N T-SHIRTS ##",
+  "grade": "C",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ec43fbce73196ae00632b"
+  },
+  "itemCode": "LMSO2",
+  "itemName": "LADIES MODERN SHORTS #2",
+  "labelName": "LADIES MODERN SHORTS #2",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ec669e8fe73b41d6ac471"
+  },
+  "itemCode": "ARMY2",
+  "itemName": "ARMY #2",
+  "labelName": "ARMY #2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ec68ae8fe73b41d6ac472"
+  },
+  "itemCode": "AYSO",
+  "itemName": "ARMY SHORTS",
+  "labelName": "ARMY SHORTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eca1c211cfb324bab06ad"
+  },
+  "itemCode": "DNBL",
+  "itemName": "DENIM BLOUSE #1",
+  "labelName": "DENIM BLOUSE #1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eca4d211cfb324bab06ae"
+  },
+  "itemCode": "DNBL2",
+  "itemName": "DENIM BLOUSE B",
+  "labelName": "DENIM BLOUSE B",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eca6e211cfb324bab06af"
+  },
+  "itemCode": "DLST",
+  "itemName": "DENIM LONG SHORTS",
+  "labelName": "DENIM LONG SHORTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eca8f211cfb324bab06b0"
+  },
+  "itemCode": "DNSTA",
+  "itemName": "DENIM SHIRTS A",
+  "labelName": "DENIM SHIRTS A",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecaac211cfb324bab06b1"
+  },
+  "itemCode": "DNSTB",
+  "itemName": "DENIM SHIRTS B",
+  "labelName": "DENIM SHIRTS B",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecad9211cfb324bab06b2"
+  },
+  "itemCode": "HWST3",
+  "itemName": "HAWAIIAN SHIRTS C",
+  "labelName": "HAWAIIAN SHIRTS C",
+  "grade": "C",
+  "category": "GENERAL",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecb03211cfb324bab06b3"
+  },
+  "itemCode": "JSJAB",
+  "itemName": "JUMP SUITS (JEANS) A + B",
+  "labelName": "JUMP SUITS (JEANS) A + B",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecbbd211cfb324bab06b4"
+  },
+  "itemCode": "LFBLW",
+  "itemName": "LADIES FLANNEL BLOUSES - W",
+  "labelName": "LADIES FLANNEL BLOUSES - W",
+  "grade": "W",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecbd9211cfb324bab06b5"
+  },
+  "itemCode": "LFST",
+  "itemName": "LADIES FLANNEL SHIRT #1",
+  "labelName": "LADIES FLANNEL SHIRT #1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666eccf0211cfb324bab06b6"
+  },
+  "itemCode": "LHCB",
+  "itemName": "LADIES HEAVY COTTON BLOUSE # 1",
+  "labelName": "LADIES HEAVY COTTON BLOUSE # 1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecd21211cfb324bab06b7"
+  },
+  "itemCode": "LHCD",
+  "itemName": "LADIES HEAVY COTTON DRESS ",
+  "labelName": "LADIES HEAVY COTTON DRESS ",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecd4b7a98e94a85dd5867"
+  },
+  "itemCode": "LJJTAB",
+  "itemName": "LADIES JEANS JACKET A+B",
+  "labelName": "LADIES JEANS JACKET A+B",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecd6b7a98e94a85dd5868"
+  },
+  "itemCode": "LLPT",
+  "itemName": "LADIES LEVIS PANTS",
+  "labelName": "LADIES LEVIS PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecda37a98e94a85dd5869"
+  },
+  "itemCode": "LMBLO",
+  "itemName": "LADIES MIX BLOUSE OVERSIZE",
+  "labelName": "LADIES MIX BLOUSE OVERSIZE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ece357a98e94a85dd586a"
+  },
+  "itemCode": "LSDR",
+  "itemName": "LADIES SEXY DRESS",
+  "labelName": "LADIES SEXY DRESS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ece527a98e94a85dd586b"
+  },
+  "itemCode": "LSPTW",
+  "itemName": "LADIES SKINNY PANT W",
+  "labelName": "LADIES SKINNY PANT W",
+  "grade": "W",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ece727a98e94a85dd586c"
+  },
+  "itemCode": "LTSSO",
+  "itemName": "LADIES T-SHIRTS S/S O / V",
+  "labelName": "LADIES T-SHIRTS S/S O / V",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ece937a98e94a85dd586d"
+  },
+  "itemCode": "LVJNC",
+  "itemName": "LEVIS JEANS C",
+  "labelName": "LEVIS JEANS C",
+  "grade": "C",
+  "category": "GENERAL",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecead7a98e94a85dd586e"
+  },
+  "itemCode": "LZJTO",
+  "itemName": "LIGHT ZIPPER JACKET XL AND XXL ",
+  "labelName": "LIGHT ZIPPER JACKET XL AND XXL ",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecedc7a98e94a85dd586f"
+  },
+  "itemCode": "MBPTS",
+  "itemName": "MEN BLACK PRINTED T-SHIRTS S/S #1",
+  "labelName": "MEN BLACK PRINTED T-SHIRTS S/S #1",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecefc7a98e94a85dd5870"
+  },
+  "itemCode": "MBPTS2",
+  "itemName": "MEN BLACK PRINTED T-SHIRTS S/S #2",
+  "labelName": "MEN BLACK PRINTED T-SHIRTS S/S #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecf1c7a98e94a85dd5871"
+  },
+  "itemCode": "MBPTS3",
+  "itemName": "MEN BLACK PRINTED T-SHIRTS S/S #3",
+  "labelName": "MEN BLACK PRINTED T-SHIRTS S/S #3",
+  "grade": "C",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecf3c7a98e94a85dd5872"
+  },
+  "itemCode": "MCPB",
+  "itemName": "MEN COTTON PANTS B+C ",
+  "labelName": "MEN COTTON PANTS B+C ",
+  "grade": "B",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecf4f7a98e94a85dd5873"
+  },
+  "itemCode": "MCPOV",
+  "itemName": "MEN COTTON PANTS OVERSIZE",
+  "labelName": "MEN COTTON PANTS OVERSIZE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecf6b7a98e94a85dd5874"
+  },
+  "itemCode": "MFST2",
+  "itemName": "MEN FLANNEL SHIRT THIN  # 2",
+  "labelName": "MEN FLANNEL SHIRT THIN  # 2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecfa07a98e94a85dd5877"
+  },
+  "itemCode": "MHOSS",
+  "itemName": "MEN HEAVY OVER SIZE SHIRT S/S",
+  "labelName": "MEN HEAVY OVER SIZE SHIRT S/S",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecfbb7a98e94a85dd5878"
+  },
+  "itemCode": "MHSLAB",
+  "itemName": "MEN HEAVY SHIRTS L / S  A+B",
+  "labelName": "MEN HEAVY SHIRTS L / S  A+B",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ecfef7a98e94a85dd5879"
+  },
+  "itemCode": "MHSSO",
+  "itemName": "MEN HODDED SWEATSHIRT - OV",
+  "labelName": "MEN HODDED SWEATSHIRT - OV",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed1007a98e94a85dd587a"
+  },
+  "itemCode": "MRSSO",
+  "itemName": "MEN R/N SWEATSHIRTS OV",
+  "labelName": "MEN R/N SWEATSHIRTS OV",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed1187a98e94a85dd587b"
+  },
+  "itemCode": "MJJTAB",
+  "itemName": "MEN JEANS JACKET A+B",
+  "labelName": "MEN JEANS JACKET A+B",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed1397a98e94a85dd587c"
+  },
+  "itemCode": "MJPTO",
+  "itemName": "MEN JEANS PANT OVERSIZE",
+  "labelName": "MEN JEANS PANT OVERSIZE",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed14e7a98e94a85dd587d"
+  },
+  "itemCode": "MOTR",
+  "itemName": "MEN OVERSIZE TSHIRTS R/N",
+  "labelName": "MEN OVERSIZE TSHIRTS R/N",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed1827a98e94a85dd587f"
+  },
+  "itemCode": "MOTR3",
+  "itemName": "MEN OVERSIZE TSHIRTS R/N ##",
+  "labelName": "MEN OVERSIZE TSHIRTS R/N ##",
+  "grade": "C",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed1987a98e94a85dd5880"
+  },
+  "itemCode": "MPTLAB",
+  "itemName": "MEN PRINTED T-SHIRT L/S  A+ B",
+  "labelName": "MEN PRINTED T-SHIRT L/S  A+ B",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed1b97a98e94a85dd5881"
+  },
+  "itemCode": "MPTSC",
+  "itemName": "MEN PRINTED T-SHIRTS S/S C",
+  "labelName": "MEN PRINTED T-SHIRTS S/S C",
+  "grade": "C",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed1db7a98e94a85dd5882"
+  },
+  "itemCode": "MPTS2",
+  "itemName": "MEN PRINTED T-SHIRT-SS # 2 W",
+  "labelName": "MEN PRINTED T-SHIRT-SS # 2 W",
+  "grade": "B",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed2007a98e94a85dd5883"
+  },
+  "itemCode": "MSSW",
+  "itemName": "MEN SWEATSHIRT (W) ONLY MEN",
+  "labelName": "MEN SWEATSHIRT (W) ONLY MEN",
+  "grade": "W",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed27d7a98e94a85dd5884"
+  },
+  "itemCode": "MWNST",
+  "itemName": "MEN WESTERN SHIRT",
+  "labelName": "MEN WESTERN SHIRT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed2a67a98e94a85dd5885"
+  },
+  "itemCode": "MWPT3",
+  "itemName": "MEN WHITE  PRINTED T SHIRT ###",
+  "labelName": "MEN WHITE  PRINTED T SHIRT ###",
+  "grade": "C",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed2c07a98e94a85dd5886"
+  },
+  "itemCode": "MWPT2",
+  "itemName": "MEN WHITE  PRINTED T SHIRT 2",
+  "labelName": "MEN WHITE  PRINTED T SHIRT 2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed2da7a98e94a85dd5887"
+  },
+  "itemCode": "MWSLB",
+  "itemName": "MEN WHITE SHIRT B L/S",
+  "labelName": "MEN WHITE SHIRT B L/S",
+  "grade": "B",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed2ef7a98e94a85dd5888"
+  },
+  "itemCode": "MWSAB",
+  "itemName": "MEN WORK SHIRT  A+B",
+  "labelName": "MEN WORK SHIRT  A+B",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed30a7a98e94a85dd5889"
+  },
+  "itemCode": "MMRA",
+  "itemName": "MILITARY MIX  REAL ARMY ORGINAL ARMY",
+  "labelName": "MILITARY MIX  REAL ARMY ORGINAL ARMY",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed3227a98e94a85dd588a"
+  },
+  "itemCode": "TDTS",
+  "itemName": "TYE DYE T SHIRTS",
+  "labelName": "TYE DYE T SHIRTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ed34a7a98e94a85dd588b"
+  },
+  "itemCode": "SMST",
+  "itemName": "SWIMMING SUIT 1 PC",
+  "labelName": "SWIMMING SUIT 1 PC",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "666ee787b4c5ed18e2cec2e0"
+  },
+  "itemCode": "ESTT2",
+  "itemName": "EXERCISE TANK TOP #2",
+  "labelName": "EXERCISE TANK TOP #2",
+  "grade": "B",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6671378a343152920b3bcabe"
+  },
+  "itemCode": "FLBR",
+  "itemName": "FLEECE BATHROBES",
+  "labelName": "FLEECE BATHROBES",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "667137ae343152920b3bcabf"
+  },
+  "itemCode": "CWW2",
+  "itemName": "CHILDREN WINTER WEAR #",
+  "labelName": "CHILDREN WINTER WEAR",
+  "grade": "B",
+  "category": "CHILDREN",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "667137d4343152920b3bcac0"
+  },
+  "itemCode": "LRBL",
+  "itemName": "LADIES RAYON BLOUSE",
+  "labelName": "LADIES RAYON BLOUSE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6671048129448fda7df41d0b"
+  },
+  "itemCode": "LDDR1",
+  "itemName": "LADIES DENIM DRESS #1",
+  "labelName": "LADIES DENIM DRESS #1",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6671061b3c8d179e1fc34305"
+  },
+  "itemCode": "MHOSL",
+  "itemName": "MEN HEAVY OVERSIZE SHIRT L/S",
+  "labelName": "MEN HEAVY OVERSIZE SHIRT L/S",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "667fec9c6609503b24c1ca2a"
+  },
+  "itemCode": "HWSAB",
+  "itemName": "HAWAIIAN SHIRT A + B",
+  "labelName": "HAWAIIAN SHIRT A + B",
+  "grade": "B",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668257daef2fd6c4fa98b557"
+  },
+  "itemCode": "MHSSW",
+  "itemName": "MEN HOODED SWEAT SHIRTS (W) ONLY MEN",
+  "labelName": "MEN HOODED SWEAT SHIRTS #",
+  "grade": "W",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668259b306c4c5c13b452d3f"
+  },
+  "itemCode": "SWST2",
+  "itemName": "SWEATSHIRTS #2",
+  "labelName": "SWEATSHIRTS #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6682619f37020608b79745df"
+  },
+  "itemCode": "MLPT",
+  "itemName": "MEN LEVIS OTHER BRAND",
+  "labelName": "MEN LEVIS OTHER BRAND",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6682626eda10d6ae35b12c02"
+  },
+  "itemCode": "MOTR2",
+  "itemName": "MEN OVERSIZE T-SHIRTS R/N ##",
+  "labelName": "MEN OVERSIZE T-SHIRTS R/N ##",
+  "grade": "B",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668273c1434c9e99a80f2c84"
+  },
+  "itemCode": "LDDR3",
+  "itemName": "LADIES DENIM DRESS #3",
+  "labelName": "LADIES DENIM DRESS #3",
+  "grade": "C",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6682a681dfad17dfbafbe81d"
+  },
+  "itemCode": "TEST",
+  "itemName": "TEST",
+  "labelName": "TEST",
+  "grade": "A",
+  "category": "MEN",
+  "section": "CHILDREN",
+  "packing": "-1",
+  "packingType": "Bale",
+  "packingMeasure": "Pcs",
+  "masterPrice": "-1",
+  "baleweight": "-1"
+},
+{
+  "_id": {
+    "$oid": "66853b2ef5855e3e8e2744d3"
+  },
+  "itemCode": "BDCL",
+  "itemName": "BEDCOVER(LIGHT)",
+  "labelName": "BED COVER",
+  "grade": "B",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "80",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66853e1da03abcc43822de44"
+  },
+  "itemCode": "MSCBB",
+  "itemName": "MEN SUIT COAT BLACK AND BLUE",
+  "labelName": "MEN SUIT COAT BLACK AND BLUE",
+  "grade": "B",
+  "category": "MEN",
+  "section": "WOOL BODY",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "50",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66862b3468236295b5565dc6"
+  },
+  "itemCode": "DSSP",
+  "itemName": "DIVIDED SKIRT SEXY PRINTED",
+  "labelName": "DIVIDED SKIRT SEXY PRINTED",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "50",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66862b7268236295b5565dc7"
+  },
+  "itemCode": "DSSS",
+  "itemName": "DIVIDED SKIRT SEXY SPORT",
+  "labelName": "DIVIDED SKIRT SEXY SPORT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "50",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668638f69a6a7c3e2d84c234"
+  },
+  "itemCode": "",
+  "itemName": "",
+  "labelName": "",
+  "grade": "Select...",
+  "category": "Select...",
+  "section": "Select...",
+  "packing": "",
+  "packingType": "Wt",
+  "packingMeasure": "Lbs",
+  "masterPrice": "",
+  "baleweight": ""
+},
+{
+  "_id": {
+    "$oid": "66866dad52e4925c14dbfa8f"
+  },
+  "itemCode": "LMOS",
+  "itemName": "LADIES MIX OVERSIZE",
+  "labelName": "LADIES MIX OVERSIZE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JOGGING PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "50",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6686790cefad8aac82b49742"
+  },
+  "itemCode": "SWST",
+  "itemName": "SWEATSHIRT",
+  "labelName": "SWEATSHIRT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668779549deb906c11685648"
+  },
+  "itemCode": "LCDB",
+  "itemName": "LADIES CODROID BLOUSE",
+  "labelName": "LADIES CODROID BLOUSE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668793d66752bac78e303d5f"
+  },
+  "itemCode": "MCCC",
+  "itemName": "MEN CORDROID COAT",
+  "labelName": "MEN CORDROID COAT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "WOOL BODY",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6687c25471d8c139142ba563"
+  },
+  "itemCode": "LGS",
+  "itemName": "LEGGINGS",
+  "labelName": "LEGGINGS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JOGGING PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6687cb0f2b5ff99350c20e46"
+  },
+  "itemCode": "LCPP",
+  "itemName": "LCEP",
+  "labelName": "LCEP",
+  "grade": "A",
+  "category": "Select...",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66890eb10774f57d448d4cae"
+  },
+  "itemCode": "LFTJ",
+  "itemName": "LOOSE FIT JEANS",
+  "labelName": "LOOSE FIT JEANS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668cb7340e35f5e0f5606641"
+  },
+  "itemCode": "MTOV",
+  "itemName": "MEN R/N T-SHIRT L/S OVERSIZE",
+  "labelName": "MEN R/N T-SHIRT L/S OV",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668cb9281c22dc3f57971bdf"
+  },
+  "itemCode": "VLVTB",
+  "itemName": "VELVET BOTTOM",
+  "labelName": "VELVET BOTTOM",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JOGGING PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668cbcb0001be3eb99989f1c"
+  },
+  "itemCode": "DCPO",
+  "itemName": "DENIM CAPRI PANT OVERSIZE",
+  "labelName": "DENIM CAPRI PANT OV",
+  "grade": "A",
+  "category": "MEN",
+  "section": "JEANS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668e4bbc5540129ed4a310d9"
+  },
+  "itemCode": "SWFZ",
+  "itemName": "SWEATSHIRT FULL ZIPPER",
+  "labelName": "SWEATSHIRT FULL ZIPPER",
+  "grade": "A",
+  "category": "Select...",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "668f70f0a269fd900c6d11c7"
+  },
+  "itemCode": "LCPT0",
+  "itemName": "LADIES CAPRI PANT OVERSIZE",
+  "labelName": "LADIES CAPRI PANT OV",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "669235d748370e39fd986e8f"
+  },
+  "itemCode": "CTNJKT",
+  "itemName": "COTTON JACKET",
+  "labelName": "COTTON JACKET",
+  "grade": "B",
+  "category": "MEN",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6695190abb4b2931f52c03c2"
+  },
+  "itemCode": "PPCP",
+  "itemName": "POPCORN TOP",
+  "labelName": "POPCORN TOP",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66960bc5758e1109b986fc35"
+  },
+  "itemCode": "MNCS",
+  "itemName": "MEN CORDROID SHIRT",
+  "labelName": "MEN CORDROID SHIRT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "669e442fe351b8173ec02b34"
+  },
+  "itemCode": "LVJK",
+  "itemName": "LADIES VELVET JACKET",
+  "labelName": "LADIES VELVET JACKET",
+  "grade": "A",
+  "category": "Select...",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66a084324af0147692e83d97"
+  },
+  "itemCode": "STJO",
+  "itemName": "SPORT TRACK JACKET OV",
+  "labelName": "SPORT TRACK JACKET OV",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66a32d86902faf939545e221"
+  },
+  "itemCode": "JGGP",
+  "itemName": "JOGGER PANT",
+  "labelName": "JOGGER PANT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66a32dad902faf939545e222"
+  },
+  "itemCode": "PTSX",
+  "itemName": "PRINTED SHORTS XL",
+  "labelName": "PRINTED SHORTS XL",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66a36ff0961322836b9d7e9b"
+  },
+  "itemCode": "ASW2",
+  "itemName": "ASIAN WEAR",
+  "labelName": "ASIAN WEAR",
+  "grade": "A",
+  "category": "Select...",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66a3879e1ce9428b3b993b05"
+  },
+  "itemCode": "STJ",
+  "itemName": "SPORT TRACK JACKET OV",
+  "labelName": "SPORT TRACK JACKET OV",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66a4c112b370de03db9ebfc6"
+  },
+  "itemCode": "LCPPOV",
+  "itemName": "LCEP OV",
+  "labelName": "LCEP OV",
+  "grade": "A",
+  "category": "MEN",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66b1f9275c9ee882e2149aed"
+  },
+  "itemCode": "LADS",
+  "itemName": "LADIES SKORTS",
+  "labelName": "LADIES SKORTS",
+  "grade": "C",
+  "category": "LADIES",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Wt",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "50"
+},
+{
+  "_id": {
+    "$oid": "66b162f584ef4f3ebb48a113"
+  },
+  "itemCode": "FZTS",
+  "itemName": "FASHION ZIPPER T-SHIRT",
+  "labelName": "FASHION ZIPPER T-SHIRT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66b354fd9fefab55fe369982"
+  },
+  "itemCode": "FFZJ",
+  "itemName": "FLEECE FULL ZIPPER JACKET",
+  "labelName": "FLEECE FULL ZIPPER JACKET",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66bee6b0ca40187f6f2e7bae"
+  },
+  "itemCode": "HDTS",
+  "itemName": "HOODED T-SHIRT",
+  "labelName": "HOODED T-SHIRT",
+  "grade": "B",
+  "category": "LADIES",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c034b353b2f805993703b9"
+  },
+  "itemCode": "LCPOO",
+  "itemName": "LADIES COTTON PANT OV",
+  "labelName": "LADIES COTTON PANT OV",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c071e30d55b3824528fb58"
+  },
+  "itemCode": "MCCO",
+  "itemName": "MEN CORDROID COAT",
+  "labelName": "MEN CORDROID COAT",
+  "grade": "A",
+  "category": "MEN",
+  "section": "WOOL BODY",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c072110d55b3824528fb59"
+  },
+  "itemCode": "LVLJ",
+  "itemName": "LADIES VELVET COAT",
+  "labelName": "LADIES VELVET COAT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "WOOL BODY",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c0898f9901f4eaa5970ed3"
+  },
+  "itemCode": "HTJO",
+  "itemName": "HEAVT TRACK JACKET OV",
+  "labelName": "HEAVT TRACK JACKET OV",
+  "grade": "B",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c42b7223c8d8db503d006a"
+  },
+  "itemCode": "JLS",
+  "itemName": "JEANS LONG SKIRT",
+  "labelName": "JEANS LONG SKIRT",
+  "grade": "A",
+  "category": "ADULT",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c435718b46a1240474d194"
+  },
+  "itemCode": "LBS",
+  "itemName": "LADIES BODY SUIT",
+  "labelName": "LADIES BODY SUIT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c4377f8b46a1240474d195"
+  },
+  "itemCode": "MDJ",
+  "itemName": "MIX DENIM JACKET",
+  "labelName": "MIX DENIM JACKET",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c4382b19f59d444ab09002"
+  },
+  "itemCode": "LALB",
+  "itemName": "LADIES JACKET",
+  "labelName": "LADIES LONG BLAZER",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c4386f19f59d444ab09003"
+  },
+  "itemCode": "LALC",
+  "itemName": "LADIES LONG COAT",
+  "labelName": "LADIES LONG COAT",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c439340909d944e14a68f2"
+  },
+  "itemCode": "LASC",
+  "itemName": "LADIES SUIT COAT",
+  "labelName": "LADIES SUIT COAT",
+  "grade": "A",
+  "category": "Select...",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Wt",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c6fc0bd0590a941bacdca0"
+  },
+  "itemCode": "CDSC",
+  "itemName": "CHILDREN SUIT COAT",
+  "labelName": "CHILDREN SUIT COAT",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "WOOL BODY",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66c82c9c333bfb71d1edb4f4"
+  },
+  "itemCode": "LLDB",
+  "itemName": "LADIES LONG BLAZER",
+  "labelName": "LADIES LONG BLAZER",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66cf17188a4f843d13702964"
+  },
+  "itemCode": "SWM",
+  "itemName": "SWIMWEAR MIX",
+  "labelName": " SWIMWEAR MIX",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66d5678ccdb21c1e0fd7c45a"
+  },
+  "itemCode": "SUM",
+  "itemName": "SUMMER MIX",
+  "labelName": "SUMMER MIX",
+  "grade": "A",
+  "category": "ADULT",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Wt",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66daa679af07a8f58850ad41"
+  },
+  "itemCode": "SXBL",
+  "itemName": "SEXY BLOUSE",
+  "labelName": "SEXY BLOUSE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66e4176246f1d574f9e07080"
+  },
+  "itemCode": "LRS",
+  "itemName": "LADIES RAYON SHORTS",
+  "labelName": "LADIES RAYON SHORTS",
+  "grade": "A",
+  "category": "Select...",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "110",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66ed36cb21294889946f5838"
+  },
+  "itemCode": "MVLJ",
+  "itemName": "MENS VELVET JACKET",
+  "labelName": "MENS VELVET JACKET",
+  "grade": "A",
+  "category": "MEN",
+  "section": "WOOL BODY",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "110",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66f7ef9137edb5ae72419159"
+  },
+  "itemCode": "SPPG",
+  "itemName": "SHOPPING BAG",
+  "labelName": "SHOPPING BAG",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "110",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66fe3053248de20d99f8eae2"
+  },
+  "itemCode": "HDCP",
+  "itemName": "HOODED CROP",
+  "labelName": "HOODED CROP",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66fe864fb2cd7e4213211761"
+  },
+  "itemCode": "WNCT",
+  "itemName": "WINTER CROP TOP",
+  "labelName": "WINTER CROP TOP",
+  "grade": "A",
+  "category": "Select...",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Wt",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66ffc611f3addcd7084396fa"
+  },
+  "itemCode": "TBM",
+  "itemName": "TABLE MAT",
+  "labelName": "TABLE MAT",
+  "grade": "A",
+  "category": "Select...",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "66ffcb5d110ba4352a02bbec"
+  },
+  "itemCode": "KTN",
+  "itemName": "KITCHEN  NAPKINS ",
+  "labelName": "KITCHEN  NAPKINS ",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6704e70d92b959ca518c7416"
+  },
+  "itemCode": "APN",
+  "itemName": "APRON",
+  "labelName": "APRON",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Kgs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6708ee46a768e28d89d62eaa"
+  },
+  "itemCode": "CSCV",
+  "itemName": "CUSHION COVER",
+  "labelName": "CUSHION COVER",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6718e80d07380e6edcc89f84"
+  },
+  "itemCode": "MRTSS2",
+  "itemName": "MEN R/N T-SHIRT S/S #2",
+  "labelName": "MEN R/N T-SHIRT S/S #2",
+  "grade": "B",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "671f7ca346eda922cee8d4a3"
+  },
+  "itemCode": "LPS",
+  "itemName": "LADIES POLO SKIRTS",
+  "labelName": "LADIES POLO SKIRTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "SHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "110",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6728b2fefd5dd2d7d70793b3"
+  },
+  "itemCode": "BABS",
+  "itemName": "BABY BEDSHEET",
+  "labelName": "BABY BEDSHEET",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Kgs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "673b3130b7b08c525d4fcb13"
+  },
+  "itemCode": "CHCV",
+  "itemName": "CHAIR COVERS",
+  "labelName": "CHAIR COVERS",
+  "grade": "Select...",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6744547dfe08b024c87e3afe"
+  },
+  "itemCode": "BDFS",
+  "itemName": "BODY FIT SUIT",
+  "labelName": "BODY FIT SUIT",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "674aa14d01ffa6dbd7017b67"
+  },
+  "itemCode": "LSK",
+  "itemName": "LADIES KURTI",
+  "labelName": "LADIES KURTI",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "674aaa2501ffa6dbd7017b68"
+  },
+  "itemCode": "LSSL",
+  "itemName": "LADIES SALWAR",
+  "labelName": "LADIES SALWAR",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "DRESS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "675429441e8dbdc573004ed5"
+  },
+  "itemCode": "CRST",
+  "itemName": "CORSET",
+  "labelName": "CORSET",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "6789f4859794ac3e53f546b8"
+  },
+  "itemCode": "LWBL",
+  "itemName": "LADIES WHITE BLOUSE",
+  "labelName": "LADIES WHITE BLOUSE",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "BLOUSE",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "678cd7a603b221e5c2ce4050"
+  },
+  "itemCode": "SPSS",
+  "itemName": "SPORTS SEXY SHORTS",
+  "labelName": "SPORTS SEXY SHORTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "679ddd08a42372fbfb5a51bd"
+  },
+  "itemCode": "LDST",
+  "itemName": "LADIES SINGLET",
+  "labelName": "LADIES SINGLET",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "679f0286b6ffdce380de3bac"
+  },
+  "itemCode": "LDHS",
+  "itemName": "LADIES HEAVY SHRUG",
+  "labelName": "LADIES HEAVY SHRUG",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "679f02a2b6ffdce380de3bad"
+  },
+  "itemCode": "LDLS",
+  "itemName": "LADIES LIGHT SHRUG",
+  "labelName": "LADIES LIGHT SHRUG",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "679f12853b17ee963b499aa5"
+  },
+  "itemCode": "test",
+  "itemName": "test",
+  "labelName": "test",
+  "grade": "A",
+  "category": "MEN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Wt",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "100"
+},
+{
+  "_id": {
+    "$oid": "67f3716defbb391b414a1164"
+  },
+  "itemCode": "LFSK",
+  "itemName": "LADIES FASHION SKIRT",
+  "labelName": "LADIES FASHION SKIRT",
+  "grade": "A",
+  "category": "PREMIUM",
+  "section": "PREMIUM",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f3719cefbb391b414a117c"
+  },
+  "itemCode": "LDFB",
+  "itemName": "LADIES FASHION BLOUSE",
+  "labelName": "LADIES FASHION BLOUSE",
+  "grade": "A",
+  "category": "PREMIUM",
+  "section": "PREMIUM",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f371c3efbb391b414a1194"
+  },
+  "itemCode": "SPMX",
+  "itemName": "SPORTS MIX",
+  "labelName": "SPORTS MIX",
+  "grade": "A",
+  "category": "PREMIUM",
+  "section": "PREMIUM",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f371ffefbb391b414a11ac"
+  },
+  "itemCode": "MTSC",
+  "itemName": "MEN TSHIRTS S/S CREAM",
+  "labelName": "MEN TSHIRTS S/S CREAM",
+  "grade": "A",
+  "category": "MEN",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f3722defbb391b414a11c4"
+  },
+  "itemCode": "CDWM",
+  "itemName": "CHILDREN WINTER MIX",
+  "labelName": "CHILDREN WINTER MIX",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "PREMIUM",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f37266efbb391b414a11dc"
+  },
+  "itemCode": "LDTP",
+  "itemName": "LADIES TIGHT PANTS",
+  "labelName": "LADIES TIGHT PANTS",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f37302d271b8fda1bc8d0c"
+  },
+  "itemCode": "CDSM",
+  "itemName": "CHILDREN SUMMER MIX",
+  "labelName": "CHILDREN SUMMER MIX",
+  "grade": "A",
+  "category": "CHILDREN",
+  "section": "CHILDREN",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f37333d271b8fda1bc8d24"
+  },
+  "itemCode": "GNIJ",
+  "itemName": "GENERAL ITEM JUMBO",
+  "labelName": "GENERAL ITEM JUMBO",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "GENERAL",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f3736ad271b8fda1bc8d3c"
+  },
+  "itemCode": "LMSW",
+  "itemName": "LADIES & MEN SWEATER",
+  "labelName": "LADIES & MEN SWEATER",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SWEATER",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f373c4d271b8fda1bc8d54"
+  },
+  "itemCode": "MLTLS",
+  "itemName": "M & L T-SHIRTS L/S",
+  "labelName": "M & L T-SHIRTS L/S",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "TSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f373fdd271b8fda1bc8d6c"
+  },
+  "itemCode": "MXJT",
+  "itemName": "MIX JACKET",
+  "labelName": "MIX JACKET",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f3742fd271b8fda1bc8d84"
+  },
+  "itemCode": "MXST",
+  "itemName": "MIX SHORTS",
+  "labelName": "MIX SHORTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f37459d271b8fda1bc8d9c"
+  },
+  "itemCode": "MXSS",
+  "itemName": "MIX SWEATSHIRTS",
+  "labelName": "MIX SWEATSHIRTS",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SWEATSHIRT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f3749ad271b8fda1bc8db4"
+  },
+  "itemCode": "PRPJ",
+  "itemName": "PRINTED PAJAMA",
+  "labelName": "PRINTED PAJAMA",
+  "grade": "A",
+  "category": "LADIES",
+  "section": "PANT",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f374e8d271b8fda1bc8dcc"
+  },
+  "itemCode": "SMXJ",
+  "itemName": "SKI MIX JACKET",
+  "labelName": "SKI MIX JACKET",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "JACKET",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f37525d271b8fda1bc8de4"
+  },
+  "itemCode": "CTHN",
+  "itemName": "COTTON HANKEY",
+  "labelName": "COTTON HANKEY",
+  "grade": "A",
+  "category": "HOUSEHOLD",
+  "section": "HOUSEHOLD",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f51051cacc1043b5435e9c"
+  },
+  "itemCode": "MSTX",
+  "itemName": "MEN SHORTS XL",
+  "labelName": "MEN SHORTS XL",
+  "grade": "A",
+  "category": "MEN",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+},
+{
+  "_id": {
+    "$oid": "67f51086cacc1043b5435eb4"
+  },
+  "itemCode": "SPCPL",
+  "itemName": "SPORTS CAPRI (L)",
+  "labelName": "SPORTS CAPRI (L)",
+  "grade": "A",
+  "category": "GENERAL",
+  "section": "SHORTS",
+  "packing": "100",
+  "packingType": "Bale",
+  "packingMeasure": "Lbs",
+  "masterPrice": "100",
+  "baleweight": "45"
+}]
