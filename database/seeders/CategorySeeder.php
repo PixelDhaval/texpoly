@@ -22,7 +22,8 @@ class CategorySeeder extends Seeder
             ['id' => '5', 'name' => 'MEN'],
             ['id' => '6', 'name' => 'HOUSEHOLD'],
             ['id' => '7', 'name' => 'PREMIUM'],
-            ['id' => '8', 'name' => 'UNISEX']
+            ['id' => '8', 'name' => 'UNISEX'],
+            ['id' => '9', 'name' => 'Select...']
         ];
 
         // Insert categories into the database

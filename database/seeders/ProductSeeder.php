@@ -65,7 +65,7 @@ class ProductSeeder extends Seeder
                 'subcategory_id' => $subcategories[$item['section']] ?? null,
                 'label_name' => $item['labelName'] ?? null,
                 'grade' => $item['grade'] ?? null,
-                'unit' => $item['packingMeasure'] ?? null,
+                'unit' => strtoupper($item['packingMeasure']) ?? null,
                 'price' => isset($item['masterPrice']) ? (float) $item['masterPrice'] : 0,
                 'quantity' => isset($item['packing']) ? (int) $item['packing'] : 0,
                 'weight' => isset($item['baleweight']) ? (int) $item['baleweight'] : 0,

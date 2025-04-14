@@ -32,6 +32,7 @@ class SubcategorySeeder extends Seeder
             ['id' => '15', 'name' => 'BLOUSE'],
             ['id' => '16', 'name' => 'SHORT'],
             ['id' => '17', 'name' => 'SWEATER'],
+            ['id' => '18', 'name' => 'Select...']
         ];
 
         // Insert subcategories into the database
