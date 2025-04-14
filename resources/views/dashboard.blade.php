@@ -46,8 +46,9 @@
         <!-- Recent Activities -->
         <div class="col-lg-4 mb-4">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title mb-0">Recent Activities</h5>
+                    <a href="{{ route('bales.index') }}" class="btn btn-primary btn-sm">View All</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

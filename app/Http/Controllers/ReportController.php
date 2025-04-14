@@ -53,22 +53,28 @@ class ReportController extends Controller
             4 => ['start' => '15:30:01', 'end' => '23:59:59']
         ];
 
-        // Get production bales
+        // Modify the production data query
         $productionData = Bale::with(['packinglist.customer', 'packinglist.product'])
-            ->whereDate('created_at', $date)
-            ->where('type', 'production')
+            ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
+            ->join('products', 'packinglists.product_id', '=', 'products.id')
+            ->whereDate('bales.created_at', $date)
+            ->where('bales.type', 'production')
+            ->orderBy('products.name')
             ->get()
             ->groupBy('packinglist.customer_id');
 
-        // Get repacking bales
+        // Modify the repacking data query
         $repackingData = Bale::with([
                 'packinglist.customer', 
                 'packinglist.product',
                 'refPackinglist.customer',
                 'refPackinglist.product'
             ])
-            ->whereDate('created_at', $date)
-            ->where('type', 'repacking')
+            ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
+            ->join('products', 'packinglists.product_id', '=', 'products.id')
+            ->whereDate('bales.created_at', $date)
+            ->where('bales.type', 'repacking')
+            ->orderBy('products.name')
             ->get();
 
         // Process production data
@@ -148,7 +154,7 @@ class ReportController extends Controller
                 $query->where('products.subcategory_id', $request->subcategory);
             }
 
-            $packinglists = $query->orderBy('products.short_code')
+            $packinglists = $query->orderBy('products.name') // Changed from short_code to name
                                  ->select('packinglists.*')
                                  ->get();
         }
@@ -168,7 +174,7 @@ class ReportController extends Controller
         $stockData = Packinglist::with(['product.category', 'customer'])
             ->where('stock', '>', 0)
             ->join('products', 'packinglists.product_id', '=', 'products.id')
-            ->orderBy('products.short_code')
+            ->orderBy('products.name') // Changed from short_code to name
             ->get()
             ->groupBy('product_id');
 
