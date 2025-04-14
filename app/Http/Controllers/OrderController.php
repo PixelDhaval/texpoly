@@ -55,7 +55,6 @@ class OrderController extends Controller
         $lastOrder = Order::where('order_no', 'like', $customer->short_code . $monthYear . '%')
                          ->orderBy('order_no', 'desc')
                          ->first();
-
         // Set order number starting from 1 for each month
         $orderNumber = 1;
         if ($lastOrder) {
