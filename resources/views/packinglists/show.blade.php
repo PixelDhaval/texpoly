@@ -14,15 +14,13 @@
             <div class="col-md-8">
                 <form id="filterForm" class="row g-3">
                     <div class="col-md-5">
-                        <input type="text" class="form-control" name="search"
-                            placeholder="Search by product name/code" value="{{ request('search') }}">
+                        <input type="text" class="form-control" id="searchProduct" placeholder="Search by product name/code">
                     </div>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" name="label_name"
-                            placeholder="Search by label name" value="{{ request('label_name') }}">
+                        <input type="text" class="form-control" id="searchLabel" placeholder="Search by label name">
                     </div>
                     <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary w-100">Filter</button>
+                        <button type="button" class="btn btn-primary w-100" id="applyFilter">Filter</button>
                     </div>
                 </form>
             </div>
@@ -105,9 +103,34 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const token = document.querySelector('meta[name="csrf-token"]').content;
+    const packinglistForm = document.getElementById('packinglistForm');
+    let isFormDirty = false;
 
-    // Handle form submission
-    
+    // Mark the form as dirty when any input changes
+    packinglistForm.addEventListener('input', function() {
+        isFormDirty = true;
+    });
+
+    // Prompt the user to save changes before leaving the page
+    window.addEventListener('beforeunload', function(event) {
+        if (isFormDirty) {
+            const confirmationMessage = 'You have unsaved changes. Do you want to save before leaving?';
+            event.returnValue = confirmationMessage; // Standard for most browsers
+            return confirmationMessage; // For older browsers
+        }
+    });
+
+    // Automatically save the form when the user confirms leaving
+    function saveForm() {
+        if (isFormDirty) {
+            packinglistForm.submit();
+        }
+    }
+
+    // Attach event listener to the "Save All Changes" button
+    document.querySelector('button[onclick="document.getElementById(\'packinglistForm\').submit()"]').addEventListener('click', function() {
+        isFormDirty = false; // Reset the dirty flag after saving
+    });
 
     // Handle filter form submission
     const filterForm = document.getElementById('filterForm');
@@ -118,9 +141,33 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = `${window.location.pathname}?${params.toString()}`;
     });
 
-    document.getElementById('saveAll').addEventListener('click',() => {
-        document.getElementById('packinglistForm').submit()
-    })
+    const searchProductInput = document.getElementById('searchProduct');
+    const searchLabelInput = document.getElementById('searchLabel');
+    const applyFilterButton = document.getElementById('applyFilter');
+    const tableRows = document.querySelectorAll('#packinglistTable tbody tr');
+
+    // Function to filter table rows
+    function filterTable() {
+        const searchProduct = searchProductInput.value.toLowerCase();
+        const searchLabel = searchLabelInput.value.toLowerCase();
+
+        tableRows.forEach(row => {
+            const productCell = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+            const labelCell = row.querySelector('td:nth-child(3) input').value.toLowerCase();
+
+            // Show row if it matches the search criteria
+            if (productCell.includes(searchProduct) && labelCell.includes(searchLabel)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    // Attach event listeners
+    applyFilterButton.addEventListener('click', filterTable);
+    searchProductInput.addEventListener('input', filterTable);
+    searchLabelInput.addEventListener('input', filterTable);
 });
 </script>
 @endpush

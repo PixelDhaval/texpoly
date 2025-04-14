@@ -12,15 +12,19 @@
                     <label class="form-label">Customer</label>
                     <select name="customer_id" class="form-select" required>
                         <option value="">Select Customer</option>
+                        @if(isset($customer))
+                        <option value="{{ $customer->id }}" selected>{{ $customer->name }}</option>
+                        @else
                         @foreach($customers as $customer)
-                            <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                        <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                         @endforeach
+                        @endif
                     </select>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Order Date</label>
-                    <input type="date" name="order_date" class="form-control" required 
-                           value="{{ date('Y-m-d') }}">
+                    <input type="date" name="order_date" class="form-control" required
+                        value="{{ date('Y-m-d') }}">
                 </div>
             </div>
 

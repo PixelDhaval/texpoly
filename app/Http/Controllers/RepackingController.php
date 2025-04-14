@@ -17,7 +17,15 @@ class RepackingController extends Controller
     {
         $customers = Customer::all();
         $employees = Employee::all();
-        return view('repacking.index', compact('customers', 'employees'));
+        
+        // Get today's repacking bales
+        $todayBales = Bale::with(['packinglist.product', 'packinglist.customer', 'qcEmployee', 'finalistEmployee'])
+            ->where('type', 'repacking')
+            ->whereDate('created_at', now())
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('repacking.index', compact('customers', 'employees', 'todayBales'));
     }
 
     public function getBaleDetails(Request $request)

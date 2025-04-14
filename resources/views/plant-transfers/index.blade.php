@@ -162,7 +162,7 @@
         </div>
 
         <div class="mt-3">
-            {{ $bales->links() }}
+            {{ $bales->links('pagination::bootstrap-5') }}
         </div>
     </div>
 </div>

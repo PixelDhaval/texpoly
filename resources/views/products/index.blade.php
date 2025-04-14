@@ -60,11 +60,12 @@
                         <td>{{ $product->quantity }}</td>
                         <td>
                             <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                            <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
-                            </form>
+                            <button type="button" 
+                                    class="btn btn-danger btn-sm delete-product" 
+                                    data-id="{{ $product->id }}" 
+                                    data-name="{{ $product->name }}">
+                                Delete
+                            </button>
                         </td>
                     </tr>
                     @endforeach
@@ -73,8 +74,147 @@
         </div>
         
         <div class="mt-4">
-            {{ $products->links() }}
+            {{ $products->links('pagination::bootstrap-5') }}
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="mergeModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Do you want to transfer this product's stock to another product?</p>
+                <div class="mb-3">
+                    <select id="mergeProductSelect" class="form-select">
+                        <option value="">Select Product to Transfer Stock</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="deleteWithoutMerge">Delete Without Transfer</button>
+                <button type="button" class="btn btn-primary" id="confirmMerge">Transfer and Delete</button>
+            </div>
         </div>
     </div>
 </div>
 @endsection
+
+@push('styles')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<style>
+    .select2-container {
+        width: 100% !important;
+    }
+    /* Fix for Select2 inside Bootstrap modal */
+    .select2-dropdown {
+        z-index: 1056;
+    }
+</style>
+@endpush
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mergeModal = new bootstrap.Modal(document.getElementById('mergeModal'));
+    let currentProductId = null;
+    
+    // Initialize Select2
+    $('#mergeProductSelect').select2({
+        dropdownParent: $('#mergeModal'),
+        placeholder: 'Select Product to Transfer Stock',
+        width: '100%'
+    });
+    
+    // Handle delete button click
+    document.querySelectorAll('.delete-product').forEach(button => {
+        button.addEventListener('click', function() {
+            currentProductId = this.dataset.id;
+            const currentProductName = this.dataset.name;
+            
+            // Clear and reload the product select options
+            const mergeProductSelect = $('#mergeProductSelect');
+            mergeProductSelect.empty().append('<option value="">Select Product to Transfer Stock</option>');
+            
+            // Add all products except the current one
+            @foreach($allProducts as $product)
+            if ('{{ $product->id }}' !== currentProductId) {
+                const option = new Option(
+                    '{{ $product->name }} ({{ $product->short_code }})', 
+                    '{{ $product->id }}'
+                );
+                mergeProductSelect.append(option);
+            }
+            @endforeach
+            
+            // Update modal title to include product name
+            document.querySelector('#mergeModal .modal-title').textContent = 
+                `Delete Product: ${currentProductName}`;
+            
+            // Trigger Select2 to update
+            mergeProductSelect.trigger('change');
+            
+            mergeModal.show();
+        });
+    });
+
+    // Handle delete without merge
+    document.getElementById('deleteWithoutMerge').addEventListener('click', function() {
+        deleteProduct(currentProductId);
+    });
+
+    // Handle merge and delete
+    document.getElementById('confirmMerge').addEventListener('click', function() {
+        const targetProductId = document.getElementById('mergeProductSelect').value;
+        if (!targetProductId) {
+            alert('Please select a product to transfer stock to');
+            return;
+        }
+        mergeAndDeleteProduct(currentProductId, targetProductId);
+    });
+
+    function deleteProduct(productId) {
+        fetch(`/products/${productId}`, {
+            method: 'DELETE',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert(data.message || 'Error deleting product');
+            }
+        });
+    }
+
+    function mergeAndDeleteProduct(sourceProductId, targetProductId) {
+        fetch(`/products/${sourceProductId}/merge`, {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ target_product_id: targetProductId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert(data.message || 'Error merging products');
+            }
+        });
+    }
+});
+</script>
+@endpush

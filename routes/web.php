@@ -17,15 +17,14 @@ use App\Http\Controllers\RepackingController;
 use App\Http\Controllers\PlantController;
 use App\Http\Controllers\PlantTransferController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 
+    [DashboardController::class, 'index']
+)->middleware(['auth'])->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -42,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/plants', PlantController::class)->except(['create', 'edit', 'show', 'update']);
 
     Route::get('/products/check-shortcode', [ProductController::class, 'checkShortCode'])->name('products.check-shortcode');
+    Route::post('/products/{product}/merge', [ProductController::class, 'merge'])->name('products.merge');
 
     Route::get('/packinglists', [PackinglistController::class, 'index'])->name('packinglists.index');
     Route::get('/packinglists/{customer}', [PackinglistController::class, 'show'])->name('packinglists.show');

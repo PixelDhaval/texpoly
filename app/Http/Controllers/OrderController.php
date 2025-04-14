@@ -24,8 +24,12 @@ class OrderController extends Controller
         return view('orders.index', compact('orders'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        if($request->query('customer_id')) {
+            $customer = Customer::find($request->query('customer_id'));
+            return view('orders.form', compact('customer'));
+        }
         $customers = Customer::all();
         return view('orders.form', compact('customers'));
     }

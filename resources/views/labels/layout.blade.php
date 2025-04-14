@@ -14,6 +14,7 @@
         .nav-link.active {
             font-weight: bold;
         }
+        
     </style>
 </head>
 <body>

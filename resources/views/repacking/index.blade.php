@@ -105,6 +105,44 @@
     </div>
 </div>
 
+<div class="card mt-4">
+    <div class="card-header">
+        <h2>Today's Repacking Bales</h2>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Bale No</th>
+                        <th>Source Product</th>
+                        <th>Source Customer</th>
+                        <th>Target Product</th>
+                        <th>Target Customer</th>
+                        <th>QC</th>
+                        <th>Finalist</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($todayBales as $bale)
+                    <tr>
+                        <td>{{ $bale->bale_no }}</td>
+                        <td>{{ $bale->refPackinglist->product->name }}</td>
+                        <td>{{ $bale->refPackinglist->customer->name }}</td>
+                        <td>{{ $bale->packinglist->product->name }}</td>
+                        <td>{{ $bale->packinglist->customer->name }}</td>
+                        <td>{{ $bale->qcEmployee->name }}</td>
+                        <td>{{ $bale->finalistEmployee->name }}</td>
+                        <td>{{ $bale->created_at->format('H:i:s') }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 <!-- Print Modal -->
 <div class="modal fade" id="printModal" tabindex="-1" aria-labelledby="printModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -114,6 +152,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                
                 <div id="preview"></div>
             </div>
             <div class="modal-footer">
@@ -223,10 +262,8 @@
                 labelCode = labelCode.replaceAll('[[ qr-2 ]]', is_qr == "true" || is_qr == true ? '<div id="qrcode-2">[[ qr ]]</div>' : '');
             }
             if (info) updateTargetDetails(info);
-            if (labelCode) {
                 $('#submitBtn').prop('disabled', false);
-                $('#submitBtn').data('label-code', labelCode); // Store label code for printing
-            }
+                $('#submitBtn').data('label-code', labelCode); 
         });
 
         function updateSourceDetails(info) {
@@ -308,10 +345,10 @@
             e.preventDefault();
 
             const labelCode = $(this).data('label-code');
-            if (!labelCode) {
-                alert('Please select a valid product.');
-                return;
-            }
+            // if (!labelCode) {
+            //     alert('Please select a valid product.');
+            //     return;
+            // }
 
             // Show the print modal and load the label code
             const preview = document.getElementById('preview');

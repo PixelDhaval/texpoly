@@ -25,6 +25,8 @@
                     <td>
                         <a href="{{ route('packinglists.show', $customer->id) }}" 
                            class="btn btn-primary btn-sm">View Packing List</a>
+                        <a href="{{ route('orders.create', ['customer_id' => $customer->id]) }}" 
+                           class="btn btn-success btn-sm">Create Order</a>
                     </td>
                 </tr>
                 @endforeach
