@@ -42,6 +42,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/products/check-shortcode', [ProductController::class, 'checkShortCode'])->name('products.check-shortcode');
     Route::post('/products/{product}/merge', [ProductController::class, 'merge'])->name('products.merge');
+    Route::get('/products-history', [ProductController::class, 'history'])->name('products.history');
+    Route::get('/products-history-details', [ProductController::class, 'historyDetail'])->name('products.history-details');
 
     Route::get('/packinglists', [PackinglistController::class, 'index'])->name('packinglists.index');
     Route::get('/packinglists/{customer}', [PackinglistController::class, 'show'])->name('packinglists.show');
