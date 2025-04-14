@@ -9,6 +9,29 @@
         </div>
     </div>
     <div class="card-body">
+        @if(session('warning'))
+            <div class="alert alert-warning">
+                {{ session('warning') }}
+                @if(session('errors'))
+                    <ul>
+                    @foreach(session('errors') as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                @endif
+            </div>
+        @endif
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <!-- Filter Section -->
         <div class="row mb-4">
             <div class="col-md-8">

@@ -10,8 +10,8 @@
             <div class="row g-3">
                 <div class="col-md-3">
                     <label class="form-label">Customer</label>
-                    <select name="customer_id" class="form-select" required>
-                        <option value="">Select Customer</option>
+                    <select name="customer_id" class="form-select">
+                        <option value="">All Customers</option>
                         @foreach($customers as $customer)
                             <option value="{{ $customer->id }}" 
                                 {{ request('customer_id') == $customer->id ? 'selected' : '' }}>
@@ -116,12 +116,14 @@
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Update click handler for product details
     document.querySelectorAll('.product-row').forEach(row => {
         row.addEventListener('click', function() {
             const url = new URL("{{ route('products.history-details') }}");
             url.searchParams.append('product_id', this.dataset.productId);
-            url.searchParams.append('customer_id', this.dataset.customerId);
+            // Only append customer_id if it has a value
+            if (this.dataset.customerId) {
+                url.searchParams.append('customer_id', this.dataset.customerId);
+            }
             url.searchParams.append('from_date', this.dataset.from);
             url.searchParams.append('to_date', this.dataset.to);
             

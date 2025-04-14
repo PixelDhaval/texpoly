@@ -158,14 +158,13 @@ class ProductController extends Controller
         $customers = Customer::orderBy('name')->get();
         $products = collect();
         
-        if ($request->filled('customer_id')) {
-            $query = Packinglist::where('customer_id', $request->customer_id)
-                ->join('products', 'packinglists.product_id', '=', 'products.id')
-                ->select('packinglists.product_id', 'products.name', 'products.short_code')  // Include columns needed for ordering
-                ->distinct()
-                ->with(['product' => function($q) {
-                    $q->orderBy('name', 'asc');
-                }]);
+        if ($request->has('from_date') && $request->has('to_date')) {
+            $query = Product::select('products.*')
+                ->when($request->filled('customer_id'), function($q) use ($request) {
+                    $q->join('packinglists', 'products.id', '=', 'packinglists.product_id')
+                      ->where('packinglists.customer_id', $request->customer_id)
+                      ->distinct();
+                });
 
             // Add search filter
             if ($request->filled('search')) {
@@ -183,28 +182,32 @@ class ProductController extends Controller
 
             // Get paginated results
             $perPage = $request->input('per_page', 10);
-            $packinglists = $query->paginate($perPage);
+            $productsQuery = $query->paginate($perPage);
 
             // Map the results
-            $products = $packinglists->through(function($packinglist) use ($request) {
-                $product = $packinglist->product;
+            $products = $productsQuery->through(function($product) use ($request) {
                 $fromDate = Carbon::parse($request->from_date)->startOfDay();
                 $toDate = Carbon::parse($request->to_date)->endOfDay();
                 
-                // Get current stock from packinglist
+                // Calculate movements for all customers or specific customer
+                $customerId = $request->filled('customer_id') ? $request->customer_id : null;
+                
+                // Get current stock
                 $currentStock = Packinglist::where('product_id', $product->id)
-                    ->where('customer_id', $request->customer_id)
+                    ->when($customerId, function($q) use ($customerId) {
+                        $q->where('customer_id', $customerId);
+                    })
                     ->sum('stock');
 
-                // Calculate movements between fromDate and now to get opening balance
-                $productionAfterFrom = $this->getProductionCount($product->id, $request->customer_id, $fromDate, now());
-                $repackingInAfterFrom = $this->getRepackingInCount($product->id, $request->customer_id, $fromDate, now());
-                $repackingOutAfterFrom = $this->getRepackingOutCount($product->id, $request->customer_id, $fromDate, now());
-                $inwardAfterFrom = $this->getInwardCount($product->id, $request->customer_id, $fromDate, now());
-                $outwardAfterFrom = $this->getOutwardCount($product->id, $request->customer_id, $fromDate, now());
-                $cuttingAfterFrom = $this->getCuttingCount($product->id, $request->customer_id, $fromDate, now());
+                // Calculate movements between fromDate and now
+                $productionAfterFrom = $this->getProductionCount($product->id, $customerId, $fromDate, now());
+                $repackingInAfterFrom = $this->getRepackingInCount($product->id, $customerId, $fromDate, now());
+                $repackingOutAfterFrom = $this->getRepackingOutCount($product->id, $customerId, $fromDate, now());
+                $inwardAfterFrom = $this->getInwardCount($product->id, $customerId, $fromDate, now());
+                $outwardAfterFrom = $this->getOutwardCount($product->id, $customerId, $fromDate, now());
+                $cuttingAfterFrom = $this->getCuttingCount($product->id, $customerId, $fromDate, now());
 
-                // Calculate opening balance by subtracting movements after fromDate from current stock
+                // Calculate opening balance
                 $openingBalance = $currentStock - (
                     $productionAfterFrom + 
                     $repackingInAfterFrom - 
@@ -214,16 +217,16 @@ class ProductController extends Controller
                     $cuttingAfterFrom
                 );
 
-                // Calculate movements for the selected date range
+                // Set the calculated values
                 $product->opening_balance = $openingBalance;
-                $product->production_count = $this->getProductionCount($product->id, $request->customer_id, $fromDate, $toDate);
-                $product->repacking_in = $this->getRepackingInCount($product->id, $request->customer_id, $fromDate, $toDate);
-                $product->repacking_out = $this->getRepackingOutCount($product->id, $request->customer_id, $fromDate, $toDate);
-                $product->inward = $this->getInwardCount($product->id, $request->customer_id, $fromDate, $toDate);
-                $product->outward = $this->getOutwardCount($product->id, $request->customer_id, $fromDate, $toDate);
-                $product->cutting = $this->getCuttingCount($product->id, $request->customer_id, $fromDate, $toDate);
+                $product->production_count = $this->getProductionCount($product->id, $customerId, $fromDate, $toDate);
+                $product->repacking_in = $this->getRepackingInCount($product->id, $customerId, $fromDate, $toDate);
+                $product->repacking_out = $this->getRepackingOutCount($product->id, $customerId, $fromDate, $toDate);
+                $product->inward = $this->getInwardCount($product->id, $customerId, $fromDate, $toDate);
+                $product->outward = $this->getOutwardCount($product->id, $customerId, $fromDate, $toDate);
+                $product->cutting = $this->getCuttingCount($product->id, $customerId, $fromDate, $toDate);
                 
-                // Calculate closing balance based on opening balance and movements
+                // Calculate closing balance
                 $product->closing_balance = $openingBalance + 
                     $product->production_count + 
                     $product->repacking_in - 
@@ -244,19 +247,23 @@ class ProductController extends Controller
         $product = Product::findOrFail($request->product_id);
         $fromDate = Carbon::parse($request->from_date)->startOfDay();
         $toDate = Carbon::parse($request->to_date)->endOfDay();
+        $customerId = $request->filled('customer_id') ? $request->customer_id : null;
+        $customers = Customer::orderBy('name')->get();
 
         // Get current stock
         $currentStock = Packinglist::where('product_id', $product->id)
-            ->where('customer_id', $request->customer_id)
+            ->when($customerId, function($q) use ($customerId) {
+                $q->where('customer_id', $customerId);
+            })
             ->sum('stock');
 
         // Calculate movements between fromDate and now
-        $productionAfterFrom = $this->getProductionCount($product->id, $request->customer_id, $fromDate, now());
-        $repackingInAfterFrom = $this->getRepackingInCount($product->id, $request->customer_id, $fromDate, now());
-        $repackingOutAfterFrom = $this->getRepackingOutCount($product->id, $request->customer_id, $fromDate, now());
-        $inwardAfterFrom = $this->getInwardCount($product->id, $request->customer_id, $fromDate, now());
-        $outwardAfterFrom = $this->getOutwardCount($product->id, $request->customer_id, $fromDate, now());
-        $cuttingAfterFrom = $this->getCuttingCount($product->id, $request->customer_id, $fromDate, now());
+        $productionAfterFrom = $this->getProductionCount($product->id, $customerId, $fromDate, now());
+        $repackingInAfterFrom = $this->getRepackingInCount($product->id, $customerId, $fromDate, now());
+        $repackingOutAfterFrom = $this->getRepackingOutCount($product->id, $customerId, $fromDate, now());
+        $inwardAfterFrom = $this->getInwardCount($product->id, $customerId, $fromDate, now());
+        $outwardAfterFrom = $this->getOutwardCount($product->id, $customerId, $fromDate, now());
+        $cuttingAfterFrom = $this->getCuttingCount($product->id, $customerId, $fromDate, now());
 
         // Calculate opening balance
         $openingBalance = $currentStock - (
@@ -268,68 +275,79 @@ class ProductController extends Controller
             $cuttingAfterFrom
         );
 
-        // Get bales for selected period
-        $productionBales = Bale::with('packinglist')
+        // Get bales for selected period with customer relationships
+        $productionBales = Bale::with(['packinglist.customer', 'qcEmployee', 'finalistEmployee'])
             ->where('type', 'production')
-            ->whereHas('packinglist', function($query) use ($product, $request) {
+            ->whereHas('packinglist', function($query) use ($product, $customerId) {
                 $query->where('product_id', $product->id)
-                      ->where('customer_id', $request->customer_id);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->get();
 
-        $repackingBales = Bale::with(['packinglist.customer', 'packinglist.product', 'refPackinglist.customer', 'refPackinglist.product'])
+        $repackingBales = Bale::with(['packinglist.customer', 'packinglist.product', 
+                                     'refPackinglist.customer', 'refPackinglist.product',
+                                     'qcEmployee', 'finalistEmployee'])
             ->where('type', 'repacking')
-            ->where(function($query) use ($product, $request) {
-                $query->whereHas('packinglist', function($q) use ($product, $request) {
+            ->where(function($query) use ($product, $customerId) {
+                $query->whereHas('packinglist', function($q) use ($product, $customerId) {
                     $q->where('product_id', $product->id)
-                      ->where('customer_id', $request->customer_id);
-                })->orWhereHas('refPackinglist', function($q) use ($product, $request) {
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
+                })->orWhereHas('refPackinglist', function($q) use ($product, $customerId) {
                     $q->where('product_id', $product->id)
-                      ->where('customer_id', $request->customer_id);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
                 });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->get();
 
-        // Get inward bales
         $inwardBales = Bale::with(['packinglist.customer', 'packinglist.product', 'plant'])
             ->where('type', 'inward')
-            ->whereHas('packinglist', function($query) use ($product, $request) {
+            ->whereHas('packinglist', function($query) use ($product, $customerId) {
                 $query->where('product_id', $product->id)
-                      ->where('customer_id', $request->customer_id);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->get();
 
-        // Get outward bales
         $outwardBales = Bale::with(['packinglist.customer', 'packinglist.product', 'plant'])
             ->where('type', 'outward')
-            ->whereHas('packinglist', function($query) use ($product, $request) {
+            ->whereHas('packinglist', function($query) use ($product, $customerId) {
                 $query->where('product_id', $product->id)
-                      ->where('customer_id', $request->customer_id);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->get();
 
-        // Get cutting bales
-        $cuttingBales = Bale::with(['packinglist.customer', 'packinglist.product', 'plant'])
+        $cuttingBales = Bale::with(['packinglist.customer', 'packinglist.product'])
             ->where('type', 'cutting')
-            ->whereHas('packinglist', function($query) use ($product, $request) {
+            ->whereHas('packinglist', function($query) use ($product, $customerId) {
                 $query->where('product_id', $product->id)
-                      ->where('customer_id', $request->customer_id);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->get();
 
         // Calculate movements for selected period
         $movements = [
-            'production' => $this->getProductionCount($product->id, $request->customer_id, $fromDate, $toDate),
-            'repacking_in' => $this->getRepackingInCount($product->id, $request->customer_id, $fromDate, $toDate),
-            'repacking_out' => $this->getRepackingOutCount($product->id, $request->customer_id, $fromDate, $toDate),
-            'inward' => $this->getInwardCount($product->id, $request->customer_id, $fromDate, $toDate),
-            'outward' => $this->getOutwardCount($product->id, $request->customer_id, $fromDate, $toDate),
-            'cutting' => $this->getCuttingCount($product->id, $request->customer_id, $fromDate, $toDate)
+            'production' => $this->getProductionCount($product->id, $customerId, $fromDate, $toDate),
+            'repacking_in' => $this->getRepackingInCount($product->id, $customerId, $fromDate, $toDate),
+            'repacking_out' => $this->getRepackingOutCount($product->id, $customerId, $fromDate, $toDate),
+            'inward' => $this->getInwardCount($product->id, $customerId, $fromDate, $toDate),
+            'outward' => $this->getOutwardCount($product->id, $customerId, $fromDate, $toDate),
+            'cutting' => $this->getCuttingCount($product->id, $customerId, $fromDate, $toDate)
         ];
 
         // Calculate closing balance
@@ -353,71 +371,84 @@ class ProductController extends Controller
             'currentStock',
             'movements',
             'fromDate',
-            'toDate'
+            'toDate',
+            'customers'  // Add customers to the view
         ));
     }
 
-    private function getProductionCount($productId, $customerId, $fromDate, $toDate)
+    private function getProductionCount($productId, $customerId = null, $fromDate, $toDate)
     {
         return Bale::where('type', 'production')
             ->whereHas('packinglist', function($query) use ($productId, $customerId) {
                 $query->where('product_id', $productId)
-                      ->where('customer_id', $customerId);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->count();
     }
 
-    private function getRepackingInCount($productId, $customerId, $fromDate, $toDate)
+    private function getRepackingInCount($productId, $customerId = null, $fromDate, $toDate)
     {
         return Bale::where('type', 'repacking')
             ->whereHas('packinglist', function($query) use ($productId, $customerId) {
                 $query->where('product_id', $productId)
-                      ->where('customer_id', $customerId);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->count();
     }
 
-    private function getRepackingOutCount($productId, $customerId, $fromDate, $toDate)
+    private function getRepackingOutCount($productId, $customerId = null, $fromDate, $toDate)
     {
         return Bale::where('type', 'repacking')
             ->whereHas('refPackinglist', function($query) use ($productId, $customerId) {
                 $query->where('product_id', $productId)
-                      ->where('customer_id', $customerId);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->count();
     }
 
-    private function getInwardCount($productId, $customerId, $fromDate, $toDate)
+    private function getInwardCount($productId, $customerId = null, $fromDate, $toDate)
     {
         return Bale::where('type', 'inward')
             ->whereHas('packinglist', function($query) use ($productId, $customerId) {
                 $query->where('product_id', $productId)
-                      ->where('customer_id', $customerId);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->count();
     }
 
-    private function getOutwardCount($productId, $customerId, $fromDate, $toDate)
+    private function getOutwardCount($productId, $customerId = null, $fromDate, $toDate)
     {
         return Bale::where('type', 'outward')
             ->whereHas('packinglist', function($query) use ($productId, $customerId) {
                 $query->where('product_id', $productId)
-                      ->where('customer_id', $customerId);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->count();
     }
 
-    private function getCuttingCount($productId, $customerId, $fromDate, $toDate)
+    private function getCuttingCount($productId, $customerId = null, $fromDate, $toDate)
     {
         return Bale::where('type', 'cutting')
             ->whereHas('packinglist', function($query) use ($productId, $customerId) {
                 $query->where('product_id', $productId)
-                      ->where('customer_id', $customerId);
+                      ->when($customerId, function($q) use ($customerId) {
+                          $q->where('customer_id', $customerId);
+                      });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->count();

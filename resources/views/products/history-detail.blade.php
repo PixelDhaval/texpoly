@@ -3,7 +3,17 @@
 @section('content')
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h4 class="mb-0">{{ $product->name }} ({{ $product->short_code }})</h4>
+        <div class="d-flex align-items-center">
+            <h4 class="mb-0 me-3">{{ $product->name }} ({{ $product->short_code }})</h4>
+            <select id="customerSelect" class="form-select" style="width: 200px">
+                <option value="">All Customers</option>
+                @foreach($customers as $customer)
+                    <option value="{{ $customer->id }}" {{ request('customer_id') == $customer->id ? 'selected' : '' }}>
+                        {{ $customer->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
         <a href="{{ url()->previous() }}" class="btn btn-secondary btn-sm">Back</a>
     </div>
     <div class="card-body">
@@ -92,6 +102,7 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Time</th>
+                                <th>Customer</th>
                                 <th>Bale No</th>
                                 <th>QC</th>
                                 <th>Finalist</th>
@@ -102,13 +113,14 @@
                             <tr>
                                 <td>{{ $bale->created_at->format('Y-m-d') }}</td>
                                 <td>{{ $bale->created_at->format('H:i:s') }}</td>
+                                <td><strong>{{ $bale->packinglist->customer->name }}</strong></td>
                                 <td>{{ $bale->bale_no }}</td>
                                 <td>{{ $bale->qcEmployee->name }}</td>
                                 <td>{{ $bale->finalistEmployee->name }}</td>
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="5" class="text-center">No production records found</td>
+                                <td colspan="6" class="text-center">No production records found</td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -137,8 +149,8 @@
                                 <td>{{ $bale->created_at->format('Y-m-d') }}</td>
                                 <td>{{ $bale->created_at->format('H:i:s') }}</td>
                                 <td>{{ $bale->bale_no }}</td>
-                                <td>{{ $bale->refPackinglist->customer->name }} - {{ $bale->refPackinglist->product->name }}</td>
-                                <td>{{ $bale->packinglist->customer->name }} - {{ $bale->packinglist->product->name }}</td>
+                                <td><strong>{{ $bale->refPackinglist->customer->name }} - {{ $bale->refPackinglist->product->name }}</strong></td>
+                                <td><strong>{{ $bale->packinglist->customer->name }} - {{ $bale->packinglist->product->name }}</strong></td>
                                 <td>{{ $bale->qcEmployee->name }}</td>
                                 <td>{{ $bale->finalistEmployee->name }}</td>
                             </tr>
@@ -160,6 +172,7 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Time</th>
+                                <th>Customer</th>
                                 <th>Bale No</th>
                                 <th>Plant</th>
                             </tr>
@@ -169,12 +182,13 @@
                             <tr>
                                 <td>{{ $bale->created_at->format('Y-m-d') }}</td>
                                 <td>{{ $bale->created_at->format('H:i:s') }}</td>
+                                <td><strong>{{ $bale->packinglist->customer->name }}</strong></td>
                                 <td>{{ $bale->bale_no }}</td>
                                 <td>{{ $bale->plant->name ?? '-' }}</td>
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="4" class="text-center">No inward records found</td>
+                                <td colspan="5" class="text-center">No inward records found</td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -190,6 +204,7 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Time</th>
+                                <th>Customer</th>
                                 <th>Bale No</th>
                                 <th>Plant</th>
                             </tr>
@@ -199,12 +214,13 @@
                             <tr>
                                 <td>{{ $bale->created_at->format('Y-m-d') }}</td>
                                 <td>{{ $bale->created_at->format('H:i:s') }}</td>
+                                <td><strong>{{ $bale->packinglist->customer->name }}</strong></td>
                                 <td>{{ $bale->bale_no }}</td>
                                 <td>{{ $bale->plant->name ?? '-' }}</td>
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="4" class="text-center">No outward records found</td>
+                                <td colspan="5" class="text-center">No outward records found</td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -220,6 +236,7 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Time</th>
+                                <th>Customer</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -227,10 +244,11 @@
                             <tr>
                                 <td>{{ $bale->created_at->format('Y-m-d') }}</td>
                                 <td>{{ $bale->created_at->format('H:i:s') }}</td>
+                                <td>{{ $bale->packinglist->customer->name }}</td>
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="5" class="text-center">No cutting records found</td>
+                                <td colspan="3" class="text-center">No cutting records found</td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -264,6 +282,17 @@
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // Handle customer selection change
+    document.getElementById('customerSelect').addEventListener('change', function() {
+        const url = new URL(window.location.href);
+        if (this.value) {
+            url.searchParams.set('customer_id', this.value);
+        } else {
+            url.searchParams.delete('customer_id');
+        }
+        window.location.href = url.toString();
+    });
+
     // Initialize tooltips if needed
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
