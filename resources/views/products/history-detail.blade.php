@@ -220,9 +220,6 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Time</th>
-                                <th>Bale No</th>
-                                <th>Plant</th>
-                                <th>Cutting Type</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -230,9 +227,6 @@
                             <tr>
                                 <td>{{ $bale->created_at->format('Y-m-d') }}</td>
                                 <td>{{ $bale->created_at->format('H:i:s') }}</td>
-                                <td>{{ $bale->bale_no }}</td>
-                                <td>{{ $bale->plant->name ?? '-' }}</td>
-                                <td>{{ $bale->cutting_type ?? 'Standard' }}</td>
                             </tr>
                             @empty
                             <tr>
