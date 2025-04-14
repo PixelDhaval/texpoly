@@ -47,16 +47,25 @@ class OrderController extends Controller
         ]);
 
         $customer = Customer::find($request->customer_id);
-        $lastOrder = Order::where('order_no', 'like', $customer->short_code . '%')
+        
+        // Get current month and year
+        $monthYear = now()->format('my'); // Returns format like '0425' for April 2025
+        
+        // Get the last order for this customer in current month
+        $lastOrder = Order::where('order_no', 'like', $customer->short_code . $monthYear . '%')
                          ->orderBy('order_no', 'desc')
                          ->first();
 
+        // Set order number starting from 1 for each month
         $orderNumber = 1;
         if ($lastOrder) {
             $orderNumber = (int)substr($lastOrder->order_no, -3) + 1;
         }
 
-        $validated['order_no'] = $customer->short_code . str_pad($orderNumber, 3, '0', STR_PAD_LEFT);
+        // Create order number in format QB0425001
+        $validated['order_no'] = $customer->short_code . 
+                                $monthYear . 
+                                str_pad($orderNumber, 3, '0', STR_PAD_LEFT);
         
         $order = Order::create($validated);
         return redirect()->route('orders.show', $order)->with('success', 'Order created successfully');

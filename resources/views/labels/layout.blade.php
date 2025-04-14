@@ -64,6 +64,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('bales.index') }}">Bales</a></li>
                             <li><a class="dropdown-item" href="{{ route('cancellations.index') }}">Cancellations</a></li>
+                            <li><a class="dropdown-item" href="{{ route('products.history') }}">Product History</a></li>
                         </ul>
                     </li>
 
