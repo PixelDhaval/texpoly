@@ -30,7 +30,7 @@
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
-        @ 
+        @endif
 
         <!-- Filter Section -->
         <div class="row mb-4">
