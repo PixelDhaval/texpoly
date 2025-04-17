@@ -33,7 +33,10 @@
         <div class="col-md-3">
             <label class="form-label d-block">&nbsp;</label>
             <button type="submit" class="btn btn-primary">Filter</button>
-            
+            @if($data['packinglists']->isNotEmpty())
+                <a href="{{ request()->fullUrlWithQuery(['download' => 'excel']) }}" 
+                   class="btn btn-success">Download Excel</a>
+            @endif
         </div>
     </div>
 </form>

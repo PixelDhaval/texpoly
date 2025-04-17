@@ -79,6 +79,9 @@
                         <option value="total-stock" {{ request('report') == 'total-stock' ? 'selected' : '' }}>
                             Total Stock Report
                         </option>
+                        <option value="grade-wise" {{ request('report') == 'grade-wise' ? 'selected' : '' }}>
+                            Grade-wise Report
+                        </option>
                     </select>
                 </div>
                 @if(request('report') == 'daily-production')

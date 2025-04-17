@@ -9,9 +9,10 @@ use App\Models\Packinglist;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\TotalStockExport;
+use App\Exports\CustomerStockExport;
+use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
@@ -25,7 +26,12 @@ class ReportController extends Controller
                 $data = $this->generateDailyProductionReport($request);
                 break;
             case 'customer-stock':
-                $data = $this->generateCustomerStockReport($request);
+                $response = $this->generateCustomerStockReport($request);
+                // Check if response is an Excel download
+                if ($response instanceof \Symfony\Component\HttpFoundation\BinaryFileResponse) {
+                    return $response;
+                }
+                $data = $response;
                 break;
             case 'total-stock':
                 $data = $this->generateTotalStockReport($request);
@@ -35,6 +41,9 @@ class ReportController extends Controller
                         'total_stock_' . now()->format('Y-m-d') . '.xlsx'
                     );
                 }
+                break;
+            case 'grade-wise':
+                $data = $this->generateGradeWiseReport($request);
                 break;
         }
 
@@ -160,11 +169,19 @@ class ReportController extends Controller
                 $query->where('products.subcategory_id', $request->subcategory);
             }
 
-            $packinglists = $query->orderBy('products.name') // Changed from short_code to name
+            $packinglists = $query->orderBy('products.name')
                                  ->select('packinglists.*')
                                  ->get();
+
+            // Handle Excel download separately
+            if ($request->get('download') === 'excel') {
+                $customer = Customer::find($request->customer);
+                $fileName = str_replace(' ', '_', strtolower($customer->name)) . '_' . now()->format('Y-m-d') . '.xlsx';
+                return Excel::download(new CustomerStockExport($packinglists), $fileName);
+            }
         }
 
+        // Return data for view
         return [
             'customers' => $customers,
             'categories' => $categories,
@@ -216,6 +233,47 @@ class ReportController extends Controller
             'rows' => $rows,
             'customerTotals' => $customerTotals,
             'grandTotal' => array_sum($customerTotals)
+        ];
+    }
+
+    private function generateGradeWiseReport(Request $request)
+    {
+        $date = $request->get('date', now()->format('Y-m-d'));
+
+        // Get production counts by product grade
+        $gradeData = Bale::with(['packinglist.product'])
+            ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
+            ->join('products', 'packinglists.product_id', '=', 'products.id')
+            ->select('products.grade', DB::raw('count(*) as count'))
+            ->whereDate('bales.created_at', $date)
+            ->where('bales.type', 'production')
+            ->groupBy('products.grade')
+            ->orderBy('products.grade')
+            ->get()
+            ->mapWithKeys(function($item) {
+                return [$item->grade ?: 'No Grade' => $item->count];
+            });
+
+        // Get customer-wise breakdown by product grade
+        $customerGradeData = Bale::with(['packinglist.customer', 'packinglist.product'])
+            ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
+            ->join('products', 'packinglists.product_id', '=', 'products.id')
+            ->select(
+                'packinglists.customer_id',
+                'products.grade',
+                DB::raw('count(*) as count')
+            )
+            ->whereDate('bales.created_at', $date)
+            ->where('bales.type', 'production')
+            ->groupBy('packinglists.customer_id', 'products.grade')
+            ->orderBy('products.grade')
+            ->get()
+            ->groupBy('packinglist.customer.name');
+
+        return [
+            'date' => $date,
+            'gradeData' => $gradeData,
+            'customerGradeData' => $customerGradeData
         ];
     }
 }
