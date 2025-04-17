@@ -14,6 +14,7 @@ class PermissionSeeder extends Seeder
             ['name' => 'dashboard', 'display_name' => 'Dashboard', 'group' => 'dashboard'],
             
             // Master Data
+            ['name' => 'users', 'display_name' => 'Users', 'group' => 'master'],
             ['name' => 'labels', 'display_name' => 'Labels', 'group' => 'master'],
             ['name' => 'customers', 'display_name' => 'Customers', 'group' => 'master'],
             ['name' => 'categories', 'display_name' => 'Categories', 'group' => 'master'],
