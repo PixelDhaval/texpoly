@@ -15,7 +15,7 @@ class PlantTransferController extends Controller
     public function index(Request $request)
     {
         $query = Bale::with(['packinglist.customer', 'packinglist.product', 'plant'])
-            ->whereIn('type', ['inward', 'outward'])
+            ->whereIn('type', ['inward', 'outward', 'cutting'])
             ->orderBy('created_at', 'desc');
 
         if ($request->filled('date')) {
@@ -67,7 +67,7 @@ class PlantTransferController extends Controller
     {
         $request->validate([
             'packinglist_id' => 'required|exists:packinglists,id',
-            'type' => 'required|in:inward,outward',
+            'type' => 'required|in:inward,outward,cutting',
             'plant_id' => 'required|exists:plants,id',
             'quantity' => 'required|integer|min:1',
             'created_at' => 'required|date',

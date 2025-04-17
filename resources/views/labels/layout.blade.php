@@ -18,9 +18,9 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('/') }}">TexPoly</a>
+            <a class="navbar-brand" href="{{ url('/') }}">Texpoly Impex</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -114,6 +114,13 @@
 @endif
         @yield('content')
     </div>
+
+    <footer>
+        <div class="container-fluid d-flex justify-content-between py-3" style="background-color: #e5e5e5;">
+            <div>&copy; {{ date('Y') }} Texpoly Impex. All rights reserved.</div>
+            <div>Powered by <a href="https://adsvizion.net">ADS Vizion</a></div>
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     @stack('scripts')

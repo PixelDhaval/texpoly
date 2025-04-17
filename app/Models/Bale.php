@@ -14,7 +14,8 @@ class Bale extends Model
         'type',
         'plant_id',
         'ref_bale_id',
-        'ref_packinglist_id'
+        'ref_packinglist_id',
+        'created_at',
     ];
 
     protected $with = ['packinglist', 'plant', 'refBale', 'refPackinglist', 'qcEmployee', 'finalistEmployee'];

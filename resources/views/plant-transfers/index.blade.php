@@ -37,6 +37,7 @@
                         <option value="">Select Type</option>
                         <option value="inward">Inward</option>
                         <option value="outward">Outward</option>
+                        <option value="cutting">Cutting</option>
                     </select>
                 </div>
 
@@ -134,7 +135,7 @@
                     @foreach($bales as $bale)
                     <tr>
                         <td>
-                            <span class="badge bg-{{ $bale->type === 'inward' ? 'info' : 'warning' }}">
+                            <span class="badge bg-{{ $bale->type === 'inward' ? 'info' : ($bale->type === 'cutting' ? 'danger' : 'warning') }}"> 
                                 {{ ucfirst($bale->type) }}
                             </span><br>
                             {{ $bale->bale_no }}<br>
