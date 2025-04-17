@@ -43,6 +43,7 @@
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Grade</th>
                         <th>Category</th>
                         <th>Subcategory</th>
                         <th>Price</th>
@@ -54,6 +55,7 @@
                     @foreach($products as $product)
                     <tr>
                         <td>{{ $product->name }}</td>
+                        <td>{{ $product->grade }}</td>
                         <td>{{ $product->category->name }}</td>
                         <td>{{ $product->subcategory?->name }}</td>
                         <td>{{ $product->price }}</td>

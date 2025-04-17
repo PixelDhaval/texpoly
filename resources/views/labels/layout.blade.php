@@ -32,6 +32,7 @@
                             Master Data
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('users.index') }}">Users</a></li>
                             <li><a class="dropdown-item" href="{{ route('labels.index') }}">Labels</a></li>
                             <li><a class="dropdown-item" href="{{ route('customers.index') }}">Customers</a></li>
                             <li><a class="dropdown-item" href="{{ route('categories.index') }}">Categories</a></li>

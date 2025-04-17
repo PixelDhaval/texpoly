@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Permission;
 
 class ProfileController extends Controller
 {
@@ -56,5 +57,41 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    /**
+     * Display the user's permissions.
+     */
+    public function permissions(Request $request)
+    {
+        $user = $request->user();
+        $userPermissions = $user->permissions()->pluck('id')->toArray();
+        $allPermissions = Permission::orderBy('group')->get();
+        $unassignedPermissions = Permission::whereNotIn('id', $userPermissions)->get();
+        
+        return view('profile.permissions', compact('user', 'allPermissions', 'unassignedPermissions'));
+    }
+
+    /**
+     * Add a permission to the user.
+     */
+    public function addPermission(Request $request)
+    {
+        $validated = $request->validate([
+            'permission_id' => 'required|exists:permissions,id'
+        ]);
+
+        $request->user()->permissions()->attach($validated['permission_id']);
+        
+        return response()->json(['success' => true]);
+    }
+
+    /**
+     * Remove a permission from the user.
+     */
+    public function removePermission(Request $request, Permission $permission)
+    {
+        $request->user()->permissions()->detach($permission->id);
+        return response()->json(['success' => true]);
     }
 }

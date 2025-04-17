@@ -110,7 +110,7 @@
                                     {{ $item->is_bold ? 'checked' : '' }}>
                             </td>
                             <td class="editable">
-                                {{ $item->stock}}
+                               {{ $item->stock}}
                             </td>
                         </tr>
                         @endforeach

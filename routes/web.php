@@ -18,6 +18,7 @@ use App\Http\Controllers\PlantController;
 use App\Http\Controllers\PlantTransferController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 
@@ -30,6 +31,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // User Permission Routes
+    Route::get('/profile/permissions', [ProfileController::class, 'permissions'])->name('profile.permissions');
+    Route::post('/profile/permissions/add', [ProfileController::class, 'addPermission'])->name('profile.permissions.add');
+    Route::delete('/profile/permissions/{permission}', [ProfileController::class, 'removePermission'])->name('profile.permissions.remove');
+
+    // User Management Routes
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::post('/users/{user}/permissions', [UserController::class, 'addPermission'])->name('users.permissions.add');
+    Route::delete('/users/{user}/permissions/{permission}', [UserController::class, 'removePermission'])->name('users.permissions.remove');
 
     Route::resource('/labels', LabelController::class);
     Route::resource('/customers', CustomerController::class);
