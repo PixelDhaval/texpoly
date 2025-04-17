@@ -20,7 +20,7 @@ class StoreProductRequest extends FormRequest
             'category_id' => 'required|exists:categories,id',
             'subcategory_id' => 'nullable|exists:subcategories,id',
             'label_name' => 'nullable|string|max:255',
-            'grade' => 'nullable|string|in:A,B,C,W',
+            'grade' => 'nullable|string',
             'unit' => 'nullable|string|in:KGS,LBS,PCS',
             'price' => 'required|numeric|min:0',
             'quantity' => 'required|integer|min:0',
