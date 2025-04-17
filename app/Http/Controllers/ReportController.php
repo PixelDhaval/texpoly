@@ -45,15 +45,15 @@ class ReportController extends Controller
     {
         $date = $request->get('date', now()->format('Y-m-d'));
 
-        // Slot time ranges
+        // Define time slots as strings for simpler comparison
         $slots = [
-            1 => ['start' => '00:00:00', 'end' => '10:30:00'],
-            2 => ['start' => '10:30:01', 'end' => '13:15:00'],
-            3 => ['start' => '13:15:01', 'end' => '15:30:00'],
-            4 => ['start' => '15:30:01', 'end' => '23:59:59']
+            1 => ['start' => $date . ' 00:00:00', 'end' => $date . ' 10:30:59'],
+            2 => ['start' => $date . ' 10:31:00', 'end' => $date . ' 13:15:59'],
+            3 => ['start' => $date . ' 13:16:00', 'end' => $date . ' 15:30:59'],
+            4 => ['start' => $date . ' 15:31:00', 'end' => $date . ' 23:59:59']
         ];
 
-        // Modify the production data query
+        // Fetch production data
         $productionData = Bale::with(['packinglist.customer', 'packinglist.product'])
             ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
             ->join('products', 'packinglists.product_id', '=', 'products.id')
@@ -63,9 +63,9 @@ class ReportController extends Controller
             ->get()
             ->groupBy('packinglist.customer_id');
 
-        // Modify the repacking data query
+        // Fetch repacking data
         $repackingData = Bale::with([
-                'packinglist.customer', 
+                'packinglist.customer',
                 'packinglist.product',
                 'refPackinglist.customer',
                 'refPackinglist.product'
@@ -77,7 +77,7 @@ class ReportController extends Controller
             ->orderBy('products.name')
             ->get();
 
-        // Process production data
+        // Prepare report data
         $customerTotals = [];
         $customerProducts = [];
 
@@ -90,24 +90,30 @@ class ReportController extends Controller
                 $first = $productBales->first();
                 $row = [
                     'product_code' => $first->packinglist->product->short_code,
-                    'label_name' => $first->packinglist->label_name,
+                    'product_name' => $first->packinglist->product->name,
+                    'label_name'   => $first->packinglist->label_name,
                     'slot1' => 0,
                     'slot2' => 0,
                     'slot3' => 0,
-                    'slot4' => 0
+                    'slot4' => 0,
                 ];
 
                 foreach ($productBales as $bale) {
-                    $time = Carbon::parse($bale->created_at)->format('H:i:s');
-                    foreach ($slots as $slotNum => $slotTime) {
-                        if ($time >= $slotTime['start'] && $time <= $slotTime['end']) {
-                            $row['slot' . $slotNum]++;
-                            break;
-                        }
+                    $baleTime = $bale->created_at;
+                    
+                    // Simple string comparison for time slots
+                    if ($baleTime >= $slots[1]['start'] && $baleTime <= $slots[1]['end']) {
+                        $row['slot1']++;
+                    } elseif ($baleTime >= $slots[2]['start'] && $baleTime <= $slots[2]['end']) {
+                        $row['slot2']++;
+                    } elseif ($baleTime >= $slots[3]['start'] && $baleTime <= $slots[3]['end']) {
+                        $row['slot3']++;
+                    } elseif ($baleTime >= $slots[4]['start'] && $baleTime <= $slots[4]['end']) {
+                        $row['slot4']++;
                     }
                 }
 
-                $row['total'] = array_sum(array_slice($row, 2, 4));
+                $row['total'] = $row['slot1'] + $row['slot2'] + $row['slot3'] + $row['slot4'];
                 $customerTotals[$customer->name] += $row['total'];
                 $products[] = $row;
             }

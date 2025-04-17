@@ -93,7 +93,7 @@
                     @foreach($products as $product)
                         <tr>
                             <td>{{ $product['product_code'] }}</td>
-                            <td>{{ $product['label_name'] }}</td>
+                            <td>{{ $product['product_name'] }} ({{$product['label_name'] }})</td>
                             @for($i = 1; $i <= 4; $i++)
                                 @php $slotTotals[$i-1] += $product['slot'.$i]; @endphp
                                 <td>{{ $product['slot'.$i] }}</td>
