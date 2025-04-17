@@ -40,16 +40,15 @@
             </div>
         </div>
 
-        <!-- Add Permission -->
+        <!-- Add Permissions -->
         <div class="row">
             <div class="col-md-6">
-                <h5 class="mb-3">Add Permission</h5>
+                <h5 class="mb-3">Add Permissions</h5>
                 
                 <form action="{{ route('users.permissions.add', $user) }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <select name="permission_id" class="form-select">
-                            <option value="">Select Permission</option>
+                        <select name="permission_id[]" class="form-select" multiple size="10">
                             @foreach($availablePermissions->groupBy('group') as $group => $permissions)
                                 <optgroup label="{{ ucfirst($group) }}">
                                     @foreach($permissions as $permission)
@@ -60,9 +59,10 @@
                                 </optgroup>
                             @endforeach
                         </select>
+                        <div class="form-text">Hold Ctrl/Cmd to select multiple permissions</div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Add Permission</button>
+                    <button type="submit" class="btn btn-primary">Add Selected Permissions</button>
                 </form>
             </div>
         </div>

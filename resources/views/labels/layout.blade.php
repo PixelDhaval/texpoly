@@ -27,52 +27,92 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <!-- Master Data -->
+                    @if(Gate::any(['users', 'labels', 'customers', 'categories', 'subcategories', 'products', 'employees', 'plants']))
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             Master Data
                         </a>
                         <ul class="dropdown-menu">
+                            @can('users')
                             <li><a class="dropdown-item" href="{{ route('users.index') }}">Users</a></li>
+                            @endcan
+                            @can('labels')
                             <li><a class="dropdown-item" href="{{ route('labels.index') }}">Labels</a></li>
+                            @endcan
+                            @can('customers')
                             <li><a class="dropdown-item" href="{{ route('customers.index') }}">Customers</a></li>
+                            @endcan
+                            @can('categories')
                             <li><a class="dropdown-item" href="{{ route('categories.index') }}">Categories</a></li>
+                            @endcan
+                            @can('subcategories')
                             <li><a class="dropdown-item" href="{{ route('subcategories.index') }}">Subcategories</a></li>
+                            @endcan
+                            @can('products')
                             <li><a class="dropdown-item" href="{{ route('products.index') }}">Products</a></li>
+                            @endcan
+                            @can('employees')
                             <li><a class="dropdown-item" href="{{ route('employees.index') }}">Employees</a></li>
+                            @endcan
+                            @can('plants')
                             <li><a class="dropdown-item" href="{{ route('plants.index') }}">Plants</a></li>
+                            @endcan
                         </ul>
                     </li>
+                    @endif
 
                     <!-- Operations -->
+                    @if(Gate::any(['packinglists', 'orders', 'production', 'plant-transfer', 'repacking']))
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             Operations
                         </a>
                         <ul class="dropdown-menu">
+                            @can('packinglists')
                             <li><a class="dropdown-item" href="{{ route('packinglists.index') }}">Packing Lists</a></li>
+                            @endcan
+                            @can('orders')
                             <li><a class="dropdown-item" href="{{ route('orders.index') }}">Orders</a></li>
+                            @endcan
+                            @can('production')
                             <li><a class="dropdown-item" href="{{ route('production.index') }}">Production</a></li>
+                            @endcan
+                            @can('plant-transfer')
                             <li><a class="dropdown-item" href="{{ route('plant-transfer.index') }}">Plant Transfer</a></li>
+                            @endcan
+                            @can('repacking')
                             <li><a class="dropdown-item" href="{{ route('repacking.index') }}">Repacking</a></li>
+                            @endcan
                         </ul>
                     </li>
+                    @endif
 
                     <!-- Records -->
+                    @if(Gate::any(['bales', 'cancellations', 'product-history']))
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             Records
                         </a>
                         <ul class="dropdown-menu">
+                            @can('bales')
                             <li><a class="dropdown-item" href="{{ route('bales.index') }}">Bales</a></li>
+                            @endcan
+                            @can('cancellations')
                             <li><a class="dropdown-item" href="{{ route('cancellations.index') }}">Cancellations</a></li>
+                            @endcan
+                            @can('product-history')
                             <li><a class="dropdown-item" href="{{ route('products.history') }}">Product History</a></li>
+                            @endcan
                         </ul>
                     </li>
+                    @endif
 
                     <!-- Reports -->
+                    @can('reports')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('reports.index') }}">Reports</a>
                     </li>
+                    @endcan
                 </ul>
 
                 <!-- Right Side -->

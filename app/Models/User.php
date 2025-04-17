@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return $this->permissions()->where('name', $permission)->exists();
     }
+
+    public function hasAnyPermission($permissions)
+    {
+        return $this->permissions()->whereIn('name', (array) $permissions)->exists();
+    }
 }

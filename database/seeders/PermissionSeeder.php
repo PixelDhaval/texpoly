@@ -9,35 +9,61 @@ class PermissionSeeder extends Seeder
 {
     public function run()
     {
-        $permissions = [
-            // Dashboard
-            ['name' => 'dashboard', 'display_name' => 'Dashboard', 'group' => 'dashboard'],
-            
-            // Master Data
-            ['name' => 'users', 'display_name' => 'Users', 'group' => 'master'],
-            ['name' => 'labels', 'display_name' => 'Labels', 'group' => 'master'],
-            ['name' => 'customers', 'display_name' => 'Customers', 'group' => 'master'],
-            ['name' => 'categories', 'display_name' => 'Categories', 'group' => 'master'],
-            ['name' => 'subcategories', 'display_name' => 'Subcategories', 'group' => 'master'],
-            ['name' => 'products', 'display_name' => 'Products', 'group' => 'master'],
-            ['name' => 'employees', 'display_name' => 'Employees', 'group' => 'master'],
-            ['name' => 'plants', 'display_name' => 'Plants', 'group' => 'master'],
-            
-            // Operations
-            ['name' => 'packinglists', 'display_name' => 'Packing Lists', 'group' => 'operations'],
-            ['name' => 'orders', 'display_name' => 'Orders', 'group' => 'operations'],
-            ['name' => 'production', 'display_name' => 'Production', 'group' => 'operations'],
-            ['name' => 'bales', 'display_name' => 'Bales', 'group' => 'operations'],
-            ['name' => 'cancellations', 'display_name' => 'Cancellations', 'group' => 'operations'],
-            ['name' => 'repacking', 'display_name' => 'Repacking', 'group' => 'operations'],
-            ['name' => 'plant_transfer', 'display_name' => 'Plant Transfer', 'group' => 'operations'],
-            
-            // Reports
-            ['name' => 'reports', 'display_name' => 'Reports', 'group' => 'reports'],
+        $modules = [
+            'users', 'labels', 'customers', 'categories', 'subcategories',
+            'products', 'employees', 'plants', 'packinglists', 'orders',
+            'production', 'bales', 'cancellations', 'repacking', 'plant_transfer'
         ];
+
+        $permissions = [];
+
+        // Generate CRUD permissions for each module
+        foreach ($modules as $module) {
+            $permissions = array_merge($permissions, [
+                [
+                    'name' => "$module.view",
+                    'display_name' => ucfirst($module) . ' View',
+                    'group' => $this->getGroup($module)
+                ],
+                [
+                    'name' => "$module.create",
+                    'display_name' => ucfirst($module) . ' Create',
+                    'group' => $this->getGroup($module)
+                ],
+                [
+                    'name' => "$module.edit",
+                    'display_name' => ucfirst($module) . ' Edit',
+                    'group' => $this->getGroup($module)
+                ],
+                [
+                    'name' => "$module.delete",
+                    'display_name' => ucfirst($module) . ' Delete',
+                    'group' => $this->getGroup($module)
+                ],
+            ]);
+        }
+
+        // Add special permissions
+        $permissions = array_merge($permissions, [
+            ['name' => 'dashboard', 'display_name' => 'Dashboard', 'group' => 'dashboard'],
+            ['name' => 'reports.view', 'display_name' => 'View Reports', 'group' => 'reports'],
+            ['name' => 'products.history.view', 'display_name' => 'View Product History', 'group' => 'records'],
+        ]);
 
         foreach ($permissions as $permission) {
             Permission::create($permission);
         }
+    }
+
+    private function getGroup($module)
+    {
+        $masterData = ['users', 'labels', 'customers', 'categories', 'subcategories', 'products', 'employees', 'plants'];
+        $operations = ['packinglists', 'orders', 'production', 'plant_transfer', 'repacking'];
+        $records = ['bales', 'cancellations'];
+
+        if (in_array($module, $masterData)) return 'master';
+        if (in_array($module, $operations)) return 'operations';
+        if (in_array($module, $records)) return 'records';
+        return 'other';
     }
 }

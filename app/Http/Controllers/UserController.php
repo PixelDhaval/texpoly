@@ -25,12 +25,13 @@ class UserController extends Controller
     public function addPermission(Request $request, User $user)
     {
         $validated = $request->validate([
-            'permission_id' => 'required|exists:permissions,id'
+            'permission_id' => 'required|array',
+            'permission_id.*' => 'exists:permissions,id'
         ]);
 
         $user->permissions()->attach($validated['permission_id']);
         
-        return redirect()->back()->with('success', 'Permission added successfully');
+        return redirect()->back()->with('success', count($validated['permission_id']) . ' permissions added successfully');
     }
 
     public function removePermission(User $user, Permission $permission)
