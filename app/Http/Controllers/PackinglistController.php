@@ -76,7 +76,6 @@ class PackinglistController extends Controller
             'packinglists.*.unit' => 'nullable|string',
             'packinglists.*.weight' => 'nullable|integer',
             'packinglists.*.price' => 'nullable|numeric',
-            'packinglists.*.stock' => 'nullable|integer',
             'packinglists.*.is_bold' => 'nullable',
         ]);
 

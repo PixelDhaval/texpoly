@@ -110,8 +110,7 @@
                                     {{ $item->is_bold ? 'checked' : '' }}>
                             </td>
                             <td class="editable">
-                                <input type="number" class="form-control form-control-sm" name="packinglists[{{ $loop->index }}][stock]"
-                                    value="{{ $item->stock}}">
+                                {{ $item->stock}}
                             </td>
                         </tr>
                         @endforeach
