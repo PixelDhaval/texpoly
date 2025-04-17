@@ -98,6 +98,10 @@
                             </td>
                         </tr>
                         @endforeach
+                        <tr class="table-info">
+                            <td colspan="5" class="text-end fw-bold">Total Dispatch Quantity:</td>
+                            <td id="totalDispatchQty" class="fw-bold">0</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -109,5 +113,19 @@
 </div>
 
 @push('scripts')
+<script>
+function updateTotal() {
+    let total = 0;
+    $('.dispatch-qty').each(function() {
+        total += parseInt($(this).val()) || 0;
+    });
+    $('#totalDispatchQty').text(total);
+}
+
+$(document).ready(function() {
+    updateTotal();
+    $('.dispatch-qty').on('change', updateTotal);
+});
+</script>
 @endpush
 @endsection
