@@ -12,7 +12,7 @@ class PermissionSeeder extends Seeder
         $modules = [
             'users', 'labels', 'customers', 'categories', 'subcategories',
             'products', 'employees', 'plants', 'packinglists', 'orders',
-            'production', 'bales', 'cancellations', 'repacking', 'plant_transfer'
+            'production', 'bales', 'cancellations', 'repacking', 'plant_transfer', 
         ];
 
         $permissions = [];

@@ -77,7 +77,7 @@
                             @can('production')
                             <li><a class="dropdown-item" href="{{ route('production.index') }}">Production</a></li>
                             @endcan
-                            @can('plant-transfer')
+                            @can('plant_transfer')
                             <li><a class="dropdown-item" href="{{ route('plant-transfer.index') }}">Plant Transfer</a></li>
                             @endcan
                             @can('repacking')
@@ -100,7 +100,7 @@
                             @can('cancellations')
                             <li><a class="dropdown-item" href="{{ route('cancellations.index') }}">Cancellations</a></li>
                             @endcan
-                            @can('product-history')
+                            @can('product_history')
                             <li><a class="dropdown-item" href="{{ route('products.history') }}">Product History</a></li>
                             @endcan
                         </ul>
