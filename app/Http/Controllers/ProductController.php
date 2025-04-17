@@ -125,9 +125,20 @@ class ProductController extends Controller
                     // Update existing packinglist
                     $targetPackinglist->stock += $packinglist->stock;
                     $targetPackinglist->save();
+
+                    // Update related records with new packinglist_id
+                    DB::table('orderlists')->where('packinglist_id', $packinglist->id)
+                        ->update(['packinglist_id' => $targetPackinglist->id]);
                     
-                    // Delete source packinglist
+                    DB::table('cancel_bales')->where('packinglist_id', $packinglist->id)
+                        ->update(['packinglist_id' => $targetPackinglist->id]);
+                    
+                    DB::table('bales')->where('packinglist_id', $packinglist->id)
+                        ->update(['packinglist_id' => $targetPackinglist->id]);
+
+                    // Delete the old packinglist
                     $packinglist->delete();
+                    
                 } else {
                     // Transfer packinglist to new product
                     $packinglist->product_id = $targetProduct->id;

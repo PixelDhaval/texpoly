@@ -135,7 +135,7 @@ class ProductionController extends Controller
             // Define QR code URL
             $qrUrl = $url = "https://www.texpolygroup.com/orderData.php?" . http_build_query([
                 'o' => $packinglist->customer->short_code,
-                'i' => $packinglist->product->short_code,
+                'i' => $packinglist->product->name,
                 'c' => $packinglist->customer->name,
                 'q' => $qc->name,
                 'f' => $finalist->name,

@@ -104,7 +104,7 @@ class RepackingController extends Controller
             // Generate QR code URL
             $qrUrl = "https://www.texpolygroup.com/orderData.php?" . http_build_query([
                 'o' => $bale->packinglist->customer->short_code,
-                'i' => $bale->packinglist->product->short_code,
+                'i' => $bale->packinglist->product->name,
                 'c' => $bale->packinglist->customer->name,
                 'b' => $bale->bale_no,
                 'q' => $qc->name,
