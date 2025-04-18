@@ -98,7 +98,7 @@
                             </td>
                         </tr>
                         @endforeach
-                        <tr class="table-info">
+u                        <tr class="table-info">
                             <td colspan="5" class="text-end fw-bold">Total Dispatch Quantity:</td>
                             <td id="totalDispatchQty" class="fw-bold">0</td>
                         </tr>

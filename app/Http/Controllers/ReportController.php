@@ -54,12 +54,24 @@ class ReportController extends Controller
     {
         $date = $request->get('date', now()->format('Y-m-d'));
 
-        // Define time slots as strings for simpler comparison
+        // Define time slots using Carbon
         $slots = [
-            1 => ['start' => $date . ' 00:00:00', 'end' => $date . ' 10:30:59'],
-            2 => ['start' => $date . ' 10:31:00', 'end' => $date . ' 13:15:59'],
-            3 => ['start' => $date . ' 13:16:00', 'end' => $date . ' 15:30:59'],
-            4 => ['start' => $date . ' 15:31:00', 'end' => $date . ' 23:59:59']
+            1 => [
+                'start' => Carbon::parse($date)->setTime(0, 0, 0),
+                'end' => Carbon::parse($date)->setTime(10, 30, 59)
+            ],
+            2 => [
+                'start' => Carbon::parse($date)->setTime(10, 31, 0),
+                'end' => Carbon::parse($date)->setTime(13, 15, 59)
+            ],
+            3 => [
+                'start' => Carbon::parse($date)->setTime(13, 16, 0),
+                'end' => Carbon::parse($date)->setTime(15, 30, 59)
+            ],
+            4 => [
+                'start' => Carbon::parse($date)->setTime(15, 31, 0),
+                'end' => Carbon::parse($date)->setTime(23, 59, 59)
+            ]
         ];
 
         // Fetch production data
@@ -108,16 +120,16 @@ class ReportController extends Controller
                 ];
 
                 foreach ($productBales as $bale) {
-                    $baleTime = $bale->created_at;
+                    $baleTime = Carbon::parse($bale->created_at);
                     
-                    // Simple string comparison for time slots
-                    if ($baleTime >= $slots[1]['start'] && $baleTime <= $slots[1]['end']) {
+                    // Use Carbon's between() for more accurate time slot checking
+                    if ($baleTime->between($slots[1]['start'], $slots[1]['end'])) {
                         $row['slot1']++;
-                    } elseif ($baleTime >= $slots[2]['start'] && $baleTime <= $slots[2]['end']) {
+                    } elseif ($baleTime->between($slots[2]['start'], $slots[2]['end'])) {
                         $row['slot2']++;
-                    } elseif ($baleTime >= $slots[3]['start'] && $baleTime <= $slots[3]['end']) {
+                    } elseif ($baleTime->between($slots[3]['start'], $slots[3]['end'])) {
                         $row['slot3']++;
-                    } elseif ($baleTime >= $slots[4]['start'] && $baleTime <= $slots[4]['end']) {
+                    } else  {
                         $row['slot4']++;
                     }
                 }
