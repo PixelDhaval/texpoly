@@ -159,7 +159,7 @@
     <footer>
         <div class="container-fluid d-flex justify-content-between py-3" style="background-color: #e5e5e5;">
             <div>&copy; {{ date('Y') }} Texpoly Impex. All rights reserved.</div>
-            <div>Powered by <a href="https://adsvizion.net">ADS Vizion</a></div>
+            <div>Powered by <a href="https://adsvizion.net" target="_blank">ADS Vizion</a></div>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
