@@ -107,7 +107,7 @@ $(document).ready(function() {
     if (oldFromCustomer) {
         $('#fromCustomer').val(oldFromCustomer).trigger('change');
         // Load packinglists and set selected value after AJAX completes
-        loadPackinglists(oldFromCustomer, $('#fromPackinglist')).then(() => {
+        loadPackinglists(oldFromCustomer, $('#fromPackinglist'), 'from').then(() => {
             if (oldFromPackinglist) {
                 $('#fromPackinglist').val(oldFromPackinglist).trigger('change');
             }
@@ -117,21 +117,24 @@ $(document).ready(function() {
     if (oldToCustomer) {
         $('#toCustomer').val(oldToCustomer).trigger('change');
         // Load packinglists and set selected value after AJAX completes
-        loadPackinglists(oldToCustomer, $('#toPackinglist')).then(() => {
+        loadPackinglists(oldToCustomer, $('#toPackinglist'), 'to').then(() => {
             if (oldToPackinglist) {
                 $('#toPackinglist').val(oldToPackinglist).trigger('change');
             }
         });
     }
     
-    // Modify loadPackinglists to return promise
-    function loadPackinglists(customerId, targetSelect) {
+    // Modify loadPackinglists to include type parameter
+    function loadPackinglists(customerId, targetSelect, type = 'from') {
         if (!customerId) return Promise.resolve();
         
         return new Promise((resolve) => {
             $.ajax({
                 url: '{{ route("bales.packinglists") }}',
-                data: { customer_id: customerId },
+                data: { 
+                    customer_id: customerId,
+                    type: type
+                },
                 success: function(data) {
                     targetSelect.empty().append('<option value="">Select Product</option>');
                     data.forEach(function(item) {
@@ -147,17 +150,41 @@ $(document).ready(function() {
     }
 
     $('#fromCustomer').change(function() {
-        loadPackinglists($(this).val(), $('#fromPackinglist'));
+        loadPackinglists($(this).val(), $('#fromPackinglist'), 'from');
     });
 
     $('#toCustomer').change(function() {
-        loadPackinglists($(this).val(), $('#toPackinglist'));
+        loadPackinglists($(this).val(), $('#toPackinglist'), 'to').then(() => {
+            // After loading products, if from product is selected, try to select matching product
+            const fromProduct = $('#fromPackinglist').find(':selected').text();
+            if (fromProduct) {
+                const toPackinglist = $('#toPackinglist');
+                toPackinglist.find('option').each(function() {
+                    if ($(this).text().split(' (')[0] === fromProduct.split(' (')[0]) {
+                        toPackinglist.val($(this).val()).trigger('change');
+                        return false;
+                    }
+                });
+            }
+        });
     });
 
     $('#fromPackinglist').change(function() {
+        const selectedProduct = $(this).find(':selected').text();
         const stock = $(this).find(':selected').data('stock') || 0;
         $('#fromStock').val(stock);
         $('#quantity').attr('max', stock);
+
+        // If "to" customer is selected, find and select matching product
+        if ($('#toCustomer').val()) {
+            const toPackinglist = $('#toPackinglist');
+            toPackinglist.find('option').each(function() {
+                if ($(this).text().split(' (')[0] === selectedProduct.split(' (')[0]) {
+                    toPackinglist.val($(this).val()).trigger('change');
+                    return false;
+                }
+            });
+        }
     });
 
     $('#transferForm').submit(function(e) {

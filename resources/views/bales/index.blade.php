@@ -60,7 +60,7 @@
                     <label class="form-label">Type</label>
                     <select name="type" class="form-select">
                         <option value="">All Types</option>
-                        @foreach(['production', 'repacking', 'inward', 'outward', 'cutting'] as $type)
+                        @foreach(['production', 'repacking', 'inward', 'outward', 'cutting', 'transfer'] as $type)
                         <option value="{{ $type }}" {{ request('type') == $type ? 'selected' : '' }}>
                             {{ ucfirst($type) }}
                         </option>
@@ -96,11 +96,12 @@
                         <td>
                             @php
                             $typeColors = [
-                            'production' => 'primary',
-                            'repacking' => 'success',
-                            'inward' => 'info',
-                            'outward' => 'warning',
-                            'cutting' => 'danger'
+                                'production' => 'primary',
+                                'repacking' => 'success',
+                                'inward' => 'info',
+                                'outward' => 'warning',
+                                'cutting' => 'danger',
+                                'transfer' => 'secondary'
                             ];
                             @endphp
                             <span class="badge bg-{{ $typeColors[$bale->type] }}">
@@ -117,9 +118,9 @@
                                 {{ $bale->packinglist->product->category->name }} /
                                 {{ $bale->packinglist->product->subcategory->name ?? 'N/A' }}
                             </small>
-                            @if($bale->type === 'repacking' && $bale->refPackinglist)
+                            @if(in_array($bale->type, ['repacking', 'transfer']) && $bale->refPackinglist)
                             <hr class="my-1">
-                            <small class="d-block text-success">
+                            <small class="d-block {{ $bale->type === 'transfer' ? 'text-secondary' : 'text-success' }}">
                                 <strong>From:</strong> {{ $bale->refPackinglist->product->short_code }} -
                                 {{ $bale->refPackinglist->product->name }}<br>
                                 {{ $bale->refPackinglist->label_name }} ({{ $bale->refPackinglist->customer->name }})
@@ -127,11 +128,10 @@
                             @endif
                         </td>
                         <td>{{ $bale->packinglist->customer->name }}
-                            @if($bale->type === 'repacking' && $bale->refPackinglist)
+                            @if(in_array($bale->type, ['repacking', 'transfer']) && $bale->refPackinglist)
                             <hr class="my-1">
-
-                            <small class="d-block text-success">
-                                <strong>From:</strong> ({{ $bale->refPackinglist->customer->name }})
+                            <small class="d-block {{ $bale->type === 'transfer' ? 'text-secondary' : 'text-success' }}">
+                                <strong>From:</strong> {{ $bale->refPackinglist->customer->name }}
                             </small>
                             @endif
                         </td>

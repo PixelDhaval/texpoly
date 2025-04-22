@@ -78,14 +78,24 @@ class BaleController extends Controller
 
     public function getPackinglists(Request $request)
     {
-        $packinglists = Packinglist::where('customer_id', $request->customer_id)
-            ->where('stock', '>', 0)
-            ->with(['product'])
+        $type = $request->type ?? 'from';
+        
+        $query = Packinglist::where('customer_id', $request->customer_id);
+
+        // Filter based on type
+        if ($type === 'from') {
+            $query->where('stock', '>', 0);
+        } else {
+            $query->where('customer_qty', '>', 0);
+        }
+
+        $packinglists = $query->with('product')
             ->get()
-            ->map(function ($packinglist) {
+            ->map(function ($packinglist) use ($type) {
+                $suffix = $type === 'from' ? " (Stock: {$packinglist->stock})" : " (QTY: {$packinglist->customer_qty})";
                 return [
                     'id' => $packinglist->id,
-                    'text' => $packinglist->product->name . ' (' . $packinglist->label_name . ') - Stock: ' . $packinglist->stock,
+                    'text' => $packinglist->product->name . ' - ' . $packinglist->label_name . $suffix,
                     'stock' => $packinglist->stock
                 ];
             });
