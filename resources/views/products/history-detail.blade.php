@@ -47,7 +47,10 @@
                             $movements['repacking_out'] + 
                             $movements['inward'] + 
                             $movements['outward'] + 
-                            $movements['cutting']
+                            $movements['cutting'] + 
+                            $movements['transfer_in'] + 
+                            $movements['transfer_out'] + 
+                            $movements['dispatch']
                         }}</h3>
                         <small class="text-muted">During period</small>
                     </div>
@@ -89,6 +92,16 @@
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#cutting">
                     Cutting <span class="badge bg-primary">{{ $movements['cutting'] }}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#transfer">
+                    Transfer <span class="badge bg-primary">{{ $movements['transfer_in'] + $movements['transfer_out'] }}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#dispatch">
+                    Dispatch <span class="badge bg-primary">{{ $movements['dispatch'] }}</span>
                 </a>
             </li>
         </ul>
@@ -249,6 +262,66 @@
                             @empty
                             <tr>
                                 <td colspan="3" class="text-center">No cutting records found</td>
+                            </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Transfer Tab -->
+            <div class="tab-pane fade" id="transfer">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Bale No</th>
+                                <th>From</th>
+                                <th>To</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse(array_merge($transferInBales->toArray(), $transferOutBales->toArray()) as $bale)
+                            <tr>
+                                <td>{{ Carbon\Carbon::parse($bale['created_at'])->format('Y-m-d') }}</td>
+                                <td>{{ Carbon\Carbon::parse($bale['created_at'])->format('H:i:s') }}</td>
+                                <td>{{ $bale['bale_no'] }}</td>
+                                <td>{{ $bale['ref_packinglist']['customer']['name'] ?? '-' }}</td>
+                                <td>{{ $bale['packinglist']['customer']['name'] ?? '-' }}</td>
+                            </tr>
+                            @empty
+                            <tr><td colspan="5" class="text-center">No transfer records found</td></tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Dispatch Tab -->
+            <div class="tab-pane fade" id="dispatch">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Order No</th>
+                                <th>Customer</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($dispatchBales as $bale)
+                            <tr>
+                                <td>{{ Carbon\Carbon::parse($bale->created_at)->format('Y-m-d') }}</td>
+                                <td>{{ $bale->bale_no }}</td>
+                                <td>{{ $bale->customer_name ?? '-' }}</td>
+                                <td>{{ $bale->dispatch_qty }}</td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="4" class="text-center">No dispatch records found</td>
                             </tr>
                             @endforelse
                         </tbody>

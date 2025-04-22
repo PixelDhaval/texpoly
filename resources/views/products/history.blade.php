@@ -63,9 +63,12 @@
                         <th>Production</th>
                         <th>Repacking In</th>
                         <th>Repacking Out</th>
+                        <th>Transfer In</th>
+                        <th>Transfer Out</th>
                         <th>Inward</th>
                         <th>Outward</th>
                         <th>Cutting</th>
+                        <th>Dispatch</th>
                         <th>Closing Balance</th>
                     </tr>
                 </thead>
@@ -82,9 +85,12 @@
                         <td>{{ $product->production_count }}</td>
                         <td>{{ $product->repacking_in }}</td>
                         <td>{{ $product->repacking_out }}</td>
+                        <td>{{ $product->transfer_in }}</td>
+                        <td>{{ $product->transfer_out }}</td>
                         <td>{{ $product->inward }}</td>
                         <td>{{ $product->outward }}</td>
                         <td>{{ $product->cutting }}</td>
+                        <td>{{ $product->dispatch }}</td>
                         <td>{{ $product->closing_balance }}</td>
                     </tr>
                     @endforeach

@@ -71,6 +71,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/bales', [BaleController::class, 'index'])->name('bales.index');
     Route::delete('/bales/{bale}', [BaleController::class, 'destroy'])->name('bales.destroy');
+    Route::get('bales/transfer', [BaleController::class, 'transferForm'])->name('bales.transfer');
+    Route::post('bales/transfer', [BaleController::class, 'transfer'])->name('bales.transfer.store');
+    Route::get('bales/packinglists', [BaleController::class, 'getPackinglists'])->name('bales.packinglists');
 
     Route::get('/cancellations', [CancelController::class, 'index'])->name('cancellations.index');
 

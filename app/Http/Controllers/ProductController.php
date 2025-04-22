@@ -217,6 +217,9 @@ class ProductController extends Controller
                 $inwardAfterFrom = $this->getInwardCount($product->id, $customerId, $fromDate, now());
                 $outwardAfterFrom = $this->getOutwardCount($product->id, $customerId, $fromDate, now());
                 $cuttingAfterFrom = $this->getCuttingCount($product->id, $customerId, $fromDate, now());
+                $dispatchAfterFrom = $this->getDispatchCount($product->id, $customerId, $fromDate, now());
+                $transferInAfterFrom = $this->getTransferInCount($product->id, $customerId, $fromDate, now());
+                $transferOutAfterFrom = $this->getTransferOutCount($product->id, $customerId, $fromDate, now());
 
                 // Calculate opening balance
                 $openingBalance = $currentStock - (
@@ -225,7 +228,10 @@ class ProductController extends Controller
                     $repackingOutAfterFrom + 
                     $inwardAfterFrom - 
                     $outwardAfterFrom - 
-                    $cuttingAfterFrom
+                    $cuttingAfterFrom -
+                    $dispatchAfterFrom +
+                    $transferInAfterFrom -
+                    $transferOutAfterFrom
                 );
 
                 // Set the calculated values
@@ -236,6 +242,9 @@ class ProductController extends Controller
                 $product->inward = $this->getInwardCount($product->id, $customerId, $fromDate, $toDate);
                 $product->outward = $this->getOutwardCount($product->id, $customerId, $fromDate, $toDate);
                 $product->cutting = $this->getCuttingCount($product->id, $customerId, $fromDate, $toDate);
+                $product->dispatch = $this->getDispatchCount($product->id, $customerId, $fromDate, $toDate);
+                $product->transfer_in = $this->getTransferInCount($product->id, $customerId, $fromDate, $toDate);
+                $product->transfer_out = $this->getTransferOutCount($product->id, $customerId, $fromDate, $toDate);
                 
                 // Calculate closing balance
                 $product->closing_balance = $openingBalance + 
@@ -244,7 +253,10 @@ class ProductController extends Controller
                     $product->repacking_out + 
                     $product->inward - 
                     $product->outward - 
-                    $product->cutting;
+                    $product->cutting -
+                    $product->dispatch +
+                    $product->transfer_in -
+                    $product->transfer_out;
 
                 return $product;
             });
@@ -275,6 +287,9 @@ class ProductController extends Controller
         $inwardAfterFrom = $this->getInwardCount($product->id, $customerId, $fromDate, now());
         $outwardAfterFrom = $this->getOutwardCount($product->id, $customerId, $fromDate, now());
         $cuttingAfterFrom = $this->getCuttingCount($product->id, $customerId, $fromDate, now());
+        $dispatchAfterFrom = $this->getDispatchCount($product->id, $customerId, $fromDate, now());
+        $transferInAfterFrom = $this->getTransferInCount($product->id, $customerId, $fromDate, now());
+        $transferOutAfterFrom = $this->getTransferOutCount($product->id, $customerId, $fromDate, now());
 
         // Calculate opening balance
         $openingBalance = $currentStock - (
@@ -283,7 +298,10 @@ class ProductController extends Controller
             $repackingOutAfterFrom + 
             $inwardAfterFrom - 
             $outwardAfterFrom - 
-            $cuttingAfterFrom
+            $cuttingAfterFrom -
+            $dispatchAfterFrom +
+            $transferInAfterFrom -
+            $transferOutAfterFrom
         );
 
         // Get bales for selected period with customer relationships
@@ -351,6 +369,47 @@ class ProductController extends Controller
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->get();
 
+        $transferInBales = Bale::with(['packinglist.customer', 'packinglist.product'])
+            ->where('type', 'transfer')
+            ->whereHas('packinglist', function($query) use ($product, $customerId) {
+                $query->where('product_id', $product->id)
+                    ->when($customerId, function($q) use ($customerId) {
+                        $q->where('customer_id', $customerId);
+                    });
+            })
+            ->whereBetween('created_at', [$fromDate, $toDate])
+            ->get();
+
+        $transferOutBales = Bale::with(['refPackinglist.customer', 'refPackinglist.product'])
+            ->where('type', 'transfer')
+            ->whereHas('refPackinglist', function($query) use ($product, $customerId) {
+                $query->where('product_id', $product->id)
+                    ->when($customerId, function($q) use ($customerId) {
+                        $q->where('customer_id', $customerId);
+                    });
+            })
+            ->whereBetween('created_at', [$fromDate, $toDate])
+            ->get();
+
+        // Get dispatch orders for the selected period
+        $dispatchBales = DB::table('orderlists')
+            ->join('packinglists', 'orderlists.packinglist_id', '=', 'packinglists.id')
+            ->join('orders', 'orderlists.order_id', '=', 'orders.id')
+            ->where('packinglists.product_id', $product->id)
+            ->when($customerId, function($q) use ($customerId) {
+                $q->where('packinglists.customer_id', $customerId);
+            })
+            ->whereBetween('orders.order_date', [$fromDate, $toDate])
+            ->where('orderlists.dispatch_qty', '>', 0)
+            ->select(
+                'orders.order_date as created_at',
+                'orderlists.dispatch_qty',
+                'orderlists.order_id',
+                'orderlists.packinglist_id',
+                'orders.order_no as bale_no'
+            )
+            ->get();
+
         // Calculate movements for selected period
         $movements = [
             'production' => $this->getProductionCount($product->id, $customerId, $fromDate, $toDate),
@@ -358,7 +417,10 @@ class ProductController extends Controller
             'repacking_out' => $this->getRepackingOutCount($product->id, $customerId, $fromDate, $toDate),
             'inward' => $this->getInwardCount($product->id, $customerId, $fromDate, $toDate),
             'outward' => $this->getOutwardCount($product->id, $customerId, $fromDate, $toDate),
-            'cutting' => $this->getCuttingCount($product->id, $customerId, $fromDate, $toDate)
+            'cutting' => $this->getCuttingCount($product->id, $customerId, $fromDate, $toDate),
+            'dispatch' => $this->getDispatchCount($product->id, $customerId, $fromDate, $toDate),
+            'transfer_in' => $this->getTransferInCount($product->id, $customerId, $fromDate, $toDate),
+            'transfer_out' => $this->getTransferOutCount($product->id, $customerId, $fromDate, $toDate)
         ];
 
         // Calculate closing balance
@@ -368,7 +430,10 @@ class ProductController extends Controller
             $movements['repacking_out'] + 
             $movements['inward'] - 
             $movements['outward'] - 
-            $movements['cutting'];
+            $movements['cutting'] -
+            $movements['dispatch'] +
+            $movements['transfer_in'] -
+            $movements['transfer_out'];
 
         return view('products.history-detail', compact(
             'product',
@@ -377,6 +442,9 @@ class ProductController extends Controller
             'inwardBales',
             'outwardBales',
             'cuttingBales',
+            'transferInBales',
+            'transferOutBales',
+            'dispatchBales',
             'openingBalance',
             'closingBalance',
             'currentStock',
@@ -460,6 +528,45 @@ class ProductController extends Controller
                       ->when($customerId, function($q) use ($customerId) {
                           $q->where('customer_id', $customerId);
                       });
+            })
+            ->whereBetween('created_at', [$fromDate, $toDate])
+            ->count();
+    }
+
+    private function getDispatchCount($productId, $customerId = null, $fromDate, $toDate)
+    {
+        return DB::table('orderlists')
+            ->join('packinglists', 'orderlists.packinglist_id', '=', 'packinglists.id')
+            ->join('orders', 'orderlists.order_id', '=', 'orders.id')
+            ->where('packinglists.product_id', $productId)
+            ->when($customerId, function($q) use ($customerId) {
+                $q->where('packinglists.customer_id', $customerId);
+            })
+            ->whereBetween('orders.order_date', [$fromDate, $toDate])
+            ->sum('orderlists.dispatch_qty');
+    }
+
+    private function getTransferInCount($productId, $customerId = null, $fromDate, $toDate)
+    {
+        return Bale::where('type', 'transfer')
+            ->whereHas('packinglist', function($query) use ($productId, $customerId) {
+                $query->where('product_id', $productId)
+                    ->when($customerId, function($q) use ($customerId) {
+                        $q->where('customer_id', $customerId);
+                    });
+            })
+            ->whereBetween('created_at', [$fromDate, $toDate])
+            ->count();
+    }
+
+    private function getTransferOutCount($productId, $customerId = null, $fromDate, $toDate)
+    {
+        return Bale::where('type', 'transfer')
+            ->whereHas('refPackinglist', function($query) use ($productId, $customerId) {
+                $query->where('product_id', $productId)
+                    ->when($customerId, function($q) use ($customerId) {
+                        $q->where('customer_id', $customerId);
+                    });
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->count();

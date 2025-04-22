@@ -96,6 +96,7 @@
                         <ul class="dropdown-menu">
                             @can('bales')
                             <li><a class="dropdown-item" href="{{ route('bales.index') }}">Bales</a></li>
+                            <li><a class="dropdown-item" href="{{ route('bales.transfer') }}">Bale Transfer</a></li>
                             @endcan
                             @can('cancellations')
                             <li><a class="dropdown-item" href="{{ route('cancellations.index') }}">Cancellations</a></li>
