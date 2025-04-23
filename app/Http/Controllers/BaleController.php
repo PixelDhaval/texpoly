@@ -124,7 +124,7 @@ class BaleController extends Controller
     {
         $validated = $request->validate([
             'from_packinglist' => 'required|exists:packinglists,id',
-            'to_packinglist' => 'required|exists:packinglists,id|different:from_packinglist',
+            'to_packinglist' => 'required|exists:packinglists,id',
             'quantity' => 'required|integer|min:1'
         ]);
 
