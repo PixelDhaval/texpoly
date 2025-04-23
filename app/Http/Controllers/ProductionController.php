@@ -133,7 +133,7 @@ class ProductionController extends Controller
             ]);
 
             // Define QR code URL
-            $qrUrl = $url = "https://www.amazon.com/ref=nav_logo"; // Replace with your actual URL
+            $qrUrl = $url = "qrcode://this_is_not_a_valid_link_or_payload"; // Replace with your actual URL
 
             // Return bale data
             DB::commit();
