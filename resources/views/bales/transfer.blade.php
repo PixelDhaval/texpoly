@@ -80,7 +80,7 @@
 $(document).ready(function() {
     // Initialize Select2 with templateResult to show stock
     $('#fromCustomer, #toCustomer').select2();
-    $('#fromPackinglist, #toPackinglist').select2({
+    $('#fromPackinglist').select2({
         placeholder: 'Select Product',
         templateResult: function(data) {
             return data.text;
@@ -94,6 +94,16 @@ $(document).ready(function() {
                     $('#quantity').attr('max', stock);
                 }
             }
+            return data.text;
+        }
+    });
+
+    $('#toPackinglist').select2({
+        placeholder: 'Select Product',
+        templateResult: function(data) {
+            return data.text;
+        },
+        templateSelection: function(data, container) {
             return data.text;
         }
     });
