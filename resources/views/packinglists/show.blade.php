@@ -4,7 +4,12 @@
     <div class="card-header d-flex justify-content-between align-items-center">
         <h2>Packing List - {{ $customer->name }}</h2>
         <div>
-            <button type="button" class="btn btn-primary" onclick="document.getElementById('packinglistForm').submit()">Save All Changes</button>
+            <button type="button" class="btn btn-success" id="printList">
+                <i class="bi bi-printer"></i> Print List
+            </button>
+            <button type="button" class="btn btn-primary" onclick="document.getElementById('packinglistForm').submit()">
+                Save All Changes
+            </button>
             <a href="{{ route('packinglists.index') }}" class="btn btn-secondary">Back to List</a>
         </div>
     </div>
@@ -36,11 +41,17 @@
         <div class="row mb-4">
             <div class="col-md-8">
                 <form id="filterForm" class="row g-3">
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <input type="text" class="form-control" id="searchProduct" placeholder="Search by product name/code">
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <input type="text" class="form-control" id="searchLabel" placeholder="Search by label name">
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-check mt-2">
+                            <input type="checkbox" class="form-check-input" id="showActiveOnly">
+                            <label class="form-check-label" for="showActiveOnly">Active Only</label>
+                        </div>
                     </div>
                     <div class="col-md-2">
                         <button type="button" class="btn btn-primary w-100" id="applyFilter">Filter</button>
@@ -121,6 +132,76 @@
     </div>
 </div>
 
+<div class="d-none">
+    <table id="printTable" class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Qty</th>
+                <th class="blank-column"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($packinglists as $item)
+                @if($item->customer_qty > 0)
+                    <tr>
+                        <td>
+                            {{ $item->product->name }}
+                            @if($item->label_name && $item->label_name !== $item->product->name)
+                                ({{ $item->label_name }})
+                            @endif
+                        </td>
+                        <td>{{ $item->customer_qty }}</td>
+                        <td class="blank-column"></td>
+                    </tr>
+                @endif
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
+@push('styles')
+<style>
+@media print {
+    /* Hide everything except the print table */
+    body * {
+        visibility: hidden;
+    }
+    
+    #printTable, #printTable * {
+        visibility: visible;
+    }
+    
+    #printTable {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    
+    .blank-column {
+        width: 50%;
+        border-bottom: 1px solid #000;
+    }
+    
+    /* Remove table borders for cleaner look */
+    #printTable.table {
+        border: none;
+    }
+    
+    #printTable th, #printTable td {
+        border: none;
+        padding: 8px 4px;
+    }
+    
+    /* Add bottom border to rows */
+    #printTable tr {
+        border-bottom: 1px solid #ddd;
+    }
+}
+</style>
+@endpush
+
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -165,6 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const searchProductInput = document.getElementById('searchProduct');
     const searchLabelInput = document.getElementById('searchLabel');
+    const showActiveOnly = document.getElementById('showActiveOnly');
     const applyFilterButton = document.getElementById('applyFilter');
     const tableRows = document.querySelectorAll('#packinglistTable tbody tr');
 
@@ -172,17 +254,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function filterTable() {
         const searchProduct = searchProductInput.value.toLowerCase();
         const searchLabel = searchLabelInput.value.toLowerCase();
+        const activeOnly = showActiveOnly.checked;
 
         tableRows.forEach(row => {
             const productCell = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
             const labelCell = row.querySelector('td:nth-child(3) input').value.toLowerCase();
+            const customerQty = parseInt(row.querySelector('td:nth-child(4) input').value) || 0;
 
-            // Show row if it matches the search criteria
-            if (productCell.includes(searchProduct) && labelCell.includes(searchLabel)) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
+            // Show row if it matches all search criteria
+            const matchesSearch = productCell.includes(searchProduct) && 
+                                labelCell.includes(searchLabel);
+            const matchesActive = !activeOnly || customerQty > 0;
+
+            row.style.display = (matchesSearch && matchesActive) ? '' : 'none';
         });
     }
 
@@ -190,6 +274,74 @@ document.addEventListener('DOMContentLoaded', function() {
     applyFilterButton.addEventListener('click', filterTable);
     searchProductInput.addEventListener('input', filterTable);
     searchLabelInput.addEventListener('input', filterTable);
+    showActiveOnly.addEventListener('change', filterTable);
+
+    // Print functionality
+    document.getElementById('printList').addEventListener('click', function() {
+        // Check if there are unsaved changes
+        if (isFormDirty) {
+            alert('You have unsaved changes. Please save before printing.');
+        } else {
+            // No unsaved changes, proceed with printing
+            handlePrint();
+        }
+    });
+
+    // Move the print logic to a separate function
+    function handlePrint() {
+        const printContent = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Packing List - ${document.title}</title>
+                <link rel="stylesheet" href="{{ asset('css/print.css') }}">
+            </head>
+            <body>
+                <div class="print-header">
+                    <h2>{{ $customer->name }}</h2>
+                </div>
+                <table class="print-table">
+                    <thead>
+                        <tr>
+                            <th class="product-column">Product</th>
+                            <th class="qty-column">Qty</th>
+                            <th class="blank-column"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($packinglists as $item)
+                            @if($item->customer_qty > 0)
+                                <tr>
+                                    <td>
+                                        {{ $item->product->name }}
+                                        @if($item->label_name && $item->label_name !== $item->product->name)
+                                            ({{ $item->label_name }})
+                                        @endif
+                                    </td>
+                                    <td>{{ $item->customer_qty }}</td>
+                                    <td></td>
+                                </tr>
+                            @endif
+                        @endforeach
+                    </tbody>
+                </table>
+            </body>
+            </html>
+        `;
+
+        const printWindow = window.open('', '_blank', 'width=800,height=600');
+        printWindow.document.write(printContent);
+        printWindow.document.close();
+
+        printWindow.onload = function() {
+            setTimeout(function() {
+                printWindow.print();
+                printWindow.onafterprint = function() {
+                    printWindow.close();
+                };
+            }, 500);
+        };
+    }
 });
 </script>
 @endpush

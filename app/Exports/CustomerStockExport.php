@@ -27,7 +27,7 @@ class CustomerStockExport implements FromCollection, WithHeadings, WithMapping, 
             'Product Code',
             'Product Name',
             'Category',
-            'Subcategory',
+            'Section',
             'Label Name',
             'Stock',
             'Customer Qty'

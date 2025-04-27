@@ -13,6 +13,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\TotalStockExport;
 use App\Exports\CustomerStockExport;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class ReportController extends Controller
 {
@@ -44,6 +45,9 @@ class ReportController extends Controller
                 break;
             case 'grade-wise':
                 $data = $this->generateGradeWiseReport($request);
+                break;
+            case 'product-wise-daily':
+                $data = $this->generateProductWiseDailyReport($request);
                 break;
         }
 
@@ -78,6 +82,10 @@ class ReportController extends Controller
         $productionData = Bale::with(['packinglist.customer', 'packinglist.product'])
             ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
             ->join('products', 'packinglists.product_id', '=', 'products.id')
+            ->select([
+                'bales.*',
+                DB::raw('bales.created_at as actual_created_at')
+            ])
             ->whereDate('bales.created_at', $date)
             ->where('bales.type', 'production')
             ->orderBy('products.name')
@@ -98,6 +106,7 @@ class ReportController extends Controller
             ->orderBy('products.name')
             ->get();
 
+        
         // Prepare report data
         $customerTotals = [];
         $customerProducts = [];
@@ -120,7 +129,14 @@ class ReportController extends Controller
                 ];
 
                 foreach ($productBales as $bale) {
-                    $baleTime = Carbon::parse($bale->created_at);
+                    $baleTime = Carbon::parse($bale->actual_created_at);
+                    
+                    // Add debug logging
+                    Log::info("Processing bale", [
+                        'bale_id' => $bale->id,
+                        'raw_timestamp' => $bale->actual_created_at,
+                        'parsed_time' => $baleTime->format('Y-m-d H:i:s')
+                    ]);
                     
                     // Use Carbon's between() for more accurate time slot checking
                     if ($baleTime->between($slots[1]['start'], $slots[1]['end'])) {
@@ -286,6 +302,111 @@ class ReportController extends Controller
             'date' => $date,
             'gradeData' => $gradeData,
             'customerGradeData' => $customerGradeData
+        ];
+    }
+
+    private function generateProductWiseDailyReport(Request $request)
+    {
+        $date = $request->get('date', now()->format('Y-m-d'));
+
+        // Define time slots
+        $slots = [
+            1 => [
+                'start' => Carbon::parse($date)->setTime(0, 0, 0),
+                'end' => Carbon::parse($date)->setTime(10, 30, 59)
+            ],
+            2 => [
+                'start' => Carbon::parse($date)->setTime(10, 31, 0),
+                'end' => Carbon::parse($date)->setTime(13, 15, 59)
+            ],
+            3 => [
+                'start' => Carbon::parse($date)->setTime(13, 16, 0),
+                'end' => Carbon::parse($date)->setTime(15, 30, 59)
+            ],
+            4 => [
+                'start' => Carbon::parse($date)->setTime(15, 31, 0),
+                'end' => Carbon::parse($date)->setTime(23, 59, 59)
+            ]
+        ];
+
+        // Modify the production data query to include category and subcategory
+        $productionData = Bale::with([
+                'packinglist.product.category',
+                'packinglist.product.subcategory',
+                'packinglist.customer'
+            ])
+            ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
+            ->join('products', 'packinglists.product_id', '=', 'products.id')
+            ->select([
+                'bales.*',
+                'products.id as product_id',
+                'products.name as product_name',
+                'products.short_code as product_code',
+                DB::raw('bales.created_at as actual_created_at')
+            ])
+            ->whereDate('bales.created_at', $date)
+            ->where('bales.type', 'production')
+            ->orderBy('products.name')
+            ->get()
+            ->groupBy('product_id');
+
+        // Process data for report
+        $productSummary = [];
+        $slotTotals = [0, 0, 0, 0];
+        $grandTotal = 0;
+
+        foreach ($productionData as $productId => $bales) {
+            $first = $bales->first();
+            $row = [
+                'product_code' => $first->product_code,
+                'product_name' => $first->product_name,
+                'category' => $first->packinglist->product->category->name ?? 'Uncategorized',
+                'subcategory' => $first->packinglist->product->subcategory->name ?? 'None',
+                'slot1' => 0,
+                'slot2' => 0,
+                'slot3' => 0,
+                'slot4' => 0,
+                'total' => 0,
+                'customers' => []
+            ];
+
+            foreach ($bales as $bale) {
+                $baleTime = Carbon::parse($bale->actual_created_at);
+                $customerName = $bale->packinglist->customer->name;
+
+                // Initialize customer data if not exists
+                if (!isset($row['customers'][$customerName])) {
+                    $row['customers'][$customerName] = 0;
+                }
+                $row['customers'][$customerName]++;
+
+                // Increment slot counters
+                if ($baleTime->between($slots[1]['start'], $slots[1]['end'])) {
+                    $row['slot1']++;
+                    $slotTotals[0]++;
+                } elseif ($baleTime->between($slots[2]['start'], $slots[2]['end'])) {
+                    $row['slot2']++;
+                    $slotTotals[1]++;
+                } elseif ($baleTime->between($slots[3]['start'], $slots[3]['end'])) {
+                    $row['slot3']++;
+                    $slotTotals[2]++;
+                } else {
+                    $row['slot4']++;
+                    $slotTotals[3]++;
+                }
+            }
+
+            $row['total'] = $row['slot1'] + $row['slot2'] + $row['slot3'] + $row['slot4'];
+            $grandTotal += $row['total'];
+            $productSummary[] = $row;
+        }
+
+        return [
+            'date' => $date,
+            'products' => $productSummary,
+            'slotTotals' => $slotTotals,
+            'grandTotal' => $grandTotal,
+            'slots' => $slots
         ];
     }
 }

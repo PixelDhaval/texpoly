@@ -54,9 +54,9 @@
                 </div>
 
                 <div class="col-md-4">
-                    <label for="subcategory_id" class="form-label">Subcategory</label>
+                    <label for="subcategory_id" class="form-label">Section</label>
                     <select class="form-select" id="subcategory_id" name="subcategory_id">
-                        <option value="">Select Subcategory</option>
+                        <option value="">Select Section</option>
                         @foreach($subcategories as $subcategory)
                             <option value="{{ $subcategory->id }}" 
                                 {{ old('subcategory_id', $product->subcategory_id ?? '') == $subcategory->id ? 'selected' : '' }}>

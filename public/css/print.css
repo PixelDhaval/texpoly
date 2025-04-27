@@ -1,0 +1,34 @@
+.print-header {
+    text-align: center;
+    padding: 5px;
+}
+
+.print-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.print-table th {
+    font-size: 12px;
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #000;
+}
+
+.print-table td {
+    padding: 6px;
+    border: 1px solid #000;
+    font-size: 12px;
+}
+
+.blank-column {
+    width: 50%;
+}
+
+.qty-column {
+    width: 10%;
+}
+
+.product-column {
+    width: 40%;
+}

@@ -82,6 +82,9 @@
                         <option value="grade-wise" {{ request('report') == 'grade-wise' ? 'selected' : '' }}>
                             Grade-wise Report
                         </option>
+                        <option value="product-wise-daily" {{ request('report') == 'product-wise-daily' ? 'selected' : '' }}>
+                            Product-wise Daily Production
+                        </option>
                     </select>
                 </div>
                 @if(request('report') == 'daily-production')
@@ -109,6 +112,22 @@
                                 </option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label d-block">&nbsp;</label>
+                        <button type="button" class="btn btn-secondary" onclick="window.print()">
+                            Print Report
+                        </button>
+                    </div>
+                @endif
+                @if(request('report') == 'product-wise-daily')
+                    <div class="col-md-3">
+                        <label class="form-label">Date</label>
+                        <input type="date" 
+                               name="date" 
+                               class="form-control" 
+                               value="{{ request('date', now()->format('Y-m-d')) }}"
+                               onchange="this.form.submit()">
                     </div>
                     <div class="col-md-2">
                         <label class="form-label d-block">&nbsp;</label>

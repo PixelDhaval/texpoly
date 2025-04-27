@@ -20,9 +20,9 @@
             </select>
         </div>
         <div class="col-md-3">
-            <label class="form-label">Subcategory</label>
+            <label class="form-label">Section</label>
             <select name="subcategory" class="form-select">
-                <option value="">All Subcategories</option>
+                <option value="">All Sections</option>
                 @foreach($data['subcategories'] as $subcategory)
                     <option value="{{ $subcategory->id }}" {{ request('subcategory') == $subcategory->id ? 'selected' : '' }}>
                         {{ $subcategory->name }}

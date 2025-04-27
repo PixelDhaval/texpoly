@@ -48,7 +48,7 @@ class ProductController extends Controller
             ->paginate(10);
 
         // Add this line to get all products for the modal
-        $allProducts = Product::select('id', 'name', 'short_code')->get();
+        $allProducts = Product::select('id', 'name', 'short_code')->orderBy('name')->get();
 
         $categories = Category::all();
         $subcategories = Subcategory::all();
@@ -135,6 +135,9 @@ class ProductController extends Controller
                     
                     DB::table('bales')->where('packinglist_id', $packinglist->id)
                         ->update(['packinglist_id' => $targetPackinglist->id]);
+
+                    DB::table('bales')->where('ref_packinglist_id', $packinglist->id)
+                        ->update(['ref_packinglist_id' => $targetPackinglist->id]);
 
                     // Delete the old packinglist
                     $packinglist->delete();

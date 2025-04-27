@@ -13,14 +13,20 @@ class PackinglistController extends Controller
 {
     public function index()
     {
-        $customers = Customer::withCount('packinglists')->get();
+        $customers = Customer::withCount([
+            'packinglists',
+            'packinglists as active_products_count' => function($query) {
+                $query->where('customer_qty', '>', 0);
+            }
+        ])->get();
+        
         return view('packinglists.index', compact('customers'));
     }
 
     public function show(Request $request, Customer $customer)
     {
         $query = Packinglist::join('products', 'packinglists.product_id', '=', 'products.id')
-            ->orderBy('products.short_code', 'asc')
+            ->orderBy('products.name', 'asc')
             ->select('packinglists.*')
             ->where('customer_id', $customer->id);
 

@@ -4,7 +4,7 @@
     <div class="col-md-5">
         <div class="card">
             <div class="card-header">
-                <h2>{{ isset($editSubcategory) ? 'Edit Subcategory' : 'Create Subcategory' }}</h2>
+                <h2>{{ isset($editSubcategory) ? 'Edit Section' : 'Create Section' }}</h2>
             </div>
             <div class="card-body">
                 <form method="POST" action="{{ isset($editSubcategory) ? route('subcategories.update', $editSubcategory->id) : route('subcategories.store') }}">
@@ -34,7 +34,7 @@
     <div class="col-md-7">
         <div class="card">
             <div class="card-header">
-                <h2>Subcategories List</h2>
+                <h2>Sections List</h2>
             </div>
             <div class="card-body">
                 <table class="table">

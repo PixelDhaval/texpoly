@@ -21,7 +21,7 @@
                     <td>{{ $customer->name }}</td>
                     <td>{{ $customer->email }}</td>
                     <td>{{ $customer->country }}</td>
-                    <td>{{ $customer->packinglists_count }}</td>
+                    <td>{{ $customer->active_products_count }}</td>
                     <td>
                         <a href="{{ route('packinglists.show', $customer->id) }}" 
                            class="btn btn-primary btn-sm">View Packing List</a>

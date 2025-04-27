@@ -9,6 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <style>
         .nav-link.active {
@@ -46,7 +47,7 @@
                             <li><a class="dropdown-item" href="{{ route('categories.index') }}">Categories</a></li>
                             @endcan
                             @can('subcategories')
-                            <li><a class="dropdown-item" href="{{ route('subcategories.index') }}">Subcategories</a></li>
+                            <li><a class="dropdown-item" href="{{ route('subcategories.index') }}">Sections</a></li>
                             @endcan
                             @can('products')
                             <li><a class="dropdown-item" href="{{ route('products.index') }}">Products</a></li>
