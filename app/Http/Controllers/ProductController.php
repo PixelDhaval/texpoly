@@ -23,8 +23,8 @@ class ProductController extends Controller
         $query = Product::with(['category', 'subcategory']);
 
         if ($request->filled('search')) {
-            $query->where('name', 'like', '%' . $request->search . '%')
-                  ->orWhere('short_code', 'like', '%' . $request->search . '%');
+            $query->where('name', 'like', '%' . strtoupper($request->search) . '%')
+                  ->orWhere('short_code', 'like', '%' . strtoupper($request->search) . '%');
         }
 
         if ($request->filled('category')) {

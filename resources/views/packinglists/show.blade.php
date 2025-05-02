@@ -4,6 +4,9 @@
     <div class="card-header d-flex justify-content-between align-items-center">
         <h2>Packing List - {{ $customer->name }}</h2>
         <div>
+            <button type="button" class="btn btn-secondary" id="markAllBold">
+                <i class="bi bi-type-bold"></i> Mark Active as Bold
+            </button>
             <button type="button" class="btn btn-success" id="printList">
                 <i class="bi bi-printer"></i> Print List
             </button>
@@ -350,6 +353,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         };
     }
+
+    // Mark all active items as bold
+    document.getElementById('markAllBold').addEventListener('click', function() {
+        const tableRows = document.querySelectorAll('#packinglistTable tbody tr');
+        let changedCount = 0;
+
+        tableRows.forEach(row => {
+            const customerQtyInput = row.querySelector('input[name*="[customer_qty]"]');
+            const isBoldCheckbox = row.querySelector('input[name*="[is_bold]"][type="checkbox"]');
+            
+            if (customerQtyInput && isBoldCheckbox) {
+                const qty = parseInt(customerQtyInput.value) || 0;
+                if (qty > 0 && !isBoldCheckbox.checked) {
+                    isBoldCheckbox.checked = true;
+                    changedCount++;
+                    isFormDirty = true;
+                }
+            }
+        });
+
+        if (changedCount > 0) {
+            alert(`Marked ${changedCount} active items as bold. Don't forget to save your changes.`);
+        } else {
+            alert('No new items to mark as bold.');
+        }
+    });
 });
 </script>
 @endpush
