@@ -77,6 +77,7 @@
                             <th>Price</th>
                             <th>Bold</th>
                             <th>Stock</th>
+                            <th>Stop Till</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -122,6 +123,13 @@
                             </td>
                             <td class="editable">
                                 {{ $item->stock }}
+                            </td>
+                            <td>
+                                <input type="datetime-local" 
+                                       class="form-control form-control-sm" 
+                                       name="packinglists[{{ $loop->index }}][stop_till]"
+                                       value="{{ $item->stop_till ? \Carbon\Carbon::parse($item->stop_till)->format('Y-m-d\TH:i') : '' }}"
+                                       step="60">
                             </td>
                         </tr>
                         @endforeach

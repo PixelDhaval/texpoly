@@ -31,7 +31,7 @@ class ProductionController extends Controller
         $yesterdayRepackCount = Bale::whereDate('created_at', $yesterday)
             ->where('type', 'repacking')->count();
 
-        $products = Product::orderBy('short_code', 'asc')->get();
+        $products = Product::orderBy('name', 'asc')->get();
         $employees = Employee::orderBy('name', 'asc')->get();
         
         $customerOrders = collect();
@@ -42,7 +42,11 @@ class ProductionController extends Controller
                 })
                 ->whereHas('packinglist', function ($q) use ($request) {
                     $q->where('product_id', $request->product_id)
-                        ->where('customer_qty', '>', 0);
+                        ->where('customer_qty', '>', 0)
+                        ->where(function($query) {
+                            $query->whereNull('stop_till')
+                                  ->orWhere('stop_till', '<=', Carbon::now());
+                        });
                 })
                 ->get()
                 ->groupBy('packinglist.customer_id')

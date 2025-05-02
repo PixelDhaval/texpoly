@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Packinglist;
 use App\Models\Customer;
 use App\Models\Product;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -83,6 +84,7 @@ class PackinglistController extends Controller
             'packinglists.*.weight' => 'nullable|integer',
             'packinglists.*.price' => 'nullable|numeric',
             'packinglists.*.is_bold' => 'nullable',
+            'packinglists.*.stop_till' => 'nullable|'. 'date_format:Y-m-d\TH:i',
         ]);
 
         try {
@@ -103,6 +105,12 @@ class PackinglistController extends Controller
                                 $item['is_bold'] = filter_var($item['is_bold'], FILTER_VALIDATE_BOOLEAN);
                             }
                             
+                            // Convert stop_till to date
+                            if (isset($item['stop_till'])) {
+                                $item['stop_till'] = Carbon::createFromFormat('Y-m-d\TH:i', $item['stop_till']);
+
+                                $item['stop_till'] = $item['stop_till'] ? $item['stop_till']->format('Y-m-d H:i') : null;
+                            }
                             // Remove id from update data
                             unset($item['id']);
                             
