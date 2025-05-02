@@ -171,44 +171,87 @@
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
-$(document).ready(function() {
+$(document).ready(async function() {
     $('#customer_select, #packinglist_select').select2();
 
-    // Set last selected customer if exists
-    const lastCustomerId = localStorage.getItem('lastPlantTransferCustomerId');
-    if (lastCustomerId) {
-        $('#customer_select').val(lastCustomerId).trigger('change');
+    // Define form field IDs to store/restore
+    const formFields = {
+        customer: 'customer_select',
+        type: 'type_select',
+        plant: 'plant_select',
+        date: 'date_input'
+    };
+
+    // Restore saved values
+    async function restoreFormValues() {
+        // Restore customer and trigger product load
+        const lastCustomerId = localStorage.getItem('lastPlantTransferCustomerId');
+        if (lastCustomerId) {
+            $('#customer_select').val(lastCustomerId).trigger('change');
+            try {
+                const response = await fetch(`/plant-transfer/packinglists?customer_id=${lastCustomerId}`);
+                const data = await response.json();
+                
+                $('#packinglist_select').prop('disabled', false)
+                    .empty()
+                    .append('<option value="">Select Product</option>');
+                    
+                data.forEach(item => {
+                    $('#packinglist_select').append(new Option(item.text, item.id));
+                });
+            } catch (error) {
+                console.error('Error loading products:', error);
+            }
+        }
+
+        // Restore other form fields
+        $('#type_select').val(localStorage.getItem('lastPlantTransferType') || '');
+        $('#plant_select').val(localStorage.getItem('lastPlantTransferPlant') || '');
+        $('#date_input').val(localStorage.getItem('lastPlantTransferDate') || '{{ now()->format("Y-m-d\TH:i") }}');
     }
 
+    // Call restore function on page load
+    await restoreFormValues();
+
+    // Save form values when changed
     $('#customer_select').on('change', async function() {
         const customerId = this.value;
-        // Store the selected customer ID
         if (customerId) {
             localStorage.setItem('lastPlantTransferCustomerId', customerId);
-        }
-
-        if (!customerId) {
-            $('#packinglist_select').prop('disabled', true).empty();
-            return;
-        }
-
-        try {
-            const response = await fetch(`/plant-transfer/packinglists?customer_id=${customerId}`);
-            const data = await response.json();
-            
-            $('#packinglist_select').prop('disabled', false)
-                .empty()
-                .append('<option value="">Select Product</option>');
+            // Load products as before
+            try {
+                const response = await fetch(`/plant-transfer/packinglists?customer_id=${customerId}`);
+                const data = await response.json();
                 
-            data.forEach(item => {
-                $('#packinglist_select').append(new Option(item.text, item.id));
-            });
-        } catch (error) {
-            alert('Error loading products');
+                $('#packinglist_select').prop('disabled', false)
+                    .empty()
+                    .append('<option value="">Select Product</option>');
+                    
+                data.forEach(item => {
+                    $('#packinglist_select').append(new Option(item.text, item.id));
+                });
+            } catch (error) {
+                alert('Error loading products');
+            }
+        } else {
+            $('#packinglist_select').prop('disabled', true).empty();
         }
     });
 
-    // Clear stored customer after successful transfer
+    // Save other field values when changed
+    $('#type_select').on('change', function() {
+        localStorage.setItem('lastPlantTransferType', this.value);
+    });
+
+    $('#plant_select').on('change', function() {
+        localStorage.setItem('lastPlantTransferPlant', this.value);
+    });
+
+    $('#date_input').on('change', function() {
+        localStorage.setItem('lastPlantTransferDate', this.value);
+    });
+
+    // Form submission handler
     $('#transferForm').on('submit', async function(e) {
         e.preventDefault();
         
@@ -234,7 +277,7 @@ $(document).ready(function() {
             const result = await response.json();
             
             if (result.success) {
-                // Don't clear the stored customer ID anymore
+                // Keep all stored values (don't clear them)
                 alert('Transfer created successfully');
                 window.location.reload();
             } else {
