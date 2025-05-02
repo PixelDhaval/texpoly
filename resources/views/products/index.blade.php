@@ -33,10 +33,25 @@
                     </select>
                 </div>
                 <div class="col-md-2">
+                    <select name="perPage" class="form-select" onchange="this.form.submit()">
+                        @foreach($perPageOptions as $option)
+                            <option value="{{ $option }}" {{ request('perPage', 10) == $option ? 'selected' : '' }}>
+                                {{ $option }} entries
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-2">
                     <button type="submit" class="btn btn-primary w-100">Filter</button>
                 </div>
             </div>
         </form>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                Showing {{ $products->firstItem() ?? 0 }} to {{ $products->lastItem() ?? 0 }} of {{ $products->total() }} entries
+            </div>
+        </div>
 
         <div class="table-responsive">
             <table class="table table-bordered">
@@ -76,7 +91,7 @@
         </div>
         
         <div class="mt-4">
-            {{ $products->links('pagination::bootstrap-5') }}
+            {{ $products->appends(request()->except('page'))->links('pagination::bootstrap-5') }}
         </div>
     </div>
 </div>

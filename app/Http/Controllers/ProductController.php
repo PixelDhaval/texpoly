@@ -18,7 +18,9 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Product::query();
+        $perPage = $request->get('perPage', 10); // Default to 10
+
+        $query = Product::with(['category', 'subcategory']);
 
         if ($request->filled('search')) {
             $query->where('name', 'like', '%' . $request->search . '%')
@@ -33,19 +35,7 @@ class ProductController extends Controller
             $query->where('subcategory_id', $request->subcategory);
         }
 
-        $products = Product::with(['category', 'subcategory'])
-            ->when($request->search, function($query, $search) {
-                $query->where('name', 'like', "%{$search}%")
-                     ->orWhere('short_code', 'like', "%{$search}%");
-            })
-            ->when($request->category, function($query, $category) {
-                $query->where('category_id', $category);
-            })
-            ->when($request->subcategory, function($query, $subcategory) {
-                $query->where('subcategory_id', $subcategory);
-            })
-            ->orderBy('name')
-            ->paginate(10);
+        $products = $query->orderBy('name')->paginate($perPage);
 
         // Add this line to get all products for the modal
         $allProducts = Product::select('id', 'name', 'short_code')->orderBy('name')->get();
@@ -53,7 +43,10 @@ class ProductController extends Controller
         $categories = Category::all();
         $subcategories = Subcategory::all();
 
-        return view('products.index', compact('products', 'categories', 'subcategories', 'allProducts'));
+        // Add available per page options
+        $perPageOptions = [10, 25, 50, 100];
+
+        return view('products.index', compact('products', 'categories', 'subcategories', 'allProducts', 'perPageOptions', 'perPage'));
     }
 
     public function create()

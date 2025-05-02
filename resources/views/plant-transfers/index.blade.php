@@ -174,8 +174,19 @@
 $(document).ready(function() {
     $('#customer_select, #packinglist_select').select2();
 
+    // Set last selected customer if exists
+    const lastCustomerId = localStorage.getItem('lastPlantTransferCustomerId');
+    if (lastCustomerId) {
+        $('#customer_select').val(lastCustomerId).trigger('change');
+    }
+
     $('#customer_select').on('change', async function() {
         const customerId = this.value;
+        // Store the selected customer ID
+        if (customerId) {
+            localStorage.setItem('lastPlantTransferCustomerId', customerId);
+        }
+
         if (!customerId) {
             $('#packinglist_select').prop('disabled', true).empty();
             return;
@@ -197,6 +208,7 @@ $(document).ready(function() {
         }
     });
 
+    // Clear stored customer after successful transfer
     $('#transferForm').on('submit', async function(e) {
         e.preventDefault();
         
@@ -222,6 +234,7 @@ $(document).ready(function() {
             const result = await response.json();
             
             if (result.success) {
+                // Don't clear the stored customer ID anymore
                 alert('Transfer created successfully');
                 window.location.reload();
             } else {
