@@ -70,21 +70,31 @@
                     <label class="form-label">Select Report</label>
                     <select name="report" class="form-select" onchange="this.form.submit()">
                         <option value="">Choose Report</option>
+                        @canany(['daily-production-report', 'reports'])
                         <option value="daily-production" {{ request('report') == 'daily-production' ? 'selected' : '' }}>
                             Daily Production Report
                         </option>
+                        @endcanany
+                        @canany(['customer-stock-report', 'reports'])
                         <option value="customer-stock" {{ request('report') == 'customer-stock' ? 'selected' : '' }}>
                             Customer Stock Report
                         </option>
+                        @endcanany
+                        @canany(['total-stock-report', 'reports'])
                         <option value="total-stock" {{ request('report') == 'total-stock' ? 'selected' : '' }}>
                             Total Stock Report
                         </option>
+                        @endcanany
+                        @canany(['grade-wise-report', 'reports'])
                         <option value="grade-wise" {{ request('report') == 'grade-wise' ? 'selected' : '' }}>
                             Grade-wise Report
                         </option>
+                        @endcanany
+                        @canany(['product-wise-daily-report', 'reports'])
                         <option value="product-wise-daily" {{ request('report') == 'product-wise-daily' ? 'selected' : '' }}>
                             Product-wise Daily Production
                         </option>
+                        @endcanany
                     </select>
                 </div>
                 @if(request('report') == 'daily-production')
