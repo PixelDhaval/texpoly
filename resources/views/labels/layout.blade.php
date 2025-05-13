@@ -110,11 +110,11 @@
                     @endif
 
                     <!-- Reports -->
-                    @canany(['reports', 'product-wise-daily-report', 'customer-stock-report', 'daily-production-report', 'total-stock-report', 'grade-wise-report'])
+                    @if(Gate::any(['reports', 'product-wise-daily-report', 'customer-stock-report', 'daily-production-report', 'total-stock-report', 'grade-wise-report']))
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('reports.index') }}">Reports</a>
                     </li>
-                    @endcan
+                    @endif
                 </ul>
 
                 <!-- Right Side -->
