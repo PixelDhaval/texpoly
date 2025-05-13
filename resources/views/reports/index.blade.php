@@ -70,31 +70,36 @@
                     <label class="form-label">Select Report</label>
                     <select name="report" class="form-select" onchange="this.form.submit()">
                         <option value="">Choose Report</option>
-                        @canany(['daily-production-report', 'reports'])
+                        
+                        @if(auth()->user()->can('view-reports') || auth()->user()->can('daily-production-report'))
                         <option value="daily-production" {{ request('report') == 'daily-production' ? 'selected' : '' }}>
                             Daily Production Report
                         </option>
-                        @endcanany
-                        @canany(['customer-stock-report', 'reports'])
+                        @endif
+                        
+                        @if(auth()->user()->can('view-reports') || auth()->user()->can('customer-stock-report'))
                         <option value="customer-stock" {{ request('report') == 'customer-stock' ? 'selected' : '' }}>
                             Customer Stock Report
                         </option>
-                        @endcanany
-                        @canany(['total-stock-report', 'reports'])
+                        @endif
+                        
+                        @if(auth()->user()->can('view-reports') || auth()->user()->can('total-stock-report'))
                         <option value="total-stock" {{ request('report') == 'total-stock' ? 'selected' : '' }}>
                             Total Stock Report
                         </option>
-                        @endcanany
-                        @canany(['grade-wise-report', 'reports'])
+                        @endif
+                        
+                        @if(auth()->user()->can('view-reports') || auth()->user()->can('grade-wise-report'))
                         <option value="grade-wise" {{ request('report') == 'grade-wise' ? 'selected' : '' }}>
                             Grade-wise Report
                         </option>
-                        @endcanany
-                        @canany(['product-wise-daily-report', 'reports'])
+                        @endif
+                        
+                        @if(auth()->user()->can('view-reports') || auth()->user()->can('product-wise-daily-report'))
                         <option value="product-wise-daily" {{ request('report') == 'product-wise-daily' ? 'selected' : '' }}>
                             Product-wise Daily Production
                         </option>
-                        @endcanany
+                        @endif
                     </select>
                 </div>
                 @if(request('report') == 'daily-production')
