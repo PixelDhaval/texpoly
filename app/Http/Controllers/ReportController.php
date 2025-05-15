@@ -286,22 +286,45 @@ class ReportController extends Controller
         $customerGradeData = Bale::with(['packinglist.customer', 'packinglist.product'])
             ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
             ->join('products', 'packinglists.product_id', '=', 'products.id')
+            ->join('customers', 'packinglists.customer_id', '=', 'customers.id')
             ->select(
-                'packinglists.customer_id',
+                'customers.id as customer_id',
+                'customers.name as customer_name',
                 'products.grade',
-                DB::raw('count(*) as count')
+                DB::raw('count(*) as bale_count')  // Renamed 'count' to 'bale_count'
             )
             ->whereDate('bales.created_at', $date)
             ->where('bales.type', 'production')
-            ->groupBy('packinglists.customer_id', 'products.grade')
+            ->groupBy('customers.id', 'customers.name', 'products.grade')  // Include customer name in grouping
+            ->orderBy('customers.name')
             ->orderBy('products.grade')
-            ->get()
-            ->groupBy('packinglist.customer.name');
+            ->get();
 
+        // Format data for easier use in views
+        $customerGradeSummary = [];
+        foreach ($customerGradeData as $item) {
+            $grade = $item->grade ?: 'No Grade';
+            $customerId = $item->customer_id;
+            $customerName = $item->customer_name;
+            
+            if (!isset($customerGradeSummary[$customerId])) {
+                $customerGradeSummary[$customerId] = [
+                    'name' => $customerName,
+                    'grades' => [],
+                    'total' => 0
+                ];
+            }
+            
+            $customerGradeSummary[$customerId]['grades'][$grade] = $item->bale_count;
+            $customerGradeSummary[$customerId]['total'] += $item->bale_count;
+        }
+
+        // Update the return statement
         return [
             'date' => $date,
             'gradeData' => $gradeData,
-            'customerGradeData' => $customerGradeData
+            'customerGradeData' => $customerGradeSummary,
+            'allGrades' => $gradeData->keys()->toArray()  // List of all grades for table headers
         ];
     }
 

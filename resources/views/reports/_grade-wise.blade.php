@@ -58,24 +58,20 @@
                     <thead>
                         <tr>
                             <th>Customer</th>
-                            @foreach($data['gradeData']->keys() as $grade)
-                                <th>{{ $grade ?: 'No Grade' }}</th>
+                            @foreach($data['allGrades'] as $grade)
+                                <th>{{ $grade }}</th>
                             @endforeach
                             <th>Total</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($data['customerGradeData'] as $customer => $grades)
+                        @foreach($data['customerGradeData'] as $customerId => $customer)
                             <tr>
-                                <td>{{ $customer }}</td>
-                                @foreach($data['gradeData']->keys() as $grade)
-                                    <td>
-                                        {{ $grades->where('grade', $grade)->sum('count') }}
-                                    </td>
+                                <td>{{ $customer['name'] }}</td>
+                                @foreach($data['allGrades'] as $grade)
+                                    <td class="text-center">{{ $customer['grades'][$grade] ?? 0 }}</td>
                                 @endforeach
-                                <td class="fw-bold">
-                                    {{ $grades->sum('count') }}
-                                </td>
+                                <td class="fw-bold text-center">{{ $customer['total'] }}</td>
                             </tr>
                         @endforeach
                     </tbody>
