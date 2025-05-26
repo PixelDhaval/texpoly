@@ -44,12 +44,28 @@ class DashboardController extends Controller
         });
         $chartData = $productionData->pluck('count');
 
+        // Latest delivered orders
+        $deliveredOrders = Order::query()
+            ->where('status', 'delivered')
+            ->latest('order_date')
+            ->take(5)
+            ->get();
+
+        // Upcoming orders (target date in future)
+        $upcomingOrders = Order::query()
+            ->where('status', 'production')
+            ->orderBy('target_date')
+            ->take(5)
+            ->get();
+
         return view('dashboard', compact(
             'todayProduction',
             'todayRepacking',
             'recentActivities',
             'chartLabels',
-            'chartData'
+            'chartData',
+            'deliveredOrders',
+            'upcomingOrders'
         ));
     }
 }

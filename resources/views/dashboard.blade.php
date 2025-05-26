@@ -30,6 +30,91 @@
         </div>
     </div>
 
+    @can('orders')
+    <div class="row">
+        <div class="col-xl-6 mb-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">Latest Delivered Orders</h5>
+                    <a href="{{ route('orders.index') }}?status=delivered" class="btn btn-primary btn-sm">View All</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Order No</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Container</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($deliveredOrders as $order)
+                                <tr>
+                                    <td>
+                                        <a href="{{ route('orders.show', $order) }}">{{ $order->order_no }}</a>
+                                    </td>
+                                    <td>{{ $order->customer->name }}</td>
+                                    <td>{{ $order->order_date }}</td>
+                                    <td>{{ $order->container_no }}</td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="4" class="text-center">No delivered orders</td>
+                                </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Orders Card -->
+        <div class="col-xl-6 mb-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">Upcoming Orders</h5>
+                    <a href="{{ route('orders.index') }}?status=production" class="btn btn-primary btn-sm">View All</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Order No</th>
+                                    <th>Customer</th>
+                                    <th>Target Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($upcomingOrders as $order)
+                                <tr>
+                                    <td>
+                                        <a href="{{ route('orders.show', $order) }}">{{ $order->order_no }}</a>
+                                    </td>
+                                    <td>{{ $order->customer->name }}</td>
+                                    <td>{{ $order->target_date }}</td>
+                                    <td>
+                                        <span class="badge bg-primary">{{ ucfirst($order->status) }}</span>
+                                    </td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="4" class="text-center">No upcoming orders</td>
+                                </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endcan
+
     <div class="row mt-4">
         <!-- Production Chart -->
         <div class="col-lg-8 mb-4">
