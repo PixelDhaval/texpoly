@@ -54,7 +54,7 @@ class DashboardController extends Controller
         // Upcoming orders (target date in future)
         $upcomingOrders = Order::query()
             ->where('status', 'production')
-            ->orderBy('target_date')
+            ->orderBy('target_date', 'asc')
             ->take(5)
             ->get();
 
