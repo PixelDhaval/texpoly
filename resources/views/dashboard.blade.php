@@ -35,7 +35,7 @@
         <div class="col-xl-6 mb-4">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="card-title mb-0">Latest Delivered Orders</h5>
+                    <h5 class="card-title mb-0">Latest Completed Orders</h5>
                     <a href="{{ route('orders.index') }}?status=delivered" class="btn btn-primary btn-sm">View All</a>
                 </div>
                 <div class="card-body">
@@ -56,12 +56,12 @@
                                         <a href="{{ route('orders.show', $order) }}">{{ $order->order_no }}</a>
                                     </td>
                                     <td>{{ $order->customer->name }}</td>
-                                    <td>{{ $order->order_date }}</td>
+                                    <td>{{ $order->order_date ? Carbon\Carbon::parse($order->order_date)->format('d/m/Y') : '-' }}</td>
                                     <td>{{ $order->container_no }}</td>
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="4" class="text-center">No delivered orders</td>
+                                    <td colspan="4" class="text-center">No completed orders</td>
                                 </tr>
                                 @endforelse
                             </tbody>
@@ -96,7 +96,7 @@
                                         <a href="{{ route('orders.show', $order) }}">{{ $order->order_no }}</a>
                                     </td>
                                     <td>{{ $order->customer->name }}</td>
-                                    <td>{{ $order->target_date }}</td>
+                                    <td>{{ $order->target_date ? Carbon\Carbon::parse($order->target_date)->format('d/m/Y') : '-' }}</td>
                                     <td>
                                         <span class="badge bg-primary">{{ ucfirst($order->status) }}</span>
                                     </td>
