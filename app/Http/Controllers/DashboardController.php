@@ -53,8 +53,7 @@ class DashboardController extends Controller
 
         // Upcoming orders (target date in future)
         $upcomingOrders = Order::query()
-            ->where('status', 'production')
-            ->where('target_date', '>=', Carbon::today())  // Only future dates
+            ->where('status', 'production')// Only future dates
             ->orderBy('target_date', 'asc')                // Sort by target_date ascending
             ->with('customer')                             // Eager load customer relation
             ->take(5)
