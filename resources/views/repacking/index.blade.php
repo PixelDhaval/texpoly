@@ -152,7 +152,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                
+
                 <div id="preview"></div>
             </div>
             <div class="modal-footer">
@@ -230,9 +230,19 @@
 
                 let options = '<option value="">Select Product</option>';
                 data.packing_lists.forEach(item => {
-                    options += `<option value="${item.id}" data-user='${data.user}' data-info='${JSON.stringify(item)}' data-is-bale-no='${item.customer.is_bale_no}' data-is-printed-by='${item.customer.is_printed_by}' data-is-qr='${item.customer.is_qr}' data-label-code='${item.customer.label.label_code}' data-label-name='${item.label_name}' data-packing='${item.quantity} ${item.unit}' data-is-bold='${item.is_bold}'>
-                    ${item.product.name} - ${item.label_name}
-                </option>`;
+                    const escapedInfo = JSON.stringify(item).replace(/'/g, '&apos;').replace(/"/g, '&quot;');
+                    options += `<option value="${item.id}" 
+                data-user="${data.user.replace(/"/g, '&quot;')}" 
+                data-info='${escapedInfo}' 
+                data-is-bale-no="${item.customer.is_bale_no}" 
+                data-is-printed-by="${item.customer.is_printed_by}" 
+                data-is-qr="${item.customer.is_qr}" 
+                data-label-code="${item.customer.label.label_code.replace(/"/g, '&quot;')}" 
+                data-label-name="${item.label_name.replace(/"/g, '&quot;')}" 
+                data-packing="${item.quantity} ${item.unit}" 
+                data-is-bold="${item.is_bold}">
+                ${item.product.name} - ${item.label_name}
+            </option>`;
                 });
 
                 $('#target_packinglist').html(options).prop('disabled', false);
@@ -262,8 +272,8 @@
                 labelCode = labelCode.replaceAll('[[ qr-2 ]]', is_qr == "true" || is_qr == true ? '<div id="qrcode-2">[[ qr ]]</div>' : '');
             }
             if (info) updateTargetDetails(info);
-                $('#submitBtn').prop('disabled', false);
-                $('#submitBtn').data('label-code', labelCode); 
+            $('#submitBtn').prop('disabled', false);
+            $('#submitBtn').data('label-code', labelCode);
         });
 
         function updateSourceDetails(info) {
