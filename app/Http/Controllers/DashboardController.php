@@ -44,10 +44,23 @@ class DashboardController extends Controller
         });
         $chartData = $productionData->pluck('count');
 
-        // Latest delivered orders
-        $deliveredOrders = Order::query()
+        // Delivered orders this month
+        $thisMonthDelivered = Order::query()
             ->where('status', 'delivered')
+            ->whereMonth('order_date', Carbon::now()->month)
+            ->whereYear('order_date', Carbon::now()->year)
             ->latest('order_date')
+            ->with('customer')
+            ->take(5)
+            ->get();
+
+        // Delivered orders last month
+        $lastMonthDelivered = Order::query()
+            ->where('status', 'delivered')
+            ->whereMonth('order_date', Carbon::now()->subMonth()->month)
+            ->whereYear('order_date', Carbon::now()->subMonth()->year)
+            ->latest('order_date')
+            ->with('customer')
             ->take(5)
             ->get();
 
@@ -66,7 +79,8 @@ class DashboardController extends Controller
             'recentActivities',
             'chartLabels',
             'chartData',
-            'deliveredOrders',
+            'thisMonthDelivered',
+            'lastMonthDelivered',
             'upcomingOrders'
         ));
     }

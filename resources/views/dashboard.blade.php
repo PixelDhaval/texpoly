@@ -164,6 +164,99 @@
             </div>
         </div>
     </div>
+
+    <!-- Replace the completed orders card content -->
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="card-title mb-0">Completed Orders</h5>
+                <a href="{{ route('orders.index') }}?status=delivered" class="btn btn-primary btn-sm">View All</a>
+            </div>
+            <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" 
+                       id="this-month-tab" 
+                       data-bs-toggle="tab" 
+                       href="#this-month" 
+                       role="tab">This Month</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" 
+                       id="last-month-tab" 
+                       data-bs-toggle="tab" 
+                       href="#last-month" 
+                       role="tab">Last Month</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="tab-content">
+                <!-- This Month Tab -->
+                <div class="tab-pane fade show active" id="this-month" role="tabpanel">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Order No</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Container</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($thisMonthDelivered as $order)
+                                <tr>
+                                    <td>
+                                        <a href="{{ route('orders.show', $order) }}">{{ $order->order_no }}</a>
+                                    </td>
+                                    <td>{{ $order->customer->name }}</td>
+                                    <td>{{ $order->order_date ? Carbon\Carbon::parse($order->order_date)->format('d/m/Y') : '-' }}</td>
+                                    <td>{{ $order->container_no }}</td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="4" class="text-center">No orders completed this month</td>
+                                </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Last Month Tab -->
+                <div class="tab-pane fade" id="last-month" role="tabpanel">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Order No</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Container</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($lastMonthDelivered as $order)
+                                <tr>
+                                    <td>
+                                        <a href="{{ route('orders.show', $order) }}">{{ $order->order_no }}</a>
+                                    </td>
+                                    <td>{{ $order->customer->name }}</td>
+                                    <td>{{ $order->order_date ? Carbon\Carbon::parse($order->order_date)->format('d/m/Y') : '-' }}</td>
+                                    <td>{{ $order->container_no }}</td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="4" class="text-center">No orders completed last month</td>
+                                </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @push('scripts')
