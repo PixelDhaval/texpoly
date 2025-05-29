@@ -38,7 +38,7 @@ class OrderController extends Controller
     {
         $validated = $request->validate([
             'customer_id' => 'required|exists:customers,id',
-            'order_date' => 'required|date',
+            'order_date' => 'nullable|date',
             'status' => 'required|in:production,draft,delivered',
             'container_no' => 'nullable|string',
             'sgs_seal_no' => 'nullable|string',
@@ -87,7 +87,7 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         $validated = $request->validate([
-            'order_date' => 'required|date',
+            'order_date' => 'nullable|date',
             'status' => 'required|in:production,draft,delivered',
             'container_no' => 'nullable|string',
             'sgs_seal_no' => 'nullable|string',

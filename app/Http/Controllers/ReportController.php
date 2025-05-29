@@ -266,14 +266,16 @@ class ReportController extends Controller
 
     private function generateGradeWiseReport(Request $request)
     {
-        $date = $request->get('date', now()->format('Y-m-d'));
+        $fromDate = $request->get('from_date', now()->format('Y-m-d'));
+        $toDate = $request->get('to_date', now()->format('Y-m-d'));
 
         // Get production counts by product grade
         $gradeData = Bale::with(['packinglist.product'])
             ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
             ->join('products', 'packinglists.product_id', '=', 'products.id')
             ->select('products.grade', DB::raw('count(*) as count'))
-            ->whereDate('bales.created_at', $date)
+            ->whereDate('bales.created_at', '>=', $fromDate)
+            ->whereDate('bales.created_at', '<=', $toDate)
             ->where('bales.type', 'production')
             ->groupBy('products.grade')
             ->orderBy('products.grade')
@@ -291,11 +293,12 @@ class ReportController extends Controller
                 'customers.id as customer_id',
                 'customers.name as customer_name',
                 'products.grade',
-                DB::raw('count(*) as bale_count')  // Renamed 'count' to 'bale_count'
+                DB::raw('count(*) as bale_count')
             )
-            ->whereDate('bales.created_at', $date)
+            ->whereDate('bales.created_at', '>=', $fromDate)
+            ->whereDate('bales.created_at', '<=', $toDate)
             ->where('bales.type', 'production')
-            ->groupBy('customers.id', 'customers.name', 'products.grade')  // Include customer name in grouping
+            ->groupBy('customers.id', 'customers.name', 'products.grade')
             ->orderBy('customers.name')
             ->orderBy('products.grade')
             ->get();
@@ -319,12 +322,12 @@ class ReportController extends Controller
             $customerGradeSummary[$customerId]['total'] += $item->bale_count;
         }
 
-        // Update the return statement
         return [
-            'date' => $date,
+            'from_date' => $fromDate,
+            'to_date' => $toDate,
             'gradeData' => $gradeData,
             'customerGradeData' => $customerGradeSummary,
-            'allGrades' => $gradeData->keys()->toArray()  // List of all grades for table headers
+            'allGrades' => $gradeData->keys()->toArray()
         ];
     }
 

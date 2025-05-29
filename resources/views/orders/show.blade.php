@@ -13,21 +13,26 @@
                     <label class="form-label">Customer</label>
                     <input type="text" class="form-control" value="{{ $order->customer->name }}" readonly>
                 </div>
-                <div class="col-md-3">
-                    <label class="form-label">Order Date</label>
-                    <input type="date" name="order_date" class="form-control" 
-                           value="{{ $order->order_date }}" required>
-                </div>
+                
                 <div class="col-md-3">
                     <label class="form-label">Status</label>
-                    <select name="status" class="form-select" required>
+                    <select name="status" class="form-select" id="orderStatus" required>
                         @foreach(['production', 'draft', 'delivered'] as $status)
                             <option value="{{ $status }}" {{ $order->status == $status ? 'selected' : '' }}>
-                                {{ ucfirst($status) }}
+                                {{ $status == 'delivered' ? 'Completed' : ucfirst($status) }}
                             </option>
                         @endforeach
                     </select>
                 </div>
+                
+                <div class="col-md-3 order-date-field" style="{{ $order->status !== 'delivered' ? 'display: none;' : '' }}">
+                    <label class="form-label">Order Complete Date</label>
+                    <input type="date" name="order_date" class="form-control" 
+                           value="{{ $order->order_date }}"     
+                           id="orderDate"
+                           {{ $order->status === 'delivered' ? 'required' : '' }}>
+                </div>
+
                 <div class="col-md-3">
                     <label class="form-label">Target Date</label>
                     <input type="date" name="target_date" class="form-control" 
@@ -98,7 +103,7 @@
                             </td>
                         </tr>
                         @endforeach
-u                        <tr class="table-info">
+                        <tr class="table-info">
                             <td colspan="5" class="text-end fw-bold">Total Dispatch Quantity:</td>
                             <td id="totalDispatchQty" class="fw-bold">0</td>
                         </tr>
@@ -125,6 +130,21 @@ function updateTotal() {
 $(document).ready(function() {
     updateTotal();
     $('.dispatch-qty').on('change', updateTotal);
+
+    $('#orderStatus').on('change', function() {
+        const isDelivered = $(this).val() === 'delivered';
+        const orderDateField = $('.order-date-field');
+        const orderDateInput = $('#orderDate');
+
+        if (isDelivered) {
+            orderDateField.show();
+            orderDateInput.prop('required', true);
+            // Set today's date if empty
+        } else {
+            orderDateField.hide();
+            orderDateInput.prop('required', false);
+        }
+    });
 });
 </script>
 @endpush

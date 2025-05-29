@@ -38,7 +38,7 @@
                         <td>{{ $order->customer->name }}</td>
                         <td>{{ $order->order_date }}</td>
                         <td>{{ $order->target_date }}</td>
-                        <td>{{ ucfirst($order->status) }}</td>
+                        <td>{{ $order->status == 'delivered' ? 'Completed' : ucfirst($order->status) }}</td>
                         <td>{{ $order->container_no }}</td>
                         <td>
                             <a href="{{ route('orders.show', $order) }}" class="btn btn-primary btn-sm">View/Edit</a>

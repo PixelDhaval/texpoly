@@ -1,10 +1,16 @@
+
 <form method="GET" class="mb-4">
     <input type="hidden" name="report" value="grade-wise">
     <div class="row g-3">
         <div class="col-md-3">
-            <label class="form-label">Date</label>
-            <input type="date" name="date" class="form-control" 
-                   value="{{ request('date', now()->format('Y-m-d')) }}" required>
+            <label class="form-label">From Date</label>
+            <input type="date" name="from_date" class="form-control" 
+                   value="{{ request('from_date', now()->format('Y-m-d')) }}" required>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">To Date</label>
+            <input type="date" name="to_date" class="form-control" 
+                   value="{{ request('to_date', now()->format('Y-m-d')) }}" required>
         </div>
         <div class="col-md-2">
             <label class="form-label d-block">&nbsp;</label>
@@ -19,6 +25,10 @@
             <div class="card">
                 <div class="card-header">
                     <h5 class="mb-0">Total Production by Grade</h5>
+                    <small class="text-muted">
+                        Period: {{ \Carbon\Carbon::parse($data['from_date'])->format('d/m/Y') }} 
+                        to {{ \Carbon\Carbon::parse($data['to_date'])->format('d/m/Y') }}
+                    </small>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -51,6 +61,10 @@
     <div class="card">
         <div class="card-header">
             <h5 class="mb-0">Customer-wise Grade Distribution</h5>
+            <small class="text-muted">
+                Period: {{ \Carbon\Carbon::parse($data['from_date'])->format('d/m/Y') }} 
+                to {{ \Carbon\Carbon::parse($data['to_date'])->format('d/m/Y') }}
+            </small>
         </div>
         <div class="card-body">
             <div class="table-responsive">

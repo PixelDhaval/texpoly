@@ -21,11 +21,6 @@
                         @endif
                     </select>
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label">Order Date</label>
-                    <input type="date" name="order_date" class="form-control" required
-                        value="{{ date('Y-m-d') }}">
-                </div>
             </div>
 
             <div class="row mb-3">
@@ -34,7 +29,7 @@
                     <select name="status" class="form-select" required>
                         <option value="production">Production</option>
                         <option value="draft">Draft</option>
-                        <option value="delivered">Delivered</option>
+                        <option value="delivered">Completed</option>
                     </select>
                 </div>
                 <div class="col-md-6">
