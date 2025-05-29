@@ -333,25 +333,26 @@ class ReportController extends Controller
 
     private function generateProductWiseDailyReport(Request $request)
     {
-        $date = $request->get('date', now()->format('Y-m-d'));
+        $from_date = $request->get('from_date', now()->format('Y-m-d'));
+        $to_date = $request->get('to_date', now()->format('Y-m-d'));
 
         // Define time slots
         $slots = [
             1 => [
-                'start' => Carbon::parse($date)->setTime(0, 0, 0),
-                'end' => Carbon::parse($date)->setTime(10, 30, 59)
+                'start' => Carbon::parse($from_date)->setTime(0, 0, 0),
+                'end' => Carbon::parse($to_date)->setTime(10, 30, 59)
             ],
             2 => [
-                'start' => Carbon::parse($date)->setTime(10, 31, 0),
-                'end' => Carbon::parse($date)->setTime(13, 15, 59)
+                'start' => Carbon::parse($from_date)->setTime(10, 31, 0),
+                'end' => Carbon::parse($to_date)->setTime(13, 15, 59)
             ],
             3 => [
-                'start' => Carbon::parse($date)->setTime(13, 16, 0),
-                'end' => Carbon::parse($date)->setTime(15, 30, 59)
+                'start' => Carbon::parse($from_date)->setTime(13, 16, 0),
+                'end' => Carbon::parse($to_date)->setTime(15, 30, 59)
             ],
             4 => [
-                'start' => Carbon::parse($date)->setTime(15, 31, 0),
-                'end' => Carbon::parse($date)->setTime(23, 59, 59)
+                'start' => Carbon::parse($from_date)->setTime(15, 31, 0),
+                'end' => Carbon::parse($to_date)->setTime(23, 59, 59)
             ]
         ];
 
@@ -370,7 +371,8 @@ class ReportController extends Controller
                 'products.short_code as product_code',
                 DB::raw('bales.created_at as actual_created_at')
             ])
-            ->whereDate('bales.created_at', $date)
+            ->whereDate('bales.created_at', '>=', $from_date)
+            ->whereDate('bales.created_at', '<=', $to_date)
             ->where('bales.type', 'production')
             ->orderBy('products.name')
             ->get()
@@ -428,7 +430,8 @@ class ReportController extends Controller
         }
 
         return [
-            'date' => $date,
+            'from_date' => $from_date,
+            'to_date' => $to_date,
             'products' => $productSummary,
             'slotTotals' => $slotTotals,
             'grandTotal' => $grandTotal,

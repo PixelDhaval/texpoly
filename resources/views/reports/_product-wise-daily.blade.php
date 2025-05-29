@@ -1,11 +1,33 @@
-<div class="d-print-none mb-3">
-    <button type="button" class="btn btn-secondary" onclick="window.print()">Print Report</button>
-</div>
+
+<form method="GET" class="mb-4">
+    <input type="hidden" name="report" value="product-wise-daily">
+    <div class="row g-3">
+        <div class="col-md-3">
+            <label class="form-label">From Date</label>
+            <input type="date" name="from_date" class="form-control" 
+                   value="{{ request('from_date', now()->format('Y-m-d')) }}" required>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">To Date</label>
+            <input type="date" name="to_date" class="form-control" 
+                   value="{{ request('to_date', now()->format('Y-m-d')) }}" required>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label d-block">&nbsp;</label>
+            <button type="submit" class="btn btn-primary">Generate Report</button>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label d-block">&nbsp;</label>
+            <button type="button" class="btn btn-secondary" onclick="window.print()">Print Report</button>
+        </div>
+    </div>
+</form>
 
 <div id="printArea">
     <div class="report-header">
-        <h3 class="">Product-wise Daily Production Report</h3>
-        <h4 class="">Date: {{ \Carbon\Carbon::parse($data['date'])->format('d/m/Y') }}</h4>
+        <h3 class="">Product-wise Production Report</h3>
+        <h4 class="">Period: {{ \Carbon\Carbon::parse($data['from_date'])->format('d/m/Y') }} 
+            to {{ \Carbon\Carbon::parse($data['to_date'])->format('d/m/Y') }}</h4>
     </div>
 
     <!-- Section-wise Summary Table -->
