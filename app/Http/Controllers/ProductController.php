@@ -175,7 +175,7 @@ class ProductController extends Controller
 
             // Add search filter
             if ($request->filled('search')) {
-                $search = $request->search;
+                $search = strtoupper($request->search);
                 $query->where(function($q) use ($search) {
                     $q->where('products.name', 'like', "%{$search}%")
                       ->orWhere('products.short_code', 'like', "%{$search}%");
