@@ -128,8 +128,8 @@
                                 <td>{{ $bale->created_at->format('H:i:s') }}</td>
                                 <td><strong>{{ $bale->packinglist->customer->name }}</strong></td>
                                 <td>{{ $bale->bale_no }}</td>
-                                <td>{{ $bale->qcEmployee->name }}</td>
-                                <td>{{ $bale->finalistEmployee->name }}</td>
+                                <td>{{ $bale->qcEmployee->name ?? 'None' }}</td>
+                                <td>{{ $bale->finalistEmployee->name ?? 'None' }}</td>
                             </tr>
                             @empty
                             <tr>
@@ -164,8 +164,8 @@
                                 <td>{{ $bale->bale_no }}</td>
                                 <td><strong>{{ $bale->refPackinglist->customer->name }} - {{ $bale->refPackinglist->product->name }}</strong></td>
                                 <td><strong>{{ $bale->packinglist->customer->name }} - {{ $bale->packinglist->product->name }}</strong></td>
-                                <td>{{ $bale->qcEmployee->name }}</td>
-                                <td>{{ $bale->finalistEmployee->name }}</td>
+                                <td>{{ $bale->qcEmployee->name ?? 'None' }}</td>
+                                <td>{{ $bale->finalistEmployee->name ?? 'None' }}</td>
                             </tr>
                             @empty
                             <tr>
