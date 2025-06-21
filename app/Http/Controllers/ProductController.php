@@ -447,7 +447,7 @@ class ProductController extends Controller
             'movements',
             'fromDate',
             'toDate',
-            'customers'  // Add customers to the view
+            'customers'
         ));
     }
 

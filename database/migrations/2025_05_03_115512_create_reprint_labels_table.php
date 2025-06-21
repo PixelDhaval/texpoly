@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('reprint_labels', function (Blueprint $table) {
             $table->id();
             $table->string('bale_no')->nullable();
-            $table->foreignId('packing_list_id')->constrained('packing_lists')->onDelete('cascade');
+            $table->foreignId('packinglist_id')->constrained('packinglists')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->nullOnDelete();
             $table->foreignId('qc')->constrained('employees')->nullOnDelete();
             $table->foreignId('finalist')->constrained('employees')->nullOnDelete();

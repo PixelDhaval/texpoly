@@ -22,7 +22,8 @@ class GateServiceProvider extends ServiceProvider
             'users', 'labels', 'customers', 'categories', 'subcategories',
             'products', 'employees', 'plants', 'packinglists', 'orders',
             'production', 'bales', 'cancellations', 'repacking', 'plant_transfer',
-            'dashboard', 'reports', 'product_history'
+            'dashboard', 'reports', 'product_history', 'section_wise_labour', 'daily-production-report',
+            'customer-stock-report', 'total-stock-report', 'grade-wise-report', 'product-wise-daily-report',
         ];
 
         foreach ($permissions as $permission) {

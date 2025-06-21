@@ -107,6 +107,12 @@
                             @can('cancellations')
                             <li><a class="dropdown-item" href="{{ route('cancellations.index') }}">Cancellations</a></li>
                             @endcan
+                            @can('section_wise_labour')
+                            <li><a class="dropdown-item" href="{{ route('section-labours.index') }}">Section-wise Labours</a></li>
+                            @endcan
+                            @can('section_wise_labour')
+                            <li><a class="dropdown-item" href="{{ route('section-labours.production-report') }}">Section-wise Production & Labour Report</a></li>
+                            @endcan
                             @can('product_history')
                             <li><a class="dropdown-item" href="{{ route('products.history') }}">Product History</a></li>
                             @endcan

@@ -18,6 +18,7 @@ use App\Http\Controllers\PlantController;
 use App\Http\Controllers\PlantTransferController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SectionLabourController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/orders', OrderController::class);
     Route::resource('/employees', EmployeeController::class)->except(['create', 'show']);
     Route::resource('/plants', PlantController::class)->except(['create', 'edit', 'show', 'update']);
+    Route::get('/section-labours/production-report', [SectionLabourController::class, 'sectionProductionReport'])->name('section-labours.production-report');
+    Route::resource('/section-labours', SectionLabourController::class);
 
     Route::get('/products/check-shortcode', [ProductController::class, 'checkShortCode'])->name('products.check-shortcode');
     Route::post('/products/{product}/merge', [ProductController::class, 'merge'])->name('products.merge');
@@ -86,6 +89,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/plant-transfer', [PlantTransferController::class, 'index'])->name('plant-transfer.index');
     Route::get('/plant-transfer/packinglists', [PlantTransferController::class, 'getPackinglists']);
     Route::post('/plant-transfer', [PlantTransferController::class, 'store']);
+
+
 
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
 });
