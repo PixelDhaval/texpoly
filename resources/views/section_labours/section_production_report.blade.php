@@ -10,9 +10,8 @@
             <button type="submit" class="btn btn-primary btn-sm">Show</button>
         </form>
     </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered align-middle">
+    <div class="card-body ">
+            <table class="table table-bordered align-middle" style="width: fit-content;">
                 <thead>
                     <tr>
                         <th>Section</th>
@@ -47,7 +46,6 @@
                     </tr>
                 </tfoot>
             </table>
-        </div>
         <div class="text-muted mt-2">
             Showing for date: <strong>{{ \Carbon\Carbon::parse($date)->format('d/m/Y') }}</strong>
         </div>
