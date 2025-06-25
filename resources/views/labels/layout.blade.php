@@ -94,7 +94,7 @@
                     @endif
 
                     <!-- Records -->
-                    @if(Gate::any(['bales', 'cancellations', 'product-history']))
+                    @if(Gate::any(['bales', 'cancellations', 'product-history', 'section_wise_labour']))
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             Records
