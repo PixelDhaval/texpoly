@@ -80,37 +80,14 @@
 $(document).ready(function() {
     // Initialize Select2 with templateResult to show stock
     $('#fromCustomer, #toCustomer').select2();
-    $('#fromPackinglist').select2({
-        placeholder: 'Select Product',
-        templateResult: function(data) {
-            return data.text;
-        },
-        templateSelection: function(data, container) {
-            // Update stock when an option is selected
-            if (data.element) {
-                const stock = $(data.element).data('stock');
-                if (stock !== undefined) {
-                    $('#fromStock').val(stock);
-                    $('#quantity').attr('max', stock);
-                }
-            }
-            return data.text;
-        }
-    });
-
-    $('#toPackinglist').select2({
-        placeholder: 'Select Product',
-        templateResult: function(data) {
-            return data.text;
-        },
-        templateSelection: function(data, container) {
-            return data.text;
-        }
-    });
-
-    // Preload data if there are old values
-    const oldFromCustomer = "{{ old('fromCustomer') }}";
-    const oldToCustomer = "{{ old('toCustomer') }}";
+    
+    // Load saved customer selections from localStorage if available
+    const lastFromCustomer = localStorage.getItem('lastFromCustomer');
+    const lastToCustomer = localStorage.getItem('lastToCustomer');
+    
+    // If there are old form values from validation errors, use those first
+    const oldFromCustomer = "{{ old('fromCustomer') }}" || lastFromCustomer;
+    const oldToCustomer = "{{ old('toCustomer') }}" || lastToCustomer;
     const oldFromPackinglist = "{{ old('from_packinglist') }}";
     const oldToPackinglist = "{{ old('to_packinglist') }}";
 
@@ -133,6 +110,35 @@ $(document).ready(function() {
             }
         });
     }
+    
+    // Save customer selections when they change
+    $('#fromCustomer').change(function() {
+        const customerId = $(this).val();
+        if (customerId) {
+            localStorage.setItem('lastFromCustomer', customerId);
+        }
+        loadPackinglists(customerId, $('#fromPackinglist'), 'from');
+    });
+
+    $('#toCustomer').change(function() {
+        const customerId = $(this).val();
+        if (customerId) {
+            localStorage.setItem('lastToCustomer', customerId);
+        }
+        loadPackinglists(customerId, $('#toPackinglist'), 'to').then(() => {
+            // After loading products, if from product is selected, try to select matching product
+            const fromProduct = $('#fromPackinglist').find(':selected').text();
+            if (fromProduct) {
+                const toPackinglist = $('#toPackinglist');
+                toPackinglist.find('option').each(function() {
+                    if ($(this).text().split(' (')[0] === fromProduct.split(' (')[0]) {
+                        toPackinglist.val($(this).val()).trigger('change');
+                        return false;
+                    }
+                });
+            }
+        });
+    });
     
     // Modify loadPackinglists to include type parameter
     function loadPackinglists(customerId, targetSelect, type = 'from') {
