@@ -15,6 +15,7 @@ class Order extends Model
         'sgs_seal_no',
         'line_seal_no',
         'target_date',
+        'note'
     ];
 
     protected $with = ['customer'];

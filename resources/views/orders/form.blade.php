@@ -53,6 +53,13 @@
                 </div>
             </div>
 
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label class="form-label">Note</label>
+                    <textarea name="note" class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+
             <div>
                 <button type="submit" class="btn btn-primary">Create Order</button>
                 <a href="{{ route('orders.index') }}" class="btn btn-secondary">Back</a>

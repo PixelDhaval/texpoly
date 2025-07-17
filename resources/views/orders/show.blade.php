@@ -58,6 +58,13 @@
                 </div>
             </div>
 
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label class="form-label">Note</label>
+                    <textarea name="note" class="form-control" rows="3">{{ $order->note }}</textarea>
+                </div>
+            </div>
+
             <div>
                 <button type="submit" class="btn btn-primary">Update Order</button>
                 <a href="{{ route('orders.index') }}" class="btn btn-secondary">Back</a>

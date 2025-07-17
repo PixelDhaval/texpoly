@@ -44,6 +44,7 @@ class OrderController extends Controller
             'sgs_seal_no' => 'nullable|string',
             'line_seal_no' => 'nullable|string',
             'target_date' => 'required|date',
+            'note' => 'nullable|string|max:255',
         ]);
 
         $customer = Customer::find($request->customer_id);
@@ -93,6 +94,7 @@ class OrderController extends Controller
             'sgs_seal_no' => 'nullable|string',
             'line_seal_no' => 'nullable|string',
             'target_date' => 'required|date',
+            'note' => 'nullable|string|max:255',
         ]);
 
         $order->update($validated);
