@@ -22,10 +22,6 @@ class SectionLabourController extends Controller
         $query->when($request->has('subcategory_id') && $request->input('subcategory_id') != '', function ($q) use ($request) {
             $q->where('subcategory_id', $request->input('subcategory_id'));
         });
-        $query->when($request->has('date'), function ($q) use ($request) {
-            $q->whereDate('date', $request->input('date'));
-        });
-        
         $query->when($request->has('from_date') && $request->has('to_date'), function ($q) use ($request) {
             $q->whereBetween('date', [$request->input('from_date'), $request->input('to_date')]);
         });
@@ -70,7 +66,16 @@ class SectionLabourController extends Controller
      */
     public function edit(SectionLabour $sectionLabour)
     {
-        //
+        $query = SectionLabour::query();
+        $query->with('subcategory');
+        $query->orderBy('date', 'desc');
+        $query->orderBy('created_at', 'desc');
+        $sectionLabours = $query->paginate(10);
+
+        $subcategories = Subcategory::all();
+        $editSectionLabour = $sectionLabour;
+
+        return view('section_labours.index', compact('sectionLabours', 'subcategories', 'editSectionLabour'));
     }
 
     /**

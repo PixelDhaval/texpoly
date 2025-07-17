@@ -99,12 +99,15 @@
                     </thead>
                     <tbody>
                         @foreach($sectionLabours as $sectionLabour)
-                        <tr>
+                        <tr class="{{ isset($editSectionLabour) && $editSectionLabour->id == $sectionLabour->id ? 'table-warning' : '' }}">
                             <td>{{ \Carbon\Carbon::parse($sectionLabour->date)->format('d/m/Y') }}</td>
                             <td>{{ $sectionLabour->subcategory->name ?? '-' }}</td>
                             <td>{{ $sectionLabour->labour_count }}</td>
                             <td>
-                                <a href="{{ route('section-labours.edit', $sectionLabour->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="{{ route('section-labours.edit', $sectionLabour->id) }}" 
+                                   class="btn btn-primary btn-sm {{ isset($editSectionLabour) && $editSectionLabour->id == $sectionLabour->id ? 'active' : '' }}">
+                                   {{ isset($editSectionLabour) && $editSectionLabour->id == $sectionLabour->id ? 'Editing' : 'Edit' }}
+                                </a>
                                 <form action="{{ route('section-labours.destroy', $sectionLabour->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
