@@ -79,7 +79,7 @@
 <script>
 $(document).ready(function() {
     // Initialize Select2 with templateResult to show stock
-    $('#fromCustomer, #toCustomer').select2();
+    $('#fromCustomer, #toCustomer, #fromPackinglist, #toPackinglist').select2();
     
     // Load saved customer selections from localStorage if available
     const lastFromCustomer = localStorage.getItem('lastFromCustomer');
