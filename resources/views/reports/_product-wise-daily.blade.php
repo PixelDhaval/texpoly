@@ -1,23 +1,56 @@
-
 <form method="GET" class="mb-4">
     <input type="hidden" name="report" value="product-wise-daily">
     <div class="row g-3">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <label class="form-label">From Date</label>
-            <input type="date" name="from_date" class="form-control" 
+            <input type="date" name="from_date" class="form-control"
                    value="{{ request('from_date', now()->format('Y-m-d')) }}" required>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <label class="form-label">To Date</label>
-            <input type="date" name="to_date" class="form-control" 
+            <input type="date" name="to_date" class="form-control"
                    value="{{ request('to_date', now()->format('Y-m-d')) }}" required>
         </div>
         <div class="col-md-2">
-            <label class="form-label d-block">&nbsp;</label>
-            <button type="submit" class="btn btn-primary">Generate Report</button>
+            <label class="form-label">Product Name/Code</label>
+            <input type="text" name="search" class="form-control"
+                   value="{{ request('search') }}" placeholder="Product name/code">
         </div>
         <div class="col-md-2">
-            <label class="form-label d-block">&nbsp;</label>
+            <label class="form-label">Category</label>
+            <select name="category" class="form-select">
+                <option value="">All Categories</option>
+                @foreach($data['categories'] ?? [] as $category)
+                    <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Section</label>
+            <select name="subcategory" class="form-select">
+                <option value="">All Sections</option>
+                @foreach($data['subcategories'] ?? [] as $subcategory)
+                    <option value="{{ $subcategory->id }}" {{ request('subcategory') == $subcategory->id ? 'selected' : '' }}>
+                        {{ $subcategory->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Type</label>
+            <select name="type" class="form-select">
+                <option value="">All Types</option>
+                <option value="bale" {{ request('type') == 'bale' ? 'selected' : '' }}>Bale</option>
+                <option value="jumbo" {{ request('type') == 'jumbo' ? 'selected' : '' }}>Jumbo</option>
+            </select>
+        </div>
+        <div class="col-md-2 align-self-end">
+            <button type="submit" class="btn btn-primary">Generate Report</button>
+            <a href="{{ route('reports.index', ['report' => 'product-wise-daily']) }}" class="btn btn-secondary">Reset</a>
+        </div>
+        <div class="col-md-2 align-self-end">
             <button type="button" class="btn btn-secondary" onclick="window.print()">Print Report</button>
         </div>
     </div>

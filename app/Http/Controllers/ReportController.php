@@ -421,6 +421,12 @@ class ReportController extends Controller
         $from_date = $request->get('from_date', now()->format('Y-m-d'));
         $to_date = $request->get('to_date', now()->format('Y-m-d'));
 
+        // Filters
+        $search = $request->get('search');
+        $category = $request->get('category');
+        $subcategory = $request->get('subcategory');
+        $type = $request->get('type');
+
         // Define time slots
         $slots = [
             1 => [
@@ -441,8 +447,8 @@ class ReportController extends Controller
             ]
         ];
 
-        // Modify the production data query to include category and subcategory
-        $productionData = Bale::with([
+        // Modify the production data query to include filters
+        $productionQuery = Bale::with([
                 'packinglist.product.category',
                 'packinglist.product.subcategory',
                 'packinglist.customer'
@@ -458,8 +464,26 @@ class ReportController extends Controller
             ])
             ->whereDate('bales.created_at', '>=', $from_date)
             ->whereDate('bales.created_at', '<=', $to_date)
-            ->where('bales.type', 'production')
-            ->orderBy('products.name')
+            ->where('bales.type', 'production');
+
+        if ($search) {
+            $search = strtoupper($search);
+            $productionQuery->where(function($q) use ($search) {
+                $q->where('products.name', 'like', '%' . $search . '%')
+                  ->orWhere('products.short_code', 'like', '%' . $search . '%');
+            });
+        }
+        if ($category) {
+            $productionQuery->where('products.category_id', $category);
+        }
+        if ($subcategory) {
+            $productionQuery->where('products.subcategory_id', $subcategory);
+        }
+        if ($type) {
+            $productionQuery->where('products.type', $type);
+        }
+
+        $productionData = $productionQuery->orderBy('products.name')
             ->get()
             ->groupBy('product_id');
 
@@ -514,13 +538,25 @@ class ReportController extends Controller
             $productSummary[] = $row;
         }
 
+        // Add categories and subcategories for filter dropdowns
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
+
         return [
             'from_date' => $from_date,
             'to_date' => $to_date,
             'products' => $productSummary,
             'slotTotals' => $slotTotals,
             'grandTotal' => $grandTotal,
-            'slots' => $slots
+            'slots' => $slots,
+            'categories' => $categories,
+            'subcategories' => $subcategories,
+            'filters' => [
+                'search' => $search,
+                'category' => $category,
+                'subcategory' => $subcategory,
+                'type' => $type,
+            ]
         ];
     }
 }
