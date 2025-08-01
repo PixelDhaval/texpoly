@@ -1,4 +1,49 @@
 <div class="d-print-none mb-3">
+    <form method="GET" class="row row-cols-lg-auto g-2 align-items-center mb-2">
+        <input type="hidden" name="report" value="daily-production">
+        <div>
+            <input type="date" name="date" class="form-control form-control-sm"
+                value="{{ request('date', now()->format('Y-m-d')) }}">
+        </div>
+        <div>
+            <input type="text" name="search" class="form-control form-control-sm"
+                value="{{ request('search') }}" placeholder="Product name/code">
+        </div>
+        <div>
+            <select name="category" class="form-select form-select-sm">
+                <option value="">All Categories</option>
+                @foreach($data['categories'] as $category)
+                    <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        <div>
+            <select name="subcategory" class="form-select form-select-sm">
+                <option value="">All Sections</option>
+                @foreach($data['subcategories'] as $subcategory)
+                    <option value="{{ $subcategory->id }}" {{ request('subcategory') == $subcategory->id ? 'selected' : '' }}>
+                        {{ $subcategory->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        <div>
+            <select name="type" class="form-select form-select-sm">
+                <option value="">All Types</option>
+                @foreach(['bale', 'jumbo'] as $type)
+                    <option value="{{ $type }}" {{ request('type') == $type ? 'selected' : '' }}>
+                        {{ ucfirst($type) }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-sm btn-primary">Filter</button>
+            <a href="{{ route('reports.index', ['report' => 'daily-production']) }}" class="btn btn-sm btn-secondary">Reset</a>
+        </div>
+    </form>
     <button type="button" class="btn btn-secondary" onclick="window.print()">Print Report</button>
 </div>
 

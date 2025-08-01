@@ -25,6 +25,7 @@ class UpdateProductRequest extends FormRequest
             'price' => 'required|numeric|min:0',
             'quantity' => 'required|integer|min:0',
             'weight' => 'required|integer|min:0',
+            'type' => 'required|string|in:bale,jumbo',
         ];
     }
 }

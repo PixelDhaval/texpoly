@@ -8,7 +8,7 @@
             <input type="text" name="search" class="form-control" 
                    value="{{ request('search') }}" placeholder="Search...">
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <label class="form-label">Category</label>
             <select name="category" class="form-select">
                 <option value="">All Categories</option>
@@ -19,13 +19,24 @@
                 @endforeach
             </select>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <label class="form-label">Section</label>
             <select name="subcategory" class="form-select">
                 <option value="">All Sections</option>
                 @foreach($data['subcategories'] as $subcategory)
                     <option value="{{ $subcategory->id }}" {{ request('subcategory') == $subcategory->id ? 'selected' : '' }}>
                         {{ $subcategory->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Product Type</label>
+            <select name="type" class="form-select">
+                <option value="">All Types</option>
+                @foreach(['bale', 'jumbo'] as $type)
+                    <option value="{{ $type }}" {{ request('type') == $type ? 'selected' : '' }}>
+                        {{ $type }}
                     </option>
                 @endforeach
             </select>

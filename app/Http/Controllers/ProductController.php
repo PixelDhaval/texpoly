@@ -35,6 +35,10 @@ class ProductController extends Controller
             $query->where('subcategory_id', $request->subcategory);
         }
 
+        if ($request->filled('type')) {
+            $query->where('type', $request->type);
+        }
+
         $products = $query->orderBy('name')->paginate($perPage);
 
         // Add this line to get all products for the modal
@@ -163,6 +167,8 @@ class ProductController extends Controller
     public function history(Request $request)
     {
         $customers = Customer::orderBy('name')->get();
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
         $products = collect();
         
         if ($request->has('from_date') && $request->has('to_date')) {
@@ -180,6 +186,21 @@ class ProductController extends Controller
                     $q->where('products.name', 'like', "%{$search}%")
                       ->orWhere('products.short_code', 'like', "%{$search}%");
                 });
+            }
+
+            // Add category filter
+            if ($request->filled('category')) {
+                $query->where('products.category_id', $request->category);
+            }
+
+            // Add subcategory (section) filter
+            if ($request->filled('subcategory')) {
+                $query->where('products.subcategory_id', $request->subcategory);
+            }
+
+            // Add type filter
+            if ($request->filled('type')) {
+                $query->where('products.type', $request->type);
             }
 
             // Add sorting
@@ -258,7 +279,7 @@ class ProductController extends Controller
             });
         }
 
-        return view('products.history', compact('customers', 'products'));
+        return view('products.history', compact('customers', 'products', 'categories', 'subcategories'));
     }
 
     public function historyDetail(Request $request)

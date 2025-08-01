@@ -33,6 +33,16 @@
                     </select>
                 </div>
                 <div class="col-md-2">
+                    <select name="type" class="form-select">
+                        <option value="">Select Type</option>
+                        @foreach(['bale', 'jumbo'] as $type)
+                            <option value="{{ $type }}" {{ request('type') == $type ? 'selected' : '' }}>
+                                {{ $type }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-2">
                     <select name="perPage" class="form-select" onchange="this.form.submit()">
                         @foreach($perPageOptions as $option)
                             <option value="{{ $option }}" {{ request('perPage', 10) == $option ? 'selected' : '' }}>
@@ -41,6 +51,7 @@
                         @endforeach
                     </select>
                 </div>
+                
                 <div class="col-md-2">
                     <button type="submit" class="btn btn-primary w-100">Filter</button>
                 </div>
@@ -61,6 +72,7 @@
                         <th>Grade</th>
                         <th>Category</th>
                         <th>Section</th>
+                        <th>Type</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Actions</th>
@@ -73,6 +85,7 @@
                         <td>{{ $product->grade }}</td>
                         <td>{{ $product->category->name }}</td>
                         <td>{{ $product->subcategory?->name }}</td>
+                        <td>{{ $product->type }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->quantity }}</td>
                         <td>

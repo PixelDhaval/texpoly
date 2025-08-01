@@ -58,6 +58,12 @@ class ReportController extends Controller
     {
         $date = $request->get('date', now()->format('Y-m-d'));
 
+        // Filters
+        $search = $request->get('search');
+        $category = $request->get('category');
+        $subcategory = $request->get('subcategory');
+        $type = $request->get('type');
+
         // Define time slots using Carbon
         $slots = [
             1 => [
@@ -78,8 +84,8 @@ class ReportController extends Controller
             ]
         ];
 
-        // Fetch production data
-        $productionData = Bale::with(['packinglist.customer', 'packinglist.product'])
+        // Fetch production data with filters
+        $productionQuery = Bale::with(['packinglist.customer', 'packinglist.product'])
             ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
             ->join('products', 'packinglists.product_id', '=', 'products.id')
             ->select([
@@ -87,13 +93,31 @@ class ReportController extends Controller
                 DB::raw('bales.created_at as actual_created_at')
             ])
             ->whereDate('bales.created_at', $date)
-            ->where('bales.type', 'production')
-            ->orderBy('products.name')
+            ->where('bales.type', 'production');
+
+        if ($search) {
+            $search = strtoupper($search);
+            $productionQuery->where(function($q) use ($search) {
+                $q->where('products.name', 'like', '%' . $search . '%')
+                  ->orWhere('products.short_code', 'like', '%' . $search . '%');
+            });
+        }
+        if ($category) {
+            $productionQuery->where('products.category_id', $category);
+        }
+        if ($subcategory) {
+            $productionQuery->where('products.subcategory_id', $subcategory);
+        }
+        if ($type) {
+            $productionQuery->where('products.type', $type);
+        }
+
+        $productionData = $productionQuery->orderBy('products.name')
             ->get()
             ->groupBy('packinglist.customer_id');
 
-        // Fetch repacking data
-        $repackingData = Bale::with([
+        // Fetch repacking data with same filters
+        $repackingQuery = Bale::with([
                 'packinglist.customer',
                 'packinglist.product',
                 'refPackinglist.customer',
@@ -102,11 +126,26 @@ class ReportController extends Controller
             ->join('packinglists', 'bales.packinglist_id', '=', 'packinglists.id')
             ->join('products', 'packinglists.product_id', '=', 'products.id')
             ->whereDate('bales.created_at', $date)
-            ->where('bales.type', 'repacking')
-            ->orderBy('products.name')
-            ->get();
+            ->where('bales.type', 'repacking');
 
-        
+        if ($search) {
+            $repackingQuery->where(function($q) use ($search) {
+                $q->where('products.name', 'like', '%' . $search . '%')
+                  ->orWhere('products.short_code', 'like', '%' . $search . '%');
+            });
+        }
+        if ($category) {
+            $repackingQuery->where('products.category_id', $category);
+        }
+        if ($subcategory) {
+            $repackingQuery->where('products.subcategory_id', $subcategory);
+        }
+        if ($type) {
+            $repackingQuery->where('products.type', $type);
+        }
+
+        $repackingData = $repackingQuery->orderBy('products.name')->get();
+
         // Prepare report data
         $customerTotals = [];
         $customerProducts = [];
@@ -158,12 +197,24 @@ class ReportController extends Controller
             $customerProducts[$customer->name] = $products;
         }
 
+        // Add categories and subcategories for filter dropdowns
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
+
         return [
             'date' => $date,
             'customerTotals' => $customerTotals,
             'repackingData' => $repackingData,
             'customerProducts' => $customerProducts,
-            'slots' => $slots
+            'slots' => $slots,
+            'categories' => $categories,
+            'subcategories' => $subcategories,
+            'filters' => [
+                'search' => $search,
+                'category' => $category,
+                'subcategory' => $subcategory,
+                'type' => $type,
+            ]
         ];
     }
 
@@ -197,6 +248,10 @@ class ReportController extends Controller
                 $query->where('products.subcategory_id', $request->subcategory);
             }
 
+            if ($request->filled('type')) {
+                $query->where('products.type', $request->type);
+            }
+
             $packinglists = $query->orderBy('products.name')
                                  ->select('packinglists.*')
                                  ->get();
@@ -218,14 +273,42 @@ class ReportController extends Controller
         ];
     }
 
-    private function generateTotalStockReport()
+    private function generateTotalStockReport(Request $request)
     {
         $customers = Customer::all();
-        
-        $stockData = Packinglist::with(['product.category', 'customer'])
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
+
+        $query = Packinglist::with(['product.category', 'product.subcategory', 'customer'])
             ->where('stock', '>', 0)
-            ->join('products', 'packinglists.product_id', '=', 'products.id')
-            ->orderBy('products.name') // Changed from short_code to name
+            ->join('products', 'packinglists.product_id', '=', 'products.id');
+
+        // Product name or code filter
+        if ($request->filled('search')) {
+            $search = strtoupper($request->search);
+            $query->where(function($q) use ($search) {
+                $q->where('products.name', 'like', '%' . $search . '%')
+                  ->orWhere('products.short_code', 'like', '%' . $search . '%');
+            });
+        }
+
+        // Category filter
+        if ($request->filled('category')) {
+            $query->where('products.category_id', $request->category);
+        }
+
+        // Subcategory (section) filter
+        if ($request->filled('subcategory')) {
+            $query->where('products.subcategory_id', $request->subcategory);
+        }
+
+        // Type filter
+        if ($request->filled('type')) {
+            $query->where('products.type', $request->type);
+        }
+
+        $stockData = $query->orderBy('products.name')
+            ->select('packinglists.*')
             ->get()
             ->groupBy('product_id');
 
@@ -258,6 +341,8 @@ class ReportController extends Controller
 
         return [
             'customers' => $customers,
+            'categories' => $categories,
+            'subcategories' => $subcategories,
             'rows' => $rows,
             'customerTotals' => $customerTotals,
             'grandTotal' => array_sum($customerTotals)

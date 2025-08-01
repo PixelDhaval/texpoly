@@ -13,8 +13,7 @@
                     <select name="customer_id" class="form-select">
                         <option value="">All Customers</option>
                         @foreach($customers as $customer)
-                            <option value="{{ $customer->id }}" 
-                                {{ request('customer_id') == $customer->id ? 'selected' : '' }}>
+                            <option value="{{ $customer->id }}" {{ request('customer_id') == $customer->id ? 'selected' : '' }}>
                                 {{ $customer->name }}
                             </option>
                         @endforeach
@@ -43,6 +42,36 @@
                         <option value="25" {{ request('per_page') == 25 ? 'selected' : '' }}>25</option>
                         <option value="50" {{ request('per_page') == 50 ? 'selected' : '' }}>50</option>
                         <option value="100" {{ request('per_page') == 100 ? 'selected' : '' }}>100</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Category</label>
+                    <select name="category" class="form-select">
+                        <option value="">All Categories</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Section</label>
+                    <select name="subcategory" class="form-select">
+                        <option value="">All Sections</option>
+                        @foreach($subcategories as $subcategory)
+                            <option value="{{ $subcategory->id }}" {{ request('subcategory') == $subcategory->id ? 'selected' : '' }}>
+                                {{ $subcategory->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Type</label>
+                    <select name="type" class="form-select">
+                        <option value="">All Types</option>
+                        <option value="bale" {{ request('type') == 'bale' ? 'selected' : '' }}>Bale</option>
+                        <option value="jumbo" {{ request('type') == 'jumbo' ? 'selected' : '' }}>Jumbo</option>
                     </select>
                 </div>
                 <div class="col-12">

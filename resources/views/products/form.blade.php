@@ -21,11 +21,22 @@
                     @enderror
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <label for="short_code" class="form-label">Short Code</label>
                     <input type="text" class="form-control @error('short_code') is-invalid @enderror" 
                            id="short_code" name="short_code" value="{{ old('short_code', $product->short_code ?? '') }}">
                     @error('short_code')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="col-md-2">
+                    <label for="type" class="form-label">Type</label>
+                    <select class="form-select @error('type') is-invalid @enderror" id="type" name="type" required>
+                        <option value="">Select Type</option>
+                        <option value="bale" {{ old('type', $product->type ?? '') == 'bale' ? 'selected' : '' }}>Bale</option>
+                        <option value="jumbo" {{ old('type', $product->type ?? '') == 'jumbo' ? 'selected' : '' }}>Jumbo</option>
+                    </select>
+                    @error('type')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>

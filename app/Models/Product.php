@@ -21,6 +21,7 @@ class Product extends Model
         'price',
         'quantity',
         'weight',
+        'type',
     ];
 
     protected $with = ['category', 'subcategory'];

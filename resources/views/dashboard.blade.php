@@ -9,9 +9,13 @@
                     <div class="card-body">
                         <h5 class="card-title">Today's Production</h5>
                         <h2 class="mt-3 mb-3">{{ $todayProduction ?? 0 }}</h2>
-                        <p class="card-text text-muted">
+                        <p class="card-text text-muted mb-1">
                             Bales produced today
                         </p>
+                        <div class="d-flex flex-column small text-muted">
+                            <span>Total Bale: <strong>{{ $todayBaleCount ?? 0 }}</strong></span>
+                            <span>Total Jumbo: <strong>{{ $todayJumboCount ?? 0 }}</strong></span>
+                        </div>
                     </div>
                 </div>
             </div>

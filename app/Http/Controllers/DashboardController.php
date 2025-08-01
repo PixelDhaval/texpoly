@@ -11,9 +11,25 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // Today's production count
+        // Today's production count (all types)
         $todayProduction = Bale::whereDate('created_at', Carbon::today())
             ->where('type', 'production')
+            ->count();
+
+        // Today's bale count
+        $todayBaleCount = Bale::whereDate('created_at', Carbon::today())
+            ->where('type', 'production')
+            ->whereHas('packinglist.product', function($q) {
+                $q->where('type', 'bale');
+            })
+            ->count();
+
+        // Today's jumbo count
+        $todayJumboCount = Bale::whereDate('created_at', Carbon::today())
+            ->where('type', 'production')
+            ->whereHas('packinglist.product', function($q) {
+                $q->where('type', 'jumbo');
+            })
             ->count();
 
         // Active orders count
@@ -75,6 +91,8 @@ class DashboardController extends Controller
 
         return view('dashboard', compact(
             'todayProduction',
+            'todayBaleCount',
+            'todayJumboCount',
             'todayRepacking',
             'recentActivities',
             'chartLabels',
