@@ -202,7 +202,8 @@
 
                 let options = '<option value="">Select Product</option>';
                 data.packing_lists.forEach(item => {
-                    options += `<option value="${item.id}" data-info='${JSON.stringify(item)}'>
+                    const escapedInfo = JSON.stringify(item).replace(/'/g, '&apos;').replace(/"/g, '&quot;');
+                    options += `<option value="${item.id}" data-info='${escapedInfo}'>
                     ${item.product.name} - ${item.label_name}
                 </option>`;
                 });
