@@ -81,7 +81,7 @@
                     <label for="grade" class="form-label">Grade</label>
                     <select class="form-select" id="grade" name="grade">
                         <option value="">Select Grade</option>
-                        @foreach(['A', 'B', 'C', 'W', 'A + B', 'B + C'] as $grade)
+                        @foreach(['A', 'B', 'C', 'W', 'A + B', 'B + C', 'Premium A'] as $grade)
                             <option value="{{ $grade }}" {{ old('grade', $product->grade ?? '') == $grade ? 'selected' : '' }}>
                                 {{ $grade }}
                             </option>
