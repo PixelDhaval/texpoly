@@ -74,8 +74,11 @@
 </div>
 
 <div class="card">
-    <div class="card-header">
+    <div class="card-header d-flex justify-content-between align-items-center">
         <h2>Order Items</h2>
+        <button type="button" id="downloadExcelBtn" class="btn btn-success">
+            <i class="fas fa-download"></i> Download Excel
+        </button>
     </div>
     <div class="card-body">
         <form id="orderItemsForm" action="{{ route('orderlists.bulk-update') }}" method="POST">
@@ -106,7 +109,8 @@
                                     name="orderlist[{{ $loop->index }}][dispatch_qty]"
                                     value="{{ $item->dispatch_qty }}"
                                     min="0" 
-                                    max="{{ $item->packinglist->stock + $item->dispatch_qty }}">
+                                    max="{{ $item->packinglist->stock + $item->dispatch_qty }}"
+                                    data-original="{{ $item->dispatch_qty }}">
                             </td>
                         </tr>
                         @endforeach
@@ -119,6 +123,9 @@
             </div>
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary">Update Quantities</button>
+                <span id="unsavedChanges" class="text-warning ms-3" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i> You have unsaved changes
+                </span>
             </div>
         </form>
     </div>
@@ -126,6 +133,8 @@
 
 @push('scripts')
 <script>
+let hasUnsavedChanges = false;
+
 function updateTotal() {
     let total = 0;
     $('.dispatch-qty').each(function() {
@@ -134,9 +143,52 @@ function updateTotal() {
     $('#totalDispatchQty').text(total);
 }
 
+function checkForChanges() {
+    hasUnsavedChanges = false;
+    $('.dispatch-qty').each(function() {
+        const currentValue = $(this).val();
+        const originalValue = $(this).data('original');
+        if (currentValue != originalValue) {
+            hasUnsavedChanges = true;
+            return false; // break the loop
+        }
+    });
+    
+    updateDownloadButton();
+    toggleUnsavedWarning();
+}
+
+function updateDownloadButton() {
+    const downloadBtn = $('#downloadExcelBtn');
+    if (hasUnsavedChanges) {
+        downloadBtn.prop('disabled', true)
+                  .removeClass('btn-success')
+                  .addClass('btn-secondary')
+                  .attr('title', 'Please save changes before downloading');
+    } else {
+        downloadBtn.prop('disabled', false)
+                  .removeClass('btn-secondary')
+                  .addClass('btn-success')
+                  .attr('title', 'Download Excel');
+    }
+}
+
+function toggleUnsavedWarning() {
+    if (hasUnsavedChanges) {
+        $('#unsavedChanges').show();
+    } else {
+        $('#unsavedChanges').hide();
+    }
+}
+
 $(document).ready(function() {
     updateTotal();
-    $('.dispatch-qty').on('change', updateTotal);
+    updateDownloadButton();
+    
+    $('.dispatch-qty').on('change input', function() {
+        updateTotal();
+        checkForChanges();
+    });
 
     $('#orderStatus').on('change', function() {
         const isDelivered = $(this).val() === 'delivered';
@@ -146,10 +198,33 @@ $(document).ready(function() {
         if (isDelivered) {
             orderDateField.show();
             orderDateInput.prop('required', true);
-            // Set today's date if empty
+            if (!orderDateInput.val()) {
+                orderDateInput.val(new Date().toISOString().split('T')[0]);
+            }
         } else {
             orderDateField.hide();
             orderDateInput.prop('required', false);
+        }
+    });
+
+    // Handle form submission
+    $('#orderItemsForm').on('submit', function() {
+        hasUnsavedChanges = false;
+        updateDownloadButton();
+        toggleUnsavedWarning();
+        
+        // Update original values after successful submission
+        setTimeout(function() {
+            $('.dispatch-qty').each(function() {
+                $(this).data('original', $(this).val());
+            });
+        }, 100);
+    });
+
+    // Handle Excel download
+    $('#downloadExcelBtn').on('click', function() {
+        if (!hasUnsavedChanges) {
+            window.location.href = "{{ route('orders.export', $order->id) }}";
         }
     });
 });

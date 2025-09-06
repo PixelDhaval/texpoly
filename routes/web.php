@@ -90,9 +90,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/plant-transfer/packinglists', [PlantTransferController::class, 'getPackinglists']);
     Route::post('/plant-transfer', [PlantTransferController::class, 'store']);
 
-
-
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+    Route::get('orders/{order}/export', [OrderController::class, 'exportExcel'])->name('orders.export');
 });
 
 require __DIR__.'/auth.php';

@@ -6,6 +6,8 @@ use App\Models\Order;
 use App\Models\Customer;
 use App\Models\Packinglist;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\OrderExport;
 
 class OrderController extends Controller
 {
@@ -99,5 +101,12 @@ class OrderController extends Controller
 
         $order->update($validated);
         return redirect()->back()->with('success', 'Order updated successfully');
+    }
+
+    public function exportExcel(Order $order)
+    {
+        $filename = 'order_' . $order->order_no . '_' . now()->format('Y-m-d') . '.xlsx';
+        
+        return Excel::download(new OrderExport($order), $filename);
     }
 }
