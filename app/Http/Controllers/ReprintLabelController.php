@@ -77,16 +77,6 @@ class ReprintLableController extends Controller
         return view('reprint.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreReprintLabelRequest $request)
-    {
-        ReprintLabel::create($request->validated());
-        $qrUrl = $url = "qrcode://this_is_not_a_valid_link_or_payload";
-        return 
-        
-    }
 
     /**
      * Display the specified resource.

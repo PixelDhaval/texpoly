@@ -79,8 +79,8 @@ class RepackingController extends Controller
             $qc = Employee::find($request->qc);
             $finalist = Employee::find($request->finalist);
             $today = Carbon::now();
-            $datePrefix = $today->format('dmy');
-            
+            $datePrefix = config('plantcode.plantcode').$today->format('dmy');
+
             $lastBale = Bale::where('bale_no', 'like', $datePrefix . '%')
                            ->orderBy('bale_no', 'desc')
                            ->first();

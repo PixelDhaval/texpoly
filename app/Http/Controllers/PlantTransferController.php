@@ -77,7 +77,7 @@ class PlantTransferController extends Controller
             DB::beginTransaction();
 
             $date = Carbon::parse($request->created_at);
-            $datePrefix = $date->format('dmy');
+            $datePrefix = config('plantcode.plantcode').$date->format('dmy');
 
             for ($i = 0; $i < $request->quantity; $i++) {
                 $lastBale = Bale::where('bale_no', 'like', $datePrefix . '%')

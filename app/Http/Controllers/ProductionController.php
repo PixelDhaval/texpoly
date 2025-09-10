@@ -115,7 +115,7 @@ class ProductionController extends Controller
 
             // Generate bale number
             $today = Carbon::now();
-            $datePrefix = $today->format('dmy');
+            $datePrefix = config('plantcode.plantcode', '').$today->format('dmy');
             
             $lastBale = Bale::where('bale_no', 'like', $datePrefix . '%')
                            ->orderBy('bale_no', 'desc')
