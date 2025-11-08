@@ -113,7 +113,6 @@ class ProductionController extends Controller
             $qc = Employee::find($request->qc);
             $finalist = Employee::find($request->finalist);
 
-            // Generate bale number
             $today = Carbon::now();
             $datePrefix = config('plantcode.plantcode', '').$today->format('dmy');
             
@@ -127,7 +126,6 @@ class ProductionController extends Controller
                 $sequence = str_pad($lastSequence + 1, 4, '0', STR_PAD_LEFT);
             }
 
-            // Create bale
             $bale = Bale::create([
                 'bale_no' => $datePrefix . $sequence,
                 'packinglist_id' => $request->packinglist_id,

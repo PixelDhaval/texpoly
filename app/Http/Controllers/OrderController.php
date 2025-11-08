@@ -79,7 +79,11 @@ class OrderController extends Controller
             ->with(['packinglist.product'])
             ->join('packinglists', 'orderlists.packinglist_id', '=', 'packinglists.id')
             ->join('products', 'packinglists.product_id', '=', 'products.id')
-            ->where('packinglists.customer_qty', '>', 0)
+            ->where(function($query) use ($order) {
+                $query->where('packinglists.customer_qty', '>', 0)
+                      ->orWhere('orderlists.dispatch_qty', '>', 0)
+                      ->orWhere('packinglists.stock', '>', 0);
+            })
             ->orderBy('products.short_code', 'asc')
             ->select('orderlists.*')
             ->get();
