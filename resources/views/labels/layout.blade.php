@@ -116,6 +116,9 @@
                             @can('product_history')
                             <li><a class="dropdown-item" href="{{ route('products.history') }}">Product History</a></li>
                             @endcan
+                            @can('product_history')
+                            <li><a class="dropdown-item" href="{{ route('products.customer-balance') }}">Customer Balance</a></li>
+                            @endcan
                         </ul>
                     </li>
                     @endif
