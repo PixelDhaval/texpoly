@@ -1,28 +1,28 @@
 <?php
 
-use App\Http\Controllers\LabelController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\SubcategoryController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\PackinglistController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\OrderlistController;
-use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\BaleController;
 use App\Http\Controllers\CancelController;
-use App\Http\Controllers\RepackingController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\LabelController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderlistController;
+use App\Http\Controllers\PackinglistController;
 use App\Http\Controllers\PlantController;
 use App\Http\Controllers\PlantTransferController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductionController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RepackingController;
 use App\Http\Controllers\ReportController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SectionLabourController;
+use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 
+Route::get('/',
     [DashboardController::class, 'index']
 )->middleware(['auth'])->name('home');
 
@@ -92,6 +92,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
     Route::get('orders/{order}/export', [OrderController::class, 'exportExcel'])->name('orders.export');
+    Route::get('/customer-balance', [ProductController::class, 'customerBalance'])->name('products.customer-balance');
+    Route::get('/customer-balance/export', [ProductController::class, 'customerBalanceExport'])->name('products.customer-balance.export');
 });
 
 require __DIR__.'/auth.php';

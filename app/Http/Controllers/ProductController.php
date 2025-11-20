@@ -13,6 +13,8 @@ use App\Models\Packinglist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Exports\CustomerBalanceExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -472,6 +474,318 @@ class ProductController extends Controller
         ));
     }
 
+    
+    public function customerBalance(Request $request)
+    {
+        $customers = Customer::orderBy('name')->get();
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
+        $balances = collect();
+        
+        if ($request->has('from_date') && $request->has('to_date')) {
+            $fromDate = Carbon::parse($request->from_date)->startOfDay();
+            $toDate = Carbon::parse($request->to_date)->endOfDay();
+
+            // Build base query for customers with stock
+            $query = Customer::query()
+                ->whereHas('packinglists', function($q) use ($request) {
+                    if ($request->filled('category')) {
+                        $q->whereHas('product', function($pq) use ($request) {
+                            $pq->where('category_id', $request->category);
+                        });
+                    }
+                    if ($request->filled('subcategory')) {
+                        $q->whereHas('product', function($pq) use ($request) {
+                            $pq->where('subcategory_id', $request->subcategory);
+                        });
+                    }
+                    if ($request->filled('type')) {
+                        $q->whereHas('product', function($pq) use ($request) {
+                            $pq->where('type', $request->type);
+                        });
+                    }
+                });
+
+            // Apply search filter
+            if ($request->filled('search')) {
+                $search = strtoupper($request->search);
+                $query->where('name', 'like', "%{$search}%");
+            }
+
+            // Add sorting
+            $sortField = $request->input('sort', 'name');
+            $sortDirection = $request->input('direction', 'asc');
+            $query->orderBy($sortField, $sortDirection);
+
+            // Get paginated results
+            $perPage = $request->input('per_page', 10);
+            $customersQuery = $query->paginate($perPage);
+
+            // Get customer IDs for bulk calculations
+            $customerIds = $customersQuery->pluck('id')->toArray();
+
+            // Build product filter conditions
+            $productFilter = function($q) use ($request) {
+                if ($request->filled('category')) {
+                    $q->where('category_id', $request->category);
+                }
+                if ($request->filled('subcategory')) {
+                    $q->where('subcategory_id', $request->subcategory);
+                }
+                if ($request->filled('type')) {
+                    $q->where('type', $request->type);
+                }
+            };
+
+            // Bulk calculate current stocks
+            $currentStocks = Packinglist::select('customer_id', DB::raw('SUM(stock) as total_stock'))
+                ->whereIn('customer_id', $customerIds)
+                ->whereHas('product', $productFilter)
+                ->groupBy('customer_id')
+                ->pluck('total_stock', 'customer_id');
+
+            // Bulk calculate movements after fromDate
+            $productionAfter = $this->bulkGetMovements('production', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+            $repackingInAfter = $this->bulkGetMovements('repacking', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+            $repackingOutAfter = $this->bulkGetMovements('repacking', 'refPackinglist', $customerIds, $productFilter, $fromDate, now());
+            $inwardAfter = $this->bulkGetMovements('inward', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+            $outwardAfter = $this->bulkGetMovements('outward', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+            $cuttingAfter = $this->bulkGetMovements('cutting', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+            $transferInAfter = $this->bulkGetMovements('transfer', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+            $transferOutAfter = $this->bulkGetMovements('transfer', 'refPackinglist', $customerIds, $productFilter, $fromDate, now());
+            $dispatchAfter = $this->bulkGetDispatchMovements($customerIds, $productFilter, $fromDate, now());
+
+            // Bulk calculate movements for selected period
+            $production = $this->bulkGetMovements('production', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+            $repackingIn = $this->bulkGetMovements('repacking', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+            $repackingOut = $this->bulkGetMovements('repacking', 'refPackinglist', $customerIds, $productFilter, $fromDate, $toDate);
+            $inward = $this->bulkGetMovements('inward', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+            $outward = $this->bulkGetMovements('outward', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+            $cutting = $this->bulkGetMovements('cutting', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+            $transferIn = $this->bulkGetMovements('transfer', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+            $transferOut = $this->bulkGetMovements('transfer', 'refPackinglist', $customerIds, $productFilter, $fromDate, $toDate);
+            $dispatch = $this->bulkGetDispatchMovements($customerIds, $productFilter, $fromDate, $toDate);
+
+            // Map the results
+            $balances = $customersQuery->through(function($customer) use (
+                $currentStocks, $productionAfter, $repackingInAfter, $repackingOutAfter,
+                $inwardAfter, $outwardAfter, $cuttingAfter, $transferInAfter, $transferOutAfter, $dispatchAfter,
+                $production, $repackingIn, $repackingOut, $inward, $outward, $cutting, $transferIn, $transferOut, $dispatch
+            ) {
+                $customerId = $customer->id;
+                $currentStock = $currentStocks[$customerId] ?? 0;
+
+                // Calculate opening balance
+                $openingBalance = $currentStock - (
+                    ($productionAfter[$customerId] ?? 0) + 
+                    ($repackingInAfter[$customerId] ?? 0) - 
+                    ($repackingOutAfter[$customerId] ?? 0) + 
+                    ($inwardAfter[$customerId] ?? 0) - 
+                    ($outwardAfter[$customerId] ?? 0) - 
+                    ($cuttingAfter[$customerId] ?? 0) -
+                    ($dispatchAfter[$customerId] ?? 0) +
+                    ($transferInAfter[$customerId] ?? 0) -
+                    ($transferOutAfter[$customerId] ?? 0)
+                );
+
+                // Get movements for the selected period
+                $customerProduction = $production[$customerId] ?? 0;
+                $customerRepackingIn = $repackingIn[$customerId] ?? 0;
+                $customerRepackingOut = $repackingOut[$customerId] ?? 0;
+                $customerInward = $inward[$customerId] ?? 0;
+                $customerOutward = $outward[$customerId] ?? 0;
+                $customerCutting = $cutting[$customerId] ?? 0;
+                $customerTransferIn = $transferIn[$customerId] ?? 0;
+                $customerTransferOut = $transferOut[$customerId] ?? 0;
+                $customerDispatch = $dispatch[$customerId] ?? 0;
+
+                // Calculate closing balance
+                $closingBalance = $openingBalance + 
+                    $customerProduction + 
+                    $customerRepackingIn - 
+                    $customerRepackingOut + 
+                    $customerInward - 
+                    $customerOutward - 
+                    $customerCutting -
+                    $customerDispatch +
+                    $customerTransferIn -
+                    $customerTransferOut;
+
+                // Set calculated values on customer object
+                $customer->opening_balance = $openingBalance;
+                $customer->closing_balance = $closingBalance;
+                $customer->production = $customerProduction;
+                $customer->repacking_in = $customerRepackingIn;
+                $customer->repacking_out = $customerRepackingOut;
+                $customer->transfer_in = $customerTransferIn;
+                $customer->transfer_out = $customerTransferOut;
+                $customer->inward = $customerInward;
+                $customer->outward = $customerOutward;
+                $customer->cutting = $customerCutting;
+                $customer->dispatch = $customerDispatch;
+
+                return $customer;
+            });
+        }
+
+        return view('products.customer-balance', compact('customers', 'balances', 'categories', 'subcategories'));
+    }
+
+    public function customerBalanceExport(Request $request)
+    {
+        if (!$request->has('from_date') || !$request->has('to_date')) {
+            return redirect()->back()->with('error', 'Please select date range first');
+        }
+
+        $fromDate = Carbon::parse($request->from_date)->startOfDay();
+        $toDate = Carbon::parse($request->to_date)->endOfDay();
+
+        // Build base query for customers with stock (same as customerBalance method)
+        $query = Customer::query()
+            ->whereHas('packinglists', function($q) use ($request) {
+                if ($request->filled('category')) {
+                    $q->whereHas('product', function($pq) use ($request) {
+                        $pq->where('category_id', $request->category);
+                    });
+                }
+                if ($request->filled('subcategory')) {
+                    $q->whereHas('product', function($pq) use ($request) {
+                        $pq->where('subcategory_id', $request->subcategory);
+                    });
+                }
+                if ($request->filled('type')) {
+                    $q->whereHas('product', function($pq) use ($request) {
+                        $pq->where('type', $request->type);
+                    });
+                }
+            });
+
+        // Apply search filter
+        if ($request->filled('search')) {
+            $search = strtoupper($request->search);
+            $query->where('name', 'like', "%{$search}%");
+        }
+
+        // Add sorting
+        $sortField = $request->input('sort', 'name');
+        $sortDirection = $request->input('direction', 'asc');
+        $query->orderBy($sortField, $sortDirection);
+
+        // Get all results (no pagination for export)
+        $customers = $query->get();
+        $customerIds = $customers->pluck('id')->toArray();
+
+        // Build product filter conditions
+        $productFilter = function($q) use ($request) {
+            if ($request->filled('category')) {
+                $q->where('category_id', $request->category);
+            }
+            if ($request->filled('subcategory')) {
+                $q->where('subcategory_id', $request->subcategory);
+            }
+            if ($request->filled('type')) {
+                $q->where('type', $request->type);
+            }
+        };
+
+        // Bulk calculate current stocks
+        $currentStocks = Packinglist::select('customer_id', DB::raw('SUM(stock) as total_stock'))
+            ->whereIn('customer_id', $customerIds)
+            ->whereHas('product', $productFilter)
+            ->groupBy('customer_id')
+            ->pluck('total_stock', 'customer_id');
+
+        // Bulk calculate movements after fromDate
+        $productionAfter = $this->bulkGetMovements('production', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+        $repackingInAfter = $this->bulkGetMovements('repacking', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+        $repackingOutAfter = $this->bulkGetMovements('repacking', 'refPackinglist', $customerIds, $productFilter, $fromDate, now());
+        $inwardAfter = $this->bulkGetMovements('inward', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+        $outwardAfter = $this->bulkGetMovements('outward', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+        $cuttingAfter = $this->bulkGetMovements('cutting', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+        $transferInAfter = $this->bulkGetMovements('transfer', 'packinglist', $customerIds, $productFilter, $fromDate, now());
+        $transferOutAfter = $this->bulkGetMovements('transfer', 'refPackinglist', $customerIds, $productFilter, $fromDate, now());
+        $dispatchAfter = $this->bulkGetDispatchMovements($customerIds, $productFilter, $fromDate, now());
+
+        // Bulk calculate movements for selected period
+        $production = $this->bulkGetMovements('production', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+        $repackingIn = $this->bulkGetMovements('repacking', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+        $repackingOut = $this->bulkGetMovements('repacking', 'refPackinglist', $customerIds, $productFilter, $fromDate, $toDate);
+        $inward = $this->bulkGetMovements('inward', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+        $outward = $this->bulkGetMovements('outward', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+        $cutting = $this->bulkGetMovements('cutting', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+        $transferIn = $this->bulkGetMovements('transfer', 'packinglist', $customerIds, $productFilter, $fromDate, $toDate);
+        $transferOut = $this->bulkGetMovements('transfer', 'refPackinglist', $customerIds, $productFilter, $fromDate, $toDate);
+        $dispatch = $this->bulkGetDispatchMovements($customerIds, $productFilter, $fromDate, $toDate);
+
+        // Map the results
+        $balances = $customers->map(function($customer) use (
+            $currentStocks, $productionAfter, $repackingInAfter, $repackingOutAfter,
+            $inwardAfter, $outwardAfter, $cuttingAfter, $transferInAfter, $transferOutAfter, $dispatchAfter,
+            $production, $repackingIn, $repackingOut, $inward, $outward, $cutting, $transferIn, $transferOut, $dispatch
+        ) {
+            $customerId = $customer->id;
+            $currentStock = $currentStocks[$customerId] ?? 0;
+
+            // Calculate opening balance
+            $openingBalance = $currentStock - (
+                ($productionAfter[$customerId] ?? 0) + 
+                ($repackingInAfter[$customerId] ?? 0) - 
+                ($repackingOutAfter[$customerId] ?? 0) + 
+                ($inwardAfter[$customerId] ?? 0) - 
+                ($outwardAfter[$customerId] ?? 0) - 
+                ($cuttingAfter[$customerId] ?? 0) -
+                ($dispatchAfter[$customerId] ?? 0) +
+                ($transferInAfter[$customerId] ?? 0) -
+                ($transferOutAfter[$customerId] ?? 0)
+            );
+
+            // Get movements for the selected period
+            $customerProduction = $production[$customerId] ?? 0;
+            $customerRepackingIn = $repackingIn[$customerId] ?? 0;
+            $customerRepackingOut = $repackingOut[$customerId] ?? 0;
+            $customerInward = $inward[$customerId] ?? 0;
+            $customerOutward = $outward[$customerId] ?? 0;
+            $customerCutting = $cutting[$customerId] ?? 0;
+            $customerTransferIn = $transferIn[$customerId] ?? 0;
+            $customerTransferOut = $transferOut[$customerId] ?? 0;
+            $customerDispatch = $dispatch[$customerId] ?? 0;
+
+            // Calculate closing balance
+            $closingBalance = $openingBalance + 
+                $customerProduction + 
+                $customerRepackingIn - 
+                $customerRepackingOut + 
+                $customerInward - 
+                $customerOutward - 
+                $customerCutting -
+                $customerDispatch +
+                $customerTransferIn -
+                $customerTransferOut;
+
+            // Set calculated values on customer object
+            $customer->opening_balance = $openingBalance;
+            $customer->closing_balance = $closingBalance;
+            $customer->production = $customerProduction;
+            $customer->repacking_in = $customerRepackingIn;
+            $customer->repacking_out = $customerRepackingOut;
+            $customer->transfer_in = $customerTransferIn;
+            $customer->transfer_out = $customerTransferOut;
+            $customer->inward = $customerInward;
+            $customer->outward = $customerOutward;
+            $customer->cutting = $customerCutting;
+            $customer->dispatch = $customerDispatch;
+
+            return $customer;
+        });
+
+        $filename = 'customer-balance-' . $fromDate->format('Y-m-d') . '-to-' . $toDate->format('Y-m-d') . '.xlsx';
+        
+        return Excel::download(
+            new CustomerBalanceExport($balances, $fromDate->format('Y-m-d'), $toDate->format('Y-m-d')), 
+            $filename
+        );
+    }
+
     private function getProductionCount($productId, $customerId = null, $fromDate, $toDate)
     {
         return Bale::where('type', 'production')
@@ -587,5 +901,34 @@ class ProductController extends Controller
             })
             ->whereBetween('created_at', [$fromDate, $toDate])
             ->count();
+    }
+
+    private function bulkGetMovements($type, $relation, $customerIds, $productFilter, $fromDate, $toDate)
+    {
+        return Bale::select('packinglists.customer_id', DB::raw('COUNT(*) as count'))
+            ->join('packinglists', function($join) use ($relation) {
+                $join->on('bales.' . ($relation === 'refPackinglist' ? 'ref_packinglist_id' : 'packinglist_id'), '=', 'packinglists.id');
+            })
+            ->join('products', 'packinglists.product_id', '=', 'products.id')
+            ->where('bales.type', $type)
+            ->whereIn('packinglists.customer_id', $customerIds)
+            ->where($productFilter)
+            ->whereBetween('bales.created_at', [$fromDate, $toDate])
+            ->groupBy('packinglists.customer_id')
+            ->pluck('count', 'customer_id');
+    }
+
+    private function bulkGetDispatchMovements($customerIds, $productFilter, $fromDate, $toDate)
+    {
+        return DB::table('orderlists')
+            ->join('packinglists', 'orderlists.packinglist_id', '=', 'packinglists.id')
+            ->join('orders', 'orderlists.order_id', '=', 'orders.id')
+            ->join('products', 'packinglists.product_id', '=', 'products.id')
+            ->whereIn('packinglists.customer_id', $customerIds)
+            ->where($productFilter)
+            ->whereBetween('orders.order_date', [$fromDate, $toDate])
+            ->groupBy('packinglists.customer_id')
+            ->select('packinglists.customer_id', DB::raw('SUM(orderlists.dispatch_qty) as total'))
+            ->pluck('total', 'customer_id');
     }
 }
