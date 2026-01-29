@@ -67,7 +67,6 @@ class DashboardController extends Controller
             ->whereYear('order_date', Carbon::now()->year)
             ->latest('order_date')
             ->with('customer')
-            ->take(5)
             ->get();
 
         // Delivered orders last month
@@ -77,7 +76,6 @@ class DashboardController extends Controller
             ->whereYear('order_date', Carbon::now()->subMonth()->year)
             ->latest('order_date')
             ->with('customer')
-            ->take(5)
             ->get();
 
         // Upcoming orders (target date in future)
@@ -85,8 +83,7 @@ class DashboardController extends Controller
             ->where('status', 'production')
             ->where('target_date', '>=', Carbon::today())  // Only future dates
             ->orderBy('target_date', 'asc')                // Sort by target_date ascending
-            ->with('customer')                             // Eager load customer relation
-            ->take(5)
+            ->with('customer')   
             ->get();
 
         return view('dashboard', compact(
