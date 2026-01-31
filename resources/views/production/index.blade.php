@@ -119,7 +119,11 @@
                             $labelCode = $data['orders']->first()->packinglist->customer->label->label_code;
                             $labelCode = str_replace('[[ label-name ]]', $data['orders']->first()->packinglist->label_name, $labelCode);
                             $packing = $data['orders']->first()->packinglist->quantity . ' ' . $data['orders']->first()->packinglist->unit;
-                            $labelCode = str_replace('[[ packing ]]', $packing, $labelCode);
+                            if($data['orders']->first()->packinglist->is_weight == 1){
+                                $labelCode = str_replace('[[ packing ]]', $packing, $labelCode);
+                            } else {
+                                $labelCode = str_replace('[[ packing ]]', ' ' , $labelCode);
+                            }
                             if($data['orders']->first()->packinglist->is_bold){
                             $labelCode = str_replace('[[ bold ]]', '<strong>', $labelCode);
                                 $labelCode = str_replace('[[ /bold ]]', '</strong>', $labelCode);
@@ -156,7 +160,11 @@
                             $labelCode = $data['orders']->first()->packinglist->customer->label->label_code;
                             $labelCode = str_replace('[[ label-name ]]', $data['orders']->first()->packinglist->label_name, $labelCode);
                             $packing = $data['orders']->first()->packinglist->quantity . ' ' . $data['orders']->first()->packinglist->unit;
-                            $labelCode = str_replace('[[ packing ]]', $packing, $labelCode);
+                           if($data['orders']->first()->packinglist->is_weight == 1){
+                                $labelCode = str_replace('[[ packing ]]', $packing, $labelCode);
+                            } else {
+                                $labelCode = str_replace('[[ packing ]]', ' ' , $labelCode);
+                            }
                             if($data['orders']->first()->packinglist->is_bold){
                             $labelCode = str_replace('[[ bold ]]', '<strong>', $labelCode);
                                 $labelCode = str_replace('[[ /bold ]]', '</strong>', $labelCode);

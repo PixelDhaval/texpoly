@@ -18,6 +18,7 @@ class Packinglist extends Model
         'is_bold',
         'stock',
         'stop_till',
+        'is_weight',
     ];
 
     protected $with = ['customer', 'product'];

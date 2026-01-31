@@ -81,6 +81,7 @@
                             <th>Bold</th>
                             <th>Stock</th>
                             <th>Stop Till</th>
+                            <th>Show Weight</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -133,6 +134,11 @@
                                        name="packinglists[{{ $loop->index }}][stop_till]"
                                        value="{{ $item->stop_till ? \Carbon\Carbon::parse($item->stop_till)->format('Y-m-d\TH:i') : '' }}"
                                        step="60">
+                            </td>
+                            <td class="editable">
+                                <input type="hidden" name="packinglists[{{ $loop->index }}][is_weight]" value="0">
+                                <input type="checkbox" class="form-check-input" name="packinglists[{{ $loop->index }}][is_weight]"
+                                    {{ $item->is_weight ? 'checked' : '' }}>
                             </td>
                         </tr>
                         @endforeach

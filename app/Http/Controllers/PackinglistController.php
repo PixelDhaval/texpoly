@@ -61,6 +61,7 @@ class PackinglistController extends Controller
             'weight' => 'nullable|integer',
             'stock' => 'nullable|integer',
             'is_bold' => 'boolean',
+            'is_weight' => 'boolean',
         ]);
 
         $packinglist->update($validated);
@@ -84,6 +85,7 @@ class PackinglistController extends Controller
             'packinglists.*.weight' => 'nullable|integer',
             'packinglists.*.price' => 'nullable|numeric',
             'packinglists.*.is_bold' => 'nullable',
+            'packinglists.*.is_weight' => 'nullable',
             'packinglists.*.stop_till' => 'nullable|'. 'date_format:Y-m-d\TH:i',
         ]);
 
@@ -103,6 +105,10 @@ class PackinglistController extends Controller
                             // Convert is_bold to boolean
                             if (isset($item['is_bold'])) {
                                 $item['is_bold'] = filter_var($item['is_bold'], FILTER_VALIDATE_BOOLEAN);
+                            }
+
+                            if (isset($item['is_weight'])) {
+                                $item['is_weight'] = filter_var($item['is_weight'], FILTER_VALIDATE_BOOLEAN);
                             }
                             
                             // Convert stop_till to date
