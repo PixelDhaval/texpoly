@@ -89,59 +89,66 @@ class PackinglistController extends Controller
             'packinglists.*.stop_till' => 'nullable|'. 'date_format:Y-m-d\TH:i',
         ]);
 
+        $errors = [];
+
         try {
             DB::beginTransaction();
             
-            // Process updates in chunks of 50 records
-            $chunks = array_chunk($request->packinglists, 50, true);
             $totalUpdated = 0;
-            $errors = [];
 
-            foreach ($chunks as $chunk) {
+            foreach ($request->packinglists as $index => $item) {
                 try {
-                    foreach ($chunk as $item) {
-                        $packinglist = Packinglist::find($item['id']);
-                        if ($packinglist) {
-                            // Convert is_bold to boolean
-                            if (isset($item['is_bold'])) {
-                                $item['is_bold'] = filter_var($item['is_bold'], FILTER_VALIDATE_BOOLEAN);
-                            }
+                    $packinglist = Packinglist::find($item['id']);
 
-                            if (isset($item['is_weight'])) {
-                                $item['is_weight'] = filter_var($item['is_weight'], FILTER_VALIDATE_BOOLEAN);
-                            }
-                            
-                            // Convert stop_till to date
-                            if (isset($item['stop_till'])) {
-                                $item['stop_till'] = Carbon::createFromFormat('Y-m-d\TH:i', $item['stop_till']);
+                    if (!$packinglist) {
+                        $errors[] = "Item #{$item['id']} not found";
+                        continue;
+                    }
 
-                                $item['stop_till'] = $item['stop_till'] ? $item['stop_till']->format('Y-m-d H:i') : null;
-                            }
-                            // Remove id from update data
-                            unset($item['id']);
-                            
-                            // Update and track success
-                            if ($packinglist->update($item)) {
-                                $totalUpdated++;
-                            }
+                    if (array_key_exists('is_bold', $item)) {
+                        $item['is_bold'] = filter_var($item['is_bold'], FILTER_VALIDATE_BOOLEAN);
+                    }
+
+                    if (array_key_exists('is_weight', $item)) {
+                        $item['is_weight'] = filter_var($item['is_weight'], FILTER_VALIDATE_BOOLEAN);
+                    }
+                    
+                    if (array_key_exists('stop_till', $item)) {
+                        if (blank($item['stop_till'])) {
+                            $item['stop_till'] = null;
+                        } else {
+                            $item['stop_till'] = Carbon::createFromFormat('Y-m-d\TH:i', $item['stop_till'])->format('Y-m-d H:i:s');
                         }
                     }
+
+                    unset($item['id']);
+
+                    $packinglist->fill($item);
+                    $isDirty = $packinglist->isDirty();
+
+                    if ($isDirty && $packinglist->save()) {
+                        $totalUpdated++;
+                    }
                 } catch (\Exception $e) {
-                    // Log the error but continue processing other chunks
-                    $errors[] = "Error processing chunk: " . $e->getMessage();
-                    Log::error("Packinglist bulk update error: " . $e->getMessage());
-                    continue;
+                    $itemId = $item['id'] ?? ($index + 1);
+                    $errors[] = "Error updating item #{$itemId}: " . $e->getMessage();
+                    Log::error("Packinglist bulk update error for item #{$itemId}: " . $e->getMessage());
                 }
             }
 
             DB::commit();
 
             // Determine the response based on results
-            if ($totalUpdated === count($request->packinglists)) {
+            if ($totalUpdated === count($request->packinglists) && count($errors) === 0) {
                 return redirect()->back()->with('success', 'All ' . $totalUpdated . ' items updated successfully');
-            } elseif ($totalUpdated > 0) {
+            } elseif ($totalUpdated > 0 || count($errors) > 0) {
+                $warningMessage = $totalUpdated . ' items updated successfully.';
+                if (count($errors) > 0) {
+                    $warningMessage .= ' Some items failed to update.';
+                }
+
                 return redirect()->back()
-                    ->with('warning', $totalUpdated . ' items updated successfully. Some items failed to update.')
+                    ->with('warning', $warningMessage)
                     ->with('errors', $errors);
             } else {
                 throw new \Exception("No items were updated successfully");
