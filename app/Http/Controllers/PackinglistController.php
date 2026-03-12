@@ -97,14 +97,8 @@ class PackinglistController extends Controller
             $totalUpdated = 0;
 
             foreach ($request->packinglists as $index => $item) {
+                $itemId = $item['id'] ?? ($index + 1);
                 try {
-                    $packinglist = Packinglist::find($item['id']);
-
-                    if (!$packinglist) {
-                        $errors[] = "Item #{$item['id']} not found";
-                        continue;
-                    }
-
                     if (array_key_exists('is_bold', $item)) {
                         $item['is_bold'] = filter_var($item['is_bold'], FILTER_VALIDATE_BOOLEAN);
                     }
@@ -112,7 +106,7 @@ class PackinglistController extends Controller
                     if (array_key_exists('is_weight', $item)) {
                         $item['is_weight'] = filter_var($item['is_weight'], FILTER_VALIDATE_BOOLEAN);
                     }
-                    
+
                     if (array_key_exists('stop_till', $item)) {
                         if (blank($item['stop_till'])) {
                             $item['stop_till'] = null;
@@ -121,15 +115,13 @@ class PackinglistController extends Controller
                         }
                     }
 
+                    $itemId = $item['id'];
                     unset($item['id']);
+                    $item['updated_at'] = now();
 
-                    $packinglist->fill($item);
-
-                    if ($packinglist->save()) {
-                        $totalUpdated++;
-                    }
+                    DB::table('packinglists')->where('id', $itemId)->update($item);
+                    $totalUpdated++;
                 } catch (\Exception $e) {
-                    $itemId = $item['id'] ?? ($index + 1);
                     $errors[] = "Error updating item #{$itemId}: " . $e->getMessage();
                     Log::error("Packinglist bulk update error for item #{$itemId}: " . $e->getMessage());
                 }
