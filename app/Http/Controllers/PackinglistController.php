@@ -121,7 +121,6 @@ class PackinglistController extends Controller
                         }
                     }
 
-                    unset($item['id']);
 
                     $packinglist->fill($item);
 
