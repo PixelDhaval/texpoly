@@ -121,10 +121,11 @@ class PackinglistController extends Controller
                         }
                     }
 
-                    $packinglist->fill($item);
-                    $isDirty = $packinglist->isDirty();
+                    unset($item['id']);
 
-                    if ($isDirty && $packinglist->save()) {
+                    $packinglist->fill($item);
+
+                    if ($packinglist->save()) {
                         $totalUpdated++;
                     }
                 } catch (\Exception $e) {
