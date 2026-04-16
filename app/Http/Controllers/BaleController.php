@@ -56,7 +56,7 @@ class BaleController extends Controller
             });
         }
 
-        $bales = $query->get();
+        $bales = $query->orderBy('bale_no', 'asc')->get();
         $customers = Customer::all();
         $categories = Category::all();
         $subcategories = Subcategory::all();
