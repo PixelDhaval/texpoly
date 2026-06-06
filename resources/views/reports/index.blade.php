@@ -95,6 +95,11 @@
                             Product-wise Daily Production
                         </option>
                         @endcanany
+                        @canany(['product-wise-daily-report', 'reports'])
+                        <option value="qc-finalist" {{ request('report') == 'qc-finalist' ? 'selected' : '' }}>
+                            QC / Finalist Report
+                        </option>
+                        @endcanany
                     </select>
                 </div>
                 @if(request('report') == 'daily-production')
@@ -102,6 +107,26 @@
                         <label class="form-label">Date</label>
                         <input type="date" name="date" class="form-control" 
                                value="{{ request('date', now()->format('Y-m-d')) }}"
+                               onchange="this.form.submit()">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label d-block">&nbsp;</label>
+                        <button type="button" class="btn btn-secondary" onclick="window.print()">
+                            Print Report
+                        </button>
+                    </div>
+                @endif
+                @if(request('report') == 'qc-finalist')
+                    <div class="col-md-3">
+                        <label class="form-label">From Date</label>
+                        <input type="date" name="from_date" class="form-control"
+                               value="{{ request('from_date', now()->format('Y-m-d')) }}"
+                               onchange="this.form.submit()">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">To Date</label>
+                        <input type="date" name="to_date" class="form-control"
+                               value="{{ request('to_date', now()->format('Y-m-d')) }}"
                                onchange="this.form.submit()">
                     </div>
                     <div class="col-md-2">

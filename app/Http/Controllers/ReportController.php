@@ -49,6 +49,9 @@ class ReportController extends Controller
             case 'product-wise-daily':
                 $data = $this->generateProductWiseDailyReport($request);
                 break;
+            case 'qc-finalist':
+                $data = $this->generateQcFinalistReport($request);
+                break;
         }
 
         return view('reports.index', compact('data', 'reportType'));
@@ -558,5 +561,91 @@ class ReportController extends Controller
                 'type' => $type,
             ]
         ];
+    }
+
+    private function generateQcFinalistReport(Request $request)
+    {
+        $fromDate = $request->get('from_date', now()->format('Y-m-d'));
+        $toDate = $request->get('to_date', now()->format('Y-m-d'));
+
+        $slotDefinitions = [
+            1 => ['start' => '00:00:00', 'end' => '10:30:59'],
+            2 => ['start' => '10:31:00', 'end' => '13:15:59'],
+            3 => ['start' => '13:16:00', 'end' => '15:30:59'],
+            4 => ['start' => '15:31:00', 'end' => '23:59:59'],
+        ];
+
+        $bales = Bale::with(['qcEmployee', 'finalistEmployee'])
+            ->where('type', 'production')
+            ->whereBetween('created_at', [
+                Carbon::parse($fromDate)->startOfDay(),
+                Carbon::parse($toDate)->endOfDay(),
+            ])
+            ->orderBy('created_at')
+            ->get();
+
+        return [
+            'from_date' => $fromDate,
+            'to_date' => $toDate,
+            'slots' => $slotDefinitions,
+            'qcReport' => $this->buildEmployeeSlotSummary($bales, 'qcEmployee', $slotDefinitions),
+            'finalistReport' => $this->buildEmployeeSlotSummary($bales, 'finalistEmployee', $slotDefinitions),
+        ];
+    }
+
+    private function buildEmployeeSlotSummary($bales, string $relationName, array $slotDefinitions): array
+    {
+        $summary = [];
+        $slotTotals = [0, 0, 0, 0];
+        $grandTotal = 0;
+
+        foreach ($bales as $bale) {
+            $employee = $bale->{$relationName};
+
+            if (!$employee) {
+                continue;
+            }
+
+            $employeeName = $employee->name ?: 'Unknown';
+
+            if (!isset($summary[$employeeName])) {
+                $summary[$employeeName] = [
+                    'name' => $employeeName,
+                    'slot1' => 0,
+                    'slot2' => 0,
+                    'slot3' => 0,
+                    'slot4' => 0,
+                    'total' => 0,
+                ];
+            }
+
+            $slot = $this->resolveSlotForTimestamp($bale->created_at, $slotDefinitions);
+
+            $summary[$employeeName]['slot' . $slot]++;
+            $summary[$employeeName]['total']++;
+            $slotTotals[$slot - 1]++;
+            $grandTotal++;
+        }
+
+        ksort($summary, SORT_NATURAL | SORT_FLAG_CASE);
+
+        return [
+            'rows' => array_values($summary),
+            'slotTotals' => $slotTotals,
+            'grandTotal' => $grandTotal,
+        ];
+    }
+
+    private function resolveSlotForTimestamp(Carbon $timestamp, array $slotDefinitions): int
+    {
+        $time = $timestamp->format('H:i:s');
+
+        foreach ($slotDefinitions as $slot => $definition) {
+            if ($time >= $definition['start'] && $time <= $definition['end']) {
+                return $slot;
+            }
+        }
+
+        return 4;
     }
 }
