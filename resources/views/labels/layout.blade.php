@@ -11,6 +11,8 @@
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/bootstrap-icons.min.css') }}">
+    @livewireStyles
+    @vite(['resources/js/chat.js'])
 
     <style>
         .nav-link.active {
@@ -132,7 +134,15 @@
                 </ul>
 
                 <!-- Right Side -->
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item me-2">
+                        <a class="nav-link position-relative" href="{{ route('chat.index') }}">
+                            <i class="bi bi-chat-dots-fill"></i> Chat
+                            @auth
+                                <livewire:chat.notification-bell />
+                            @endauth
+                        </a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             {{ Auth::user()->name }}
@@ -182,6 +192,7 @@
     </footer>
     <script src="{{ asset('js/jquery2.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    @livewireScripts
     @stack('scripts')
 </body>
 
